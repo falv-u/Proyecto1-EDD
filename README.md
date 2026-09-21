@@ -1,6 +1,6 @@
 # Proyecto1-EDD
 Proyecto en conjunto para el 2 octubre, asignatura Estructura de Datos (EDD).
-Entrega readme 22-09.
+[Readme de buenas prácticas (22-09)](https://github.com/falv-u/Proyecto1-EDD/blob/main/Practicas_org.md)
 
 ## Descripción del Proyecto
 Este es un reproductor de música hecho en C por los siguientes integrantes:

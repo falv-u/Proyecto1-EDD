@@ -4,33 +4,45 @@
 
 /* id unico que referencia a una sola cancion*/
 typedef struct {
-	uint32_t cid; 
+	uint32_t cid;
 	uint32_t duracion;
-	uint16_t anio; 
-	uint16_t total_rep; 
+	uint16_t anio;
+	uint16_t total_rep;
 
 	char *titulo;
 	char *artista;
 	char *album;
 	char *genero;
-
-} cancion;
+	//char *ruta; //?? sera necesario <- ariel aca, lo mismo en playlsit
+} Cancion;
 
 typedef struct {
 	char *nombre;
 	Cancion *canciones;
 	int cantidad;
-} playlist;
+	uint32_t pid;
+} Playlist;
 
 typedef struct {
-    playlist *playlists;
+    Playlist *playlists;
     int cantidad;
-} main; 
+} main;
 
-/* notas panchito: Main va en main??? o pq el nombre main? */ 
+void gestion_catalogo(main *main);
+int ordena_catalogo(main *main);
 
+/* notas ariel aca...: puse un define.h para poner el maximo de canciones y playlist a soportar en nuestro proyecto */
+/* tengo una duda de como organizamos el proyecto... si lo hacemos archivo a archivo, punto a punto lo mencionado
+ * en el pdf.. por ej:
+ * Punto 1 Gestion de catalogo -> gestor.c
+ * Punto 2 Ordenamiento y busqueda -> sort.c
+ * ... Punto 7 interfaz -> interfaz.c
+ * Quiero hacer mi primera funcion :D --------- cambio y fuera
+ */
+
+/* notas panchito: Main va en main??? o pq el nombre main? */
 /* porfa, tabs y no espacios...*/
-/* 
+/*
  * entonces para acceder al titulo de x cancion el viaje seria Main->playlist->nombre->titulo
  * si tenemos varios Main, o varias playlist se nos complicara un poco el codigo, podriamos tratar de reducirlo
  * por cada iteracion de esas tenemos al menos 5 mallocs sin contar los datos faltantes.
