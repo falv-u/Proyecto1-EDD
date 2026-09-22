@@ -27,10 +27,9 @@ typedef struct {
 typedef struct {
     Playlist *playlists;
     int cantidad;
-} main;
+} fonoteca;
 
-void gestion_catalogo(main *main);
-int ordena_catalogo(main *main);
+int reproducir_musica();
 
 /* notas ariel aca...: puse un define.h para poner el maximo de canciones y playlist a soportar en nuestro proyecto */
 /* tengo una duda de como organizamos el proyecto... si lo hacemos archivo a archivo, punto a punto lo mencionado
