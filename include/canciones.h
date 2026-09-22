@@ -18,10 +18,10 @@ typedef struct {
 } Cancion;
 
 typedef struct {
-	char *nombre;
 	Cancion *canciones;
-	int cantidad;
 	uint32_t pid;
+	char *nombre;
+	int cantidad;
 } Playlist;
 
 typedef struct {
