@@ -1,5 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
+#ifndef CANCIONES
+#define CANCIONES
+
 #include <stdint.h>
 
 /* id unico que referencia a una sola cancion*/
@@ -63,3 +64,5 @@ int ordena_catalogo(main *main);
  *  idc -> referencia a una cancion en especifico (no muta, no lo cambiamos)
  *  id  -> referencia el orden en el que aparecen (si muta, los reordenamos)
  */
+
+#endif

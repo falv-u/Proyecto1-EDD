@@ -1,0 +1,49 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/frani/code/Proyecto1-EDD/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+$(OBJ_DIR)/%.o	Makefile	/^$(OBJ_DIR)\/%.o: $(SRC_DIR)\/%.c$/;"	t
+CC	Makefile	/^CC=cc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-Wall -Wextra -Wpedantic$/;"	m
+EXEC	Makefile	/^EXEC=main.run$/;"	m
+Ejemplito	README.md	/^# Ejemplito$/;"	c
+INCLUDE	Makefile	/^INCLUDE=-I.\/include\/$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS= -Wall -lm$/;"	m
+Normas	README.md	/^## Normas$/;"	s	chapter:Proyecto1-EDD
+OBJ_DIR	Makefile	/^OBJ_DIR=obj$/;"	m
+OBJ_FILES	Makefile	/^OBJ_FILES=$(patsubst $(SRC_DIR)\/%.c,$(OBJ_DIR)\/%.o,$(SRC_FILES))$/;"	m
+Proyecto1-EDD	README.md	/^# Proyecto1-EDD$/;"	c
+README de buenas prácticas	Practicas.md	/^# README de buenas prácticas$/;"	c
+SRC_DIR	Makefile	/^SRC_DIR=src$/;"	m
+SRC_FILES	Makefile	/^SRC_FILES=$(wildcard $(SRC_DIR)\/*.c)$/;"	m
+__anon7a2afaaa0108	include/headers.h	/^typedef struct {$/;"	s
+__anon7a2afaaa0208	include/headers.h	/^typedef struct {$/;"	s
+__anon7a2afaaa0308	include/headers.h	/^typedef struct {$/;"	s
+album	include/headers.h	/^	char *album;$/;"	m	struct:__anon7a2afaaa0108	typeref:typename:char *
+all	Makefile	/^all: folders $(OBJ_FILES)$/;"	t
+anio	include/headers.h	/^	uint16_t anio; $/;"	m	struct:__anon7a2afaaa0108	typeref:typename:uint16_t
+artista	include/headers.h	/^	char *artista;$/;"	m	struct:__anon7a2afaaa0108	typeref:typename:char *
+cancion	include/headers.h	/^} cancion;$/;"	t	typeref:struct:__anon7a2afaaa0108
+canciones	include/headers.h	/^	Cancion *canciones;$/;"	m	struct:__anon7a2afaaa0208	typeref:typename:Cancion *
+cantidad	include/headers.h	/^	int cantidad;$/;"	m	struct:__anon7a2afaaa0208	typeref:typename:int
+cantidad	include/headers.h	/^    int cantidad;$/;"	m	struct:__anon7a2afaaa0308	typeref:typename:int
+cid	include/headers.h	/^	uint32_t cid; $/;"	m	struct:__anon7a2afaaa0108	typeref:typename:uint32_t
+clean	Makefile	/^clean:$/;"	t
+duracion	include/headers.h	/^	uint32_t duracion;$/;"	m	struct:__anon7a2afaaa0108	typeref:typename:uint32_t
+folders	Makefile	/^folders:$/;"	t
+genero	include/headers.h	/^	char *genero;$/;"	m	struct:__anon7a2afaaa0108	typeref:typename:char *
+main	include/headers.h	/^} main; $/;"	t	typeref:struct:__anon7a2afaaa0308
+main	src/main.c	/^int main(void)$/;"	f	typeref:typename:int
+nombre	include/headers.h	/^	char *nombre;$/;"	m	struct:__anon7a2afaaa0208	typeref:typename:char *
+playlist	include/headers.h	/^} playlist;$/;"	t	typeref:struct:__anon7a2afaaa0208
+playlists	include/headers.h	/^    playlist *playlists;$/;"	m	struct:__anon7a2afaaa0308	typeref:typename:playlist *
+run	Makefile	/^run:$/;"	t
+titulo	include/headers.h	/^	char *titulo;$/;"	m	struct:__anon7a2afaaa0108	typeref:typename:char *
+total_rep	include/headers.h	/^	uint16_t total_rep; $/;"	m	struct:__anon7a2afaaa0108	typeref:typename:uint16_t

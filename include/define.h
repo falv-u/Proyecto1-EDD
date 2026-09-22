@@ -1,2 +1,0 @@
-#define MAX_CANCIONES 50
-#define MAX_PLAYLISTS 10
