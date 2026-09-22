@@ -5,31 +5,31 @@
 
 /* id unico que referencia a una sola cancion*/
 typedef struct {
-	uint32_t cid;
-	uint32_t duracion;
-	uint16_t anio;
-	uint16_t total_rep;
+	uint32_t cid; // ID de la cancion
+	uint32_t duracion; // Duracion en segundos
+	uint16_t anio; // Anio de lanzamiento
+	uint16_t total_rep; // Total de reproducciones
 
 	char *titulo;
 	char *artista;
 	char *album;
 	char *genero;
 	//char *ruta; //?? sera necesario <- ariel aca, lo mismo en playlsit
-} Cancion;
+} cancion;
 
 typedef struct {
-	Cancion *canciones;
-	uint32_t pid;
-	char *nombre;
-	int cantidad;
-} Playlist;
+	uint32_t *canciones; // Lista de IDs de canciones
+	uint32_t pid; // ID de la playlist
+	char *nombre; // Nombre de la playlist
+	int cantidad; // Cantidad de canciones en la playlist
+} playlist;
 
 typedef struct {
-    Playlist *playlists;
-    int cantidad;
+    uint32_t *playlists; // Lista de IDs de playlists
+    int cantidad; // Cantidad de canciones en la fonoteca
 } fonoteca;
 
-int reproducir_musica();
+int reproducir_musica(void);
 
 /* notas ariel aca...: puse un define.h para poner el maximo de canciones y playlist a soportar en nuestro proyecto */
 /* tengo una duda de como organizamos el proyecto... si lo hacemos archivo a archivo, punto a punto lo mencionado
@@ -62,6 +62,11 @@ int reproducir_musica();
  *  no confudir los id de las canciones con los id de la playlist
  *  idc -> referencia a una cancion en especifico (no muta, no lo cambiamos)
  *  id  -> referencia el orden en el que aparecen (si muta, los reordenamos)
+ */
+
+/* notas pipe:
+ * TENEMOS DEPENDENCIAS!!!
+ * (todo lo que tenga que ver con) miniaudio!!!!!!!!
  */
 
 #endif
