@@ -1,0 +1,66 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/audio.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/audio.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/main.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/main.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/search.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/search.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "include/miniaudio/miniaudio.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/include/miniaudio/miniaudio.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  }
+]
