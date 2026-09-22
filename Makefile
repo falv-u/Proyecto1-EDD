@@ -1,26 +1,17 @@
-.PHONY: clean folders run send
+.PHONY: clean folders run
+
 CC=cc
 EXEC=main.run
 
-SRC_DIR=src
-OBJ_DIR=obj
-SRC_FILES=$(wildcard $(SRC_DIR)/*.c)
-OBJ_FILES=$(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC_FILES))
+SRC=src/*.c include/miniaudio/miniaudio.c
 INCLUDE=-I./include/
-#LIBS= -lm -lp
-
+LIBS=-lm
 CFLAGS=-Wall -Wextra -Wpedantic
-LDFLAGS= -Wall -lm
 
-all: folders $(OBJ_FILES)
-	$(CC) $(CFLAGS) -o build/$(EXEC) $(OBJ_FILES) $(INCLUDE) $(LIBS)
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CFLAGS) -c -o $@ $^ $(INCLUDE)
-
+all: folders
+	$(CC) $(CFLAGS) -o build/$(EXEC) $(SRC) $(INCLUDE) $(LIBS)
 
 clean:
-	rm -f $(OBJ_FILES)
 	rm -rf build/*
 
 folders:
@@ -28,4 +19,3 @@ folders:
 
 run:
 	@./build/$(EXEC)
-
