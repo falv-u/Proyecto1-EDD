@@ -1,3 +1,6 @@
+#define MAXCANCIONES 3
+#define RANGO_CID 100
+
 #ifndef CANCIONES
 #define CANCIONES
 

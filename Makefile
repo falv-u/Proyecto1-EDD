@@ -7,7 +7,6 @@ SRC=src/*.c include/miniaudio/miniaudio.c
 INCLUDE=-I./include/
 LIBS=-lm
 CFLAGS=-Wall -Wextra -Wpedantic
-
 all: folders
 	$(CC) $(CFLAGS) -o build/$(EXEC) $(SRC) $(INCLUDE) $(LIBS)
 
