@@ -30,5 +30,7 @@ int hola()
 ## Organización de grupo
 - Todo el contenido de este repositorio, su posterior informe y presentación son desarrollados de manera equitativa y colaborativa.
 - Con constante comunicación a través de medios como Zed.
-- Roles --sin definir aun--
+
+### Roles --sin definir aun--
 - panchito-> reproductor de musica
+- ariel -> (por decidir... quiza algoritmos o interfaz)

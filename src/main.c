@@ -8,6 +8,8 @@
 int main(void)
 {
     srand(time(NULL));
+    printf("Funcionando.\n");
+
     // reproducir_musica();
 
 	/*playlist pl;

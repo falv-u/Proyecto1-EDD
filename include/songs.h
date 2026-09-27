@@ -33,6 +33,8 @@ typedef struct {
 } fonoteca;
 
 int reproducir_musica(void);
+int binsearch_cancion(void);
+//int binsearch_cancion(playlist *pl, uint32_t cid_buscado);
 
 /* notas ariel aca...: puse un define.h para poner el maximo de canciones y playlist a soportar en nuestro proyecto */
 /* tengo una duda de como organizamos el proyecto... si lo hacemos archivo a archivo, punto a punto lo mencionado
