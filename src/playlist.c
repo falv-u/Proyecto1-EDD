@@ -11,14 +11,10 @@ int existe_csv(void)
 	f = fopen(ruta_pl, "r");
 	if (f == NULL) 
 	{
-		fclose(f);	
 		return 0;
 	}
-	else
-	{
-		fclose(f);
-		return 1;
-	}
+	fclose(f);
+	return 1;
 }
 
 /*
@@ -55,7 +51,7 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 	while (fgets(linea_actual, sizeof(linea_actual), f))
 		if (linea_actual[0] != '\n') 
 			total++;	
-
+	rewind(f);
 	pl->canciones = malloc(sizeof(cancion) * total);
 	pl->cantidad = 0;
 	cap = 0;
@@ -119,6 +115,7 @@ void liberar_pl(playlist *pl)
 	}
 	free(pl->canciones);
 	free(pl->nombre);
+	printf("se libero la playlit sin errores apartentes\n");
 }
 /*
  * Funcion de creado que usa funciones auxiliares para modularidad, en si esta 
@@ -128,7 +125,6 @@ playlist crear_playlist(void)
 {
 	playlist pl;
 	char buff[124];
-	int a;
 
 	pl.pid = generar_id();
 	printf("agregue un nombre para la playlist: ");
@@ -140,12 +136,40 @@ playlist crear_playlist(void)
 		exit(1);
 	strcpy(pl.nombre, buff);
 
-	a = existe_csv();
-	if (a == 1) {
-		playlist_cargar_csv(&pl, ruta_pl);		
+	if (existe_csv()) {
+		playlist_cargar_csv(&pl, ruta_pl);
 	}
 
 
 	return pl;
 }
 
+void imprimir_playlist(const playlist *pl)
+{
+	int i;
+
+	if (pl == NULL) {
+		printf("playlist vacia\n");
+		return;
+	}
+
+	printf("Playlist #%u: %s\n", pl->pid, pl->nombre ? pl->nombre : "(sin nombre)");
+	printf("Canciones: %d\n", pl->cantidad);
+	printf("----------------------------------------------------------------------\n");
+	printf("%-4s %-30s %-20s %-20s %-6s %-5s %-5s\n",
+			"ID", "Titulo", "Artista", "Album", "Dur", "Anio", "Rep");
+	printf("----------------------------------------------------------------------\n");
+
+	for (i = 0; i < pl->cantidad; i++) {
+		const cancion *c = &pl->canciones[i];
+		printf("%4u %30.30s %20.20s %20.20s %6u %-5u %-5u\n",
+				c->cid,
+				c->titulo  ? c->titulo  : "-",
+				c->artista ? c->artista : "-",
+				c->album   ? c->album   : "-",
+				c->duracion,
+				c->anio,
+				c->total_rep);
+	}
+	printf("----------------------------------------------------------------------\n");
+}

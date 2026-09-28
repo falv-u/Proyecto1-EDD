@@ -8,7 +8,9 @@
 int main(void)
 {
 	srand(time(NULL));
-	printf("Funcionando.\n");
-
+	playlist pl;
+	pl = crear_playlist();
+	imprimir_playlist(&pl);	
+	liberar_pl(&pl);
 	return 0;
 }

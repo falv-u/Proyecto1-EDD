@@ -66,5 +66,6 @@ void liberar_pl(playlist *pl);
  * Retorna la estructura playlist inicializada. */
 playlist crear_playlist(void);
 
-
+/* imprime toda la lista de canciones de una playlist */
+void imprimir_playlist(const playlist *pl);
 #endif
