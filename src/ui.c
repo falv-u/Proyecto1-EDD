@@ -12,15 +12,60 @@ void limpiar_pantalla(void)
 void render_cancion(cancion *c)
 {
     printf("\n");
-    printf(COLOR_CYAN "  %s - %s\n" COLOR_RESET, c->artista, c->titulo);
+    if (c != NULL && c->artista != NULL && c->titulo == NULL)
+    {
+        printf(COLOR_CYAN "  %s - %s\n" COLOR_RESET, c->artista, c->titulo);
+    }
+    else
+    {
+        printf(COLOR_YELLOW "\t[Sin reproducción activa]\n" COLOR_RESET);
+    }
 }
 
+// creditos: panchito?
 /*
-void render_playlist(playlist *pl, int indice)
+void render_playlist(const playlist *pl)
 {
+	int i;
+
+	if (pl == NULL || pl->cantidad == 0 || pl->canciones == NULL) {
+		printf(COLOR_YELLOW " [Playlist vacia o no cargada.]\n" COLOR_RESET);
+		return;
+	}
+
+	printf("Playlist #%u: %s\n", pl->pid, pl->nombre ? pl->nombre : "(sin nombre)");
+	printf("Canciones: %d\n", pl->cantidad);
+	printf("----------------------------------------------------------------------\n");
+	printf("%-4s %-30s %-20s %-20s %-6s %-5s %-5s\n",
+			"ID", "Titulo", "Artista", "Album", "Dur.", "Anho", "Rep");
+	printf("----------------------------------------------------------------------\n");
+
+	for (i = 0; i < pl->cantidad; i++) {
+		const cancion *c = &pl->canciones[i];
+		printf("%4u %30.30s %20.20s %20.20s %6u %-5u %-5u\n",
+				c->cid,
+				c->titulo  ? c->titulo  : "-",
+				c->artista ? c->artista : "-",
+				c->album   ? c->album   : "-",
+				c->duracion,
+				c->anio,
+				c->total_rep);
+	}
+	printf("----------------------------------------------------------------------\n");
+}
+*/
+
+void render_menu(void)
+{
+    printf("\n");
+    printf(COLOR_BLUE "  [P]" COLOR_RESET " Play/Pause   ");
+    printf(COLOR_BLUE "[N]" COLOR_RESET " Siguiente   ");
+    printf(COLOR_BLUE "[B]" COLOR_RESET " Anterior   ");
+    printf(COLOR_BLUE "[L]" COLOR_RESET " Cargar CSV   ");
+    printf(COLOR_RED  "[Q]" COLOR_RESET " Salir\n");
 }
 
-void ui_input(void)
+char ui_input(void)
 {
     // linea del input
     char input[32];
@@ -33,26 +78,17 @@ void ui_input(void)
     return input[0];
 }
 
-*/
-
-void render_menu(void)
-{
-    printf("\n");
-    printf(COLOR_BLUE "  [P]" COLOR_RESET " Play/Pause   ");
-    printf(COLOR_BLUE "[N]" COLOR_RESET " Siguiente   ");
-    printf(COLOR_BLUE "[B]" COLOR_RESET " Anterior   ");
-    printf(COLOR_BLUE "[L]" COLOR_RESET " Cargar CSV   ");
-    printf(COLOR_RED  "[Q]" COLOR_RESET " Salir\n");
-    printf(COLOR_CYAN "  >> " COLOR_RESET);
-}
-
 int ui_principal(void)
 {
-    char input[8];
     int running = 1;
     while (running)
     {
         limpiar_pantalla();
+
+        char c = ui_input();
+        if (c == 'q' || c == 'Q')
+            running = 0;
         render_menu();
     }
+    return 0;
 }
