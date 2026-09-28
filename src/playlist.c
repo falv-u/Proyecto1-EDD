@@ -44,15 +44,16 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 	int n;
 
 	f = fopen(ruta, "a+");
+
 	if (f == NULL)
 	{
 		printf("error abriendo archivo...\n");
 		return 121;
 	}
-
 	/* lee con fgets, restringido a linea_actual del tamano de linea_actual para el archivo f */	
-	while (fgets(linea, sizeof(linea), f))
-		if (linea[0] != '\n') 
+	total = 0;
+	while (fgets(linea_actual, sizeof(linea_actual), f))
+		if (linea_actual[0] != '\n') 
 			total++;	
 
 	pl->canciones = malloc(sizeof(cancion) * total);
@@ -86,7 +87,8 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		if (n < 8)
 			continue;
 
-		if (pl->cantidad == cap) {
+		if (pl->cantidad == cap)
+		{
 			cap = cap ? cap * 2 : 16;
 			pl->canciones = realloc(pl->canciones, sizeof(cancion) * cap);
 		}
