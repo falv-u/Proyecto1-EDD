@@ -33,6 +33,7 @@ typedef struct {
 } fonoteca;
 
 int reproducir_musica(void);
+void inicializar_canciones(cancion canciones[]);
 int binsearch_cancion(void);
 uint32_t generar_id();
 //int binsearch_cancion(playlist *pl, uint32_t cid_buscado);

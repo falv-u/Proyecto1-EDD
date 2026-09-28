@@ -3,6 +3,7 @@
 void insertion_sort(void);
 
 // --- IDEA SORT ---- les parece bien Selection sort???
+// pipe: le doy, segun un articulo q vi por ahi selection sirve para cuando el arreglo esta muy desordenado, mas que insertion
 /*
 void insertion_sort(playlist *pl)
 {
@@ -20,7 +21,8 @@ void insertion_sort(playlist *pl)
         pl->canciones[j + 1].cid = key;
     }
 }
- */
+*/
 
+//
 // merge o quicksort :ooooo
 // sea cual sea iria por aca <<<<<
