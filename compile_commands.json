@@ -25,6 +25,38 @@
       "-I./include/",
       "-o",
       "build/main.run",
+      "src/busqueda.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/busqueda.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/id.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/id.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
       "src/main.c"
     ],
     "directory": "/home/frani/code/Proyecto1-EDD",
@@ -41,10 +73,58 @@
       "-I./include/",
       "-o",
       "build/main.run",
+      "src/playlist.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/playlist.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
       "src/search.c"
     ],
     "directory": "/home/frani/code/Proyecto1-EDD",
     "file": "/home/frani/code/Proyecto1-EDD/src/search.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/song.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/song.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/sort.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/sort.c",
     "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
   },
   {
