@@ -5,6 +5,7 @@
 #define CANCIONES
 
 #include <stdint.h>
+#include "ui.h"
 
 /* id unico que referencia a una sola cancion*/
 typedef struct {
