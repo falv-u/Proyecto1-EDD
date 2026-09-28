@@ -21,7 +21,7 @@ typedef struct {
 } cancion;
 
 typedef struct {
-	uint32_t *canciones; // Lista de IDs de canciones
+	cancion *canciones; // Lista de IDs de canciones
 	uint32_t pid; // ID de la playlist
 	char *nombre; // Nombre de la playlist
 	int cantidad; // Cantidad de canciones en la playlist
@@ -34,6 +34,7 @@ typedef struct {
 
 int reproducir_musica(void);
 int binsearch_cancion(void);
+uint32_t generar_id();
 //int binsearch_cancion(playlist *pl, uint32_t cid_buscado);
 
 /* notas ariel aca...: puse un define.h para poner el maximo de canciones y playlist a soportar en nuestro proyecto */
