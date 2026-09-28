@@ -32,10 +32,19 @@ typedef struct {
     int cantidad; // Cantidad de canciones en la fonoteca
 } fonoteca;
 
-
+/* Reproduce el mp3 de la ruta del archivo.
+ * Retorna 0 en exito, -1 si falla. */
 int reproducir_musica(void);
+
+/* Inicializa ia informacion de las canciones desde un archivo CSV.
+ * Retorna 0 en éxito, 121 si no puede abrir el archivo. */
 void inicializar_canciones(cancion canciones[]);
+
+/* Busca la cancion en la fonoteca por un string ingresado por el usuario.
+ * Retorna el índice de la cancion si se encuentra, -1 si no. */
 int binsearch_cancion(void);
+
+/* Genera un ID único para una cancion. */
 uint32_t generar_id();
 
 /* Verifica si el archivo CSV de la playlist existe.

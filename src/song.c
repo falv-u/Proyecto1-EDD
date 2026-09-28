@@ -8,7 +8,7 @@ cancion crear_cancion(const char titulo[], const char artista[], const char albu
 {
     cancion cr;
 
-    cr.cid = (rand() % RANGO_CID) + 1;
+    cr.cid = generar_id();
     cr.anio = 1999;
     cr.total_rep = 0;
     cr.duracion = 255;
@@ -45,9 +45,9 @@ void inicializar_canciones(cancion canciones[])
         exit(1);
     }
 
-    for(int i = 0; i < MAXCANCIONES; i++)
+    for (int i = 0; i < MAXCANCIONES; i++)
     {
-        fscanf(archivo, "%[^,],%[^,],%[^,],%[^\n]\n", titulo, artista, album, genero);
+        fscanf(archivo, "%[^|],%[^|],%[^|],%[^\n]\n", titulo, artista, album, genero);
         canciones[i] = crear_cancion(titulo, artista, album, genero);
     }
 
