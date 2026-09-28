@@ -1,5 +1,6 @@
 *.sh
 *.env
+*.csv
 *.out
 *.o
 *.run
