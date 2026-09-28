@@ -27,10 +27,10 @@ int existe_csv(void)
  */
 char *dup(const char *s)
 {
-    char *p = malloc(strlen(s) + 1);
-    if (p)
-	    strcpy(p, s);
-    return p;
+	char *p = malloc(strlen(s) + 1);
+	if (p)
+		strcpy(p, s);
+	return p;
 }
 
 int playlist_cargar_csv(playlist *pl, const char *ruta)
@@ -77,7 +77,7 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		 * pasandole el valor NULL a strtok para que continue donde quedo anteriormente
 		 */
 		for (char *p = strtok(linea_actual, "|\n"); p && n < 8; p = strtok(NULL, "|\n"))
-		/* esto se lee como t[n] = p y luego n = n+1 ya que es un post-incremento */
+			/* esto se lee como t[n] = p y luego n = n+1 ya que es un post-incremento */
 			t[n++] = p;
 		/*
 		 * el for anterior solo para cuando p=NULL o n==8 es decir, si p es NULL antes de 
@@ -129,7 +129,7 @@ playlist crear_playlist(void)
 	playlist pl;
 	char buff[124];
 	int a;
-	
+
 	pl.pid = generar_id();
 	printf("agregue un nombre para la playlist: ");
 	fgets(buff, sizeof(buff), stdin);
@@ -139,7 +139,7 @@ playlist crear_playlist(void)
 	if (pl.nombre == NULL)
 		exit(1);
 	strcpy(pl.nombre, buff);
-	
+
 	a = existe_csv();
 	if (a == 1) {
 		playlist_cargar_csv(&pl, ruta_pl);		
