@@ -52,7 +52,7 @@ void inicializar_canciones(cancion canciones[]);
 
 /* Busca la cancion en la fonoteca por un string ingresado por el usuario.
  * Retorna el índice de la cancion si se encuentra, -1 si no. */
-int binsearch_cancion(void);
+int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado);
 
 /* ----------FUNCIONES PLAYLIST ---------*/ 
 /* Verifica si el archivo CSV de la playlist existe.

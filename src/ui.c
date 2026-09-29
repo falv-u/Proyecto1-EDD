@@ -1,9 +1,8 @@
+/* Idea: While principal, interfaz con colores y ascii, etc.*/
+
 #include <stdio.h>
 #include "songs.h"
 
-/*
- * Idea: While principal, interfaz con colores y ascii, etc.
- */
 void limpiar_pantalla(void)
 {
     printf("\033[H\033[J");

@@ -1,3 +1,5 @@
+#ifndef UI_H
+#define UI_H
 /*
  * CODIGOS DE LOS COLORES, DEBEN IR ACOMPAÑADOS DE UN COLOR_RESET TERMINANDO FRASES
  */
@@ -12,3 +14,14 @@
 #define COLOR_DIM     "\033[2m"
 
 #define MAX_LINE 256
+
+/*
+ * Funciones de la interfaz de usuario.
+
+void limpiar_pantalla(void);
+void render_cancion(const cancion *c);
+void render_playlist(const playlist *pl);
+void render_menu(void);
+char ui_input(void);
+ */
+#endif
