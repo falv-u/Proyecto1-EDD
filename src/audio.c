@@ -1,10 +1,9 @@
 #include <stdio.h>
+#include "songs.h"
 #include "miniaudio/miniaudio.h"
 
-int reproducir_musica() 
+int reproduir_musica(const char *ruta, cancion *c) 
 {
-
-	const char ruta[] = "./assets/take_me_out.mp3";
 	ma_result result;
 	ma_engine engine;
 	result = ma_engine_init(NULL, &engine);
@@ -17,6 +16,7 @@ int reproducir_musica()
 
 	ma_engine_uninit(&engine);
 
+	c->total_rep++;
 	return 0;
 }
 

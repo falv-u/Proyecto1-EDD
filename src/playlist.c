@@ -167,3 +167,40 @@ void imprimir_playlist(const playlist *pl)
 	}
 	printf("----------------------------------------------------------------------\n");
 }
+
+int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
+{
+	FILE *f;
+	cancion *nueva;
+	int n;
+	f = fopen(ruta, "a");
+	if ( f == NULL )
+	{
+		printf("error abriendo archivo");
+		return 121;
+	}
+
+	fprintf(f, "%u|%u|%u|%u|%s|%s|%s|%s\n",
+			c->cid, c->duracion, c->anio, c->total_rep,
+			c->titulo, c->artista, c->album, c->genero);
+	fclose(f);
+
+	n = pl->cantidad;
+	nueva = malloc(sizeof(cancion)*(n+1));
+	if (nueva == NULL)
+	{
+		printf("error de asignacion de memoria\n");
+	}
+
+	if (pl->canciones != NULL)
+	{
+		memcpy(nueva, pl->canciones , sizeof(cancion)*n);
+		free(pl->canciones);
+	}
+
+	nueva[n] = *c;
+	pl->canciones = nueva;
+	pl->cantidad = n+1;
+	
+	return 0;
+}

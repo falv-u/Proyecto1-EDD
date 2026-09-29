@@ -1,9 +1,9 @@
-#define MAXCANCIONES 3
-#define RANGO_CID 100
-
 #ifndef CANCIONES
 #define CANCIONES
 
+#define MAXCANCIONES 3
+#define RANGO_CID 100
+#define MAX_HISTORIAL 30
 #include <stdint.h>
 #include "ui.h"
 
@@ -44,7 +44,7 @@ uint32_t generar_id();
 /* ----------FUNCIONES CANCIONES ---------*/ 
 /* Reproduce el mp3 de la ruta del archivo.
  * Retorna 0 en exito, -1 si falla. */
-int reproducir_musica(void);
+int reproducir_musica(const char *ruta, cancion *c);
 
 /* Inicializa ia informacion de las canciones desde un archivo CSV.
  * Retorna 0 en éxito, 121 si no puede abrir el archivo. */

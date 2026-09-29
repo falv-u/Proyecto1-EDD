@@ -38,5 +38,17 @@ void agregar_a_historial(cancion c)
 {
 	FILE *f;
 	f = fopen(ruta_historial, "a");
+	if (f == NULL)
+	{
+		printf("error abriendo historial...\n");
+		return 121;
+	}
+
+	fprintf(f, "%lu|%lu|%lu|%lu|%s|%s|%s|%s\n",
+			c->cid, c->duracion, c->anio, c->total_rep,
+			c->titulo, c->artista, c->album, c->genero);
+
+	fclose(f);
+	return 0;
 
 }
