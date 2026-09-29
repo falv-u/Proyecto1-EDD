@@ -1,6 +1,7 @@
 /* Idea: While principal, interfaz con colores y ascii, etc.*/
 
 #include <stdio.h>
+#include <string.h>
 #include "songs.h"
 
 void limpiar_pantalla(void)
@@ -11,7 +12,7 @@ void limpiar_pantalla(void)
 void render_cancion(cancion *c)
 {
     printf("\n");
-    if (c != NULL && c->artista != NULL && c->titulo == NULL)
+    if (c != NULL && c->artista != NULL && c->titulo != NULL)
     {
         printf(COLOR_CYAN "  %s - %s\n" COLOR_RESET, c->artista, c->titulo);
     }
@@ -66,14 +67,25 @@ void render_menu(void)
 
 char ui_input(void)
 {
-    // linea del input
     char input[32];
     printf(COLOR_CYAN "  >> " COLOR_RESET);
 
     if (fgets(input, sizeof(input), stdin) == NULL)
-    {
         return '\0';
+
+    size_t len = strlen(input);
+    size_t i = 0;
+    // caso enter (\n)
+    if (len <= 1)
+        return '\0';
+
+    // comprobar que el input solo contiene caracteres permitidos: 0-9, a-z, A-Z
+    for (i = 0; i < len - 1; i++)
+    {
+        if (input[i] < 48 || (input[i] > 57 && input[i] < 97) || input[i] > 122)
+            return '\0';
     }
+
     return input[0];
 }
 
