@@ -1,8 +1,9 @@
 #ifndef UI_H
 #define UI_H
-/*
- * CODIGOS DE LOS COLORES, DEBEN IR ACOMPAÑADOS DE UN COLOR_RESET TERMINANDO FRASES
- */
+
+#include "songs.h"
+
+/* CODIGOS ANSI DE LOS COLORES, DEBEN IR ACOMPAÑADOS DE UN COLOR_RESET TERMINANDO FRASES */
 #define COLOR_RESET   "\033[0m"
 #define COLOR_BOLD    "\033[1m"
 #define COLOR_CYAN    "\033[1;36m"
@@ -15,13 +16,23 @@
 
 #define MAX_LINE 256
 
-/*
- * Funciones de la interfaz de usuario.
-
+/* ----------FUNCIONES UI ---------*/
+/* Limpia la terminal. */
 void limpiar_pantalla(void);
-void render_cancion(const cancion *c);
-void render_playlist(const playlist *pl);
-void render_menu(void);
+
+/* Imprime la cancion actual en la terminal. */
+void imprime_cancion(cancion *c);
+
+/* Imprime el menu de opciones en la terminal. */
+void imprime_menu(void);
+
+/* Lee una entrada del usuario en la terminal. */
 char ui_input(void);
- */
+
+/* Funcion principal de la interfaz de usuario. */
+int ui_principal(void);
+
+/* Pausa la ejecucion del programa hasta que el usuario presione Enter. */
+void ui_pausa(void);
+
 #endif

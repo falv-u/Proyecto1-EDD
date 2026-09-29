@@ -1,15 +1,18 @@
 /* Idea: While principal, interfaz con colores y ascii, etc.*/
+// FALTA UN CLI, reproducir, pausar
+// LS para listar las canciones completas (Panchito)
+// Crear y eliminar playlists/cancion: Orquestado
 
 #include <stdio.h>
 #include <string.h>
-#include "songs.h"
+#include "ui.h"
 
 void limpiar_pantalla(void)
 {
     printf("\033[H\033[J");
 }
 
-void render_cancion(cancion *c)
+void imprime_cancion(cancion *c)
 {
     printf("\n");
     if (c != NULL && c->artista != NULL && c->titulo != NULL)
@@ -22,40 +25,7 @@ void render_cancion(cancion *c)
     }
 }
 
-// creditos: panchito?
-/*
-void render_playlist(const playlist *pl)
-{
-	int i;
-
-	if (pl == NULL || pl->cantidad == 0 || pl->canciones == NULL) {
-		printf(COLOR_YELLOW " [Playlist vacia o no cargada.]\n" COLOR_RESET);
-		return;
-	}
-
-	printf("Playlist #%u: %s\n", pl->pid, pl->nombre ? pl->nombre : "(sin nombre)");
-	printf("Canciones: %d\n", pl->cantidad);
-	printf("----------------------------------------------------------------------\n");
-	printf("%-4s %-30s %-20s %-20s %-6s %-5s %-5s\n",
-			"ID", "Titulo", "Artista", "Album", "Dur.", "Anho", "Rep");
-	printf("----------------------------------------------------------------------\n");
-
-	for (i = 0; i < pl->cantidad; i++) {
-		const cancion *c = &pl->canciones[i];
-		printf("%4u %30.30s %20.20s %20.20s %6u %-5u %-5u\n",
-				c->cid,
-				c->titulo  ? c->titulo  : "-",
-				c->artista ? c->artista : "-",
-				c->album   ? c->album   : "-",
-				c->duracion,
-				c->anio,
-				c->total_rep);
-	}
-	printf("----------------------------------------------------------------------\n");
-}
-*/
-
-void render_menu(void)
+void imprime_menu(void)
 {
     printf("\n");
     printf(COLOR_BLUE "  [P]" COLOR_RESET " Play/Pause   ");
@@ -99,7 +69,13 @@ int ui_principal(void)
         char c = ui_input();
         if (c == 'q' || c == 'Q')
             running = 0;
-        render_menu();
+        imprime_menu();
     }
     return 0;
+}
+
+void ui_pausa(void)
+{
+    printf(COLOR_CYAN "\nPresione Enter para continuar...." COLOR_RESET);
+    getchar();
 }
