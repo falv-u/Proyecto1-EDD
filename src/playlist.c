@@ -9,7 +9,7 @@ int existe_csv(void)
 {
 	FILE *f;
 	f = fopen(ruta_pl, "r");
-	if (f == NULL) 
+	if (f == NULL)
 	{
 		return 0;
 	}
@@ -46,11 +46,11 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		printf("error abriendo archivo...\n");
 		return 121;
 	}
-	/* lee con fgets, restringido a linea_actual del tamano de linea_actual para el archivo f */	
+	/* lee con fgets, restringido a linea_actual del tamano de linea_actual para el archivo f */
 	total = 0;
 	while (fgets(linea_actual, sizeof(linea_actual), f))
-		if (linea_actual[0] != '\n') 
-			total++;	
+		if (linea_actual[0] != '\n')
+			total++;
 	rewind(f);
 	pl->canciones = malloc(sizeof(cancion) * total);
 	pl->cantidad = 0;
@@ -59,10 +59,10 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 	while (fgets(linea_actual, sizeof(linea_actual), f))
 	{
 		n = 0;
-		/* 
-		 * string tokenizer (tokenizador de strings) 
+		/*
+		 * string tokenizer (tokenizador de strings)
 		 * Divide un string en pedazos segun los caracteres que le pases como separadores.
-		 * strtok(linea, "|\n") es pedir que corte esta línea cada vez que encuentres | o \n 
+		 * strtok(linea, "|\n") es pedir que corte esta línea cada vez que encuentres | o \n
 		 *
 		 */
 
@@ -76,7 +76,7 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 			/* esto se lee como t[n] = p y luego n = n+1 ya que es un post-incremento */
 			t[n++] = p;
 		/*
-		 * el for anterior solo para cuando p=NULL o n==8 es decir, si p es NULL antes de 
+		 * el for anterior solo para cuando p=NULL o n==8 es decir, si p es NULL antes de
 		 * n llegar a 8 significa que ocurrio un error. al estar dentro de un while,
 		 * el continue corta la iteracion actual.
 		 */
@@ -97,7 +97,7 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		c->titulo    = dup(t[4]);
 		c->artista   = dup(t[5]);
 		c->album     = dup(t[6]);
-		c->genero    = dup(t[7]);	
+		c->genero    = dup(t[7]);
 	}
 	fclose(f);
 	return 0;
@@ -115,13 +115,13 @@ void liberar_pl(playlist *pl)
 	}
 	free(pl->canciones);
 	free(pl->nombre);
-	printf("se libero la playlit sin errores apartentes\n");
+	printf("se libero la playlist sin errores apartentes\n");
 }
 /*
- * Funcion de creado que usa funciones auxiliares para modularidad, en si esta 
+ * Funcion de creado que usa funciones auxiliares para modularidad, en si esta
  * funcion solo define por si misma el id de una playlist y su nombre.
  */
-playlist crear_playlist(void) 
+playlist crear_playlist(void)
 {
 	playlist pl;
 	char buff[124];
@@ -144,6 +144,7 @@ playlist crear_playlist(void)
 	return pl;
 }
 
+// ui.c <-
 void imprimir_playlist(const playlist *pl)
 {
 	int i;

@@ -10,7 +10,7 @@ int main(void)
 	srand(time(NULL));
 	playlist pl;
 	pl = crear_playlist();
-	imprimir_playlist(&pl);	
+	imprimir_playlist(&pl);
 	liberar_pl(&pl);
 	return 0;
 }
