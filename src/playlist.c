@@ -3,9 +3,8 @@
 #include <stdlib.h>
 
 #include "songs.h"
-static const char ruta_pl[] = "./playlist.csv";
 
-int existe_csv(void)
+int existe_plcsv(void)
 {
 	FILE *f;
 	f = fopen(ruta_pl, "r");
@@ -35,11 +34,10 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 	char linea_actual[1024];
 	cancion *c;
 	char *t[8];
-	int cap;
 	int total;
 	int n;
 
-	f = fopen(ruta, "a+");
+	f = fopen(ruta, "r");
 
 	if (f == NULL)
 	{
@@ -52,9 +50,9 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		if (linea_actual[0] != '\n') 
 			total++;	
 	rewind(f);
+
 	pl->canciones = malloc(sizeof(cancion) * total);
 	pl->cantidad = 0;
-	cap = 0;
 
 	while (fgets(linea_actual, sizeof(linea_actual), f))
 	{
@@ -83,11 +81,6 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		if (n < 8)
 			continue;
 
-		if (pl->cantidad == cap)
-		{
-			cap = cap ? cap * 2 : 16;
-			pl->canciones = realloc(pl->canciones, sizeof(cancion) * cap);
-		}
 		/* se usa strtoul para convertir string a un unsigned long integer */
 		c = &pl->canciones[pl->cantidad++];
 		c->cid       = strtoul(t[0], NULL, 10);
@@ -136,7 +129,7 @@ playlist crear_playlist(void)
 		exit(1);
 	strcpy(pl.nombre, buff);
 
-	if (existe_csv()) {
+	if (existe_plcsv()) {
 		playlist_cargar_csv(&pl, ruta_pl);
 	}
 

@@ -33,6 +33,15 @@ typedef struct {
     int cantidad; // Cantidad de canciones en la fonoteca
 } fonoteca;
 
+/* RUTAS */
+static const char ruta_pl[] = "./playlist.csv";
+static const char ruta_historial[] = "./historial.csv";
+
+/* ----------FUNCIONES GENERALES ---------*/ 
+/* Genera un ID único para una cancion. */
+uint32_t generar_id();
+
+/* ----------FUNCIONES CANCIONES ---------*/ 
 /* Reproduce el mp3 de la ruta del archivo.
  * Retorna 0 en exito, -1 si falla. */
 int reproducir_musica(void);
@@ -45,12 +54,10 @@ void inicializar_canciones(cancion canciones[]);
  * Retorna el índice de la cancion si se encuentra, -1 si no. */
 int binsearch_cancion(void);
 
-/* Genera un ID único para una cancion. */
-uint32_t generar_id();
-
+/* ----------FUNCIONES PLAYLIST ---------*/ 
 /* Verifica si el archivo CSV de la playlist existe.
  * Retorna 1 si existe, 0 si no. */
-int existe_csv(void);
+int existe_plcsv(void);
 
 /* Duplica una cadena de texto reservando memoria dinámica.
  * Retorna un puntero a la nueva cadena, o NULL si falla. */
@@ -69,4 +76,18 @@ playlist crear_playlist(void);
 
 /* imprime toda la lista de canciones de una playlist */
 void imprimir_playlist(const playlist *pl);
+
+/* ----------FUNCIONES HISTORIAL ---------*/ 
+
+/* verifica si existe el archivo de historial en caso de no, 
+ * llama a escribir_archivo_historial 
+ * Retorna 0 si todo salio bien, en caso de no existir y no poder crearse
+ * devuelve un 1
+ * */
+int existe_historial(void);
+
+/* crea o sobreescribe el archivo de ruta_historial
+ * Retorna 0 si todo salio bien, caso contrario retorna 1
+ */
+int escribir_archivo_historial(void);
 #endif
