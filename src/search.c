@@ -1,4 +1,5 @@
 #include "songs.h"
+#include <string.h>
 
 // designado: ariel
 /*
@@ -23,4 +24,31 @@ int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado)
     {
         return binsearch_cancion(arr, izq, med - 1, cid_buscado);
     }
+}
+
+// busqueda por nombre y titulo
+int search_titulo(cancion *arr, int n, char *titulo_buscado)
+{
+    if (arr == NULL || titulo_buscado == NULL)
+        return -1;
+
+    for (int i = 0; i < n; i++)
+    {
+        if (arr[i].titulo != NULL)
+        {
+            // comparar titulo (falta pasarlo a lowercase..)
+            if (strcmp(arr[i].titulo, titulo_buscado) == 0)
+            {
+                return i;
+            }
+        }
+    }
+
+    return -1;
+}
+
+// busqueda por artista (todas las de 1 artista)
+int search_artista(cancion *arr, int n, char *artista_buscado)
+{
+    return 0;
 }
