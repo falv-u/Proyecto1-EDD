@@ -18,7 +18,7 @@ int existe_plcsv(void)
 
 /*
  * Funcion que copia una cadena de texto y devuelve el puntero a esa nueva cadena
- * usada para en 'playlist_cargar_csv' poder reutilizar buffer sin perder informacion.
+ * usada en 'playlist_cargar_csv' poder reutilizar buffer sin perder informacion.
  */
 char *dup(const char *s)
 {
@@ -114,14 +114,25 @@ void liberar_pl(playlist *pl)
  * Funcion de creado que usa funciones auxiliares para modularidad, en si esta
  * funcion solo define por si misma el id de una playlist y su nombre.
  */
+
 playlist crear_playlist(void)
 {
 	playlist pl;
 	char buff[124];
 
 	pl.pid = generar_id();
+
+	/*
+	 * pedimos un nombre que sera recogido desde la entrada estandar,
+	 * enviado a buff con un tamano maximo de sizeof(buff)
+	 */
 	printf("agregue un nombre para la playlist: ");
 	fgets(buff, sizeof(buff), stdin);
+	/* 
+	 * calcula el numero de bytes en buff sin contar el salto de linea
+	 * devuelve el indice de '\n' que es remplazado por un '\0'
+	 * entonces remplaza el salto de linea por un termino de linea
+	 */
 	buff[strcspn(buff, "\n")] = '\0';
 
 	pl.nombre = malloc(strlen(buff) + 1);
@@ -132,7 +143,6 @@ playlist crear_playlist(void)
 	if (existe_plcsv()) {
 		playlist_cargar_csv(&pl, ruta_pl);
 	}
-
 
 	return pl;
 }

@@ -75,7 +75,6 @@ void inicializar_canciones(cancion canciones[]);
 int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado);
 
 /* ----------FUNCIONES PLAYLIST ---------*/
-
 /**
  * Verifica si el archivo CSV de la playlist existe.
  * Retorna 1 si existe, 0 si no.
@@ -112,21 +111,12 @@ int playlist_cargar_csv(playlist *pl, const char *ruta);
 /* @brief Libera toda la memoria asociada a una playlist. */
 void liberar_pl(playlist *pl);
 
-/* Crea una nueva playlist solicitando nombre al usuario.
- * Retorna la estructura playlist inicializada. */
 playlist crear_playlist(void);
 
 /* imprime toda la lista de canciones de una playlist */
 void imprimir_playlist(const playlist *pl);
 
 /* ----------FUNCIONES HISTORIAL ---------*/
-
-
-/* verifica si existe el archivo de historial en caso de no,
- * llama a escribir_archivo_historial
- * Retorna 0 si todo salio bien, en caso de no existir y no poder crearse
- * devuelve un 1
- * */
 
 /* @brief verifica si existe el archivo de historial en disco.
  *

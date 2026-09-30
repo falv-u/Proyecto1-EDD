@@ -12,6 +12,13 @@ long contar_lineas(const char *ruta)
 		printf("error, el archivo existe? \m");
 		return -1;
 	}
+	
+	/* 
+	 * mientras logre leer una linea fgets dara un valor 
+	 * distinto de NULL, cuando se llama de nuevo fgets
+	 * mueve el cursor del archivo, se detentra cuando
+	 * fgets de NULL
+	 */
 
 	while(fgets(buff,sizeof(buff),f))
 		linea++;
