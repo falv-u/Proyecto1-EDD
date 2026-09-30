@@ -1,5 +1,54 @@
 #include <stdio.h>
 #include "songs.h"
+#define MAX_K 19
+
+long contar_lineas(const char *ruta)
+{
+	FILE *f;
+	char buff[1024];
+	long linea;	
+	f = fopen(ruta, "r");
+	if ( f == NULL )
+	{
+		printf("error, el archivo existe? \m");
+		return -1;
+	}
+
+	while(fgets(buff,sizeof(buff),f))
+		linea++;
+	
+	fclose(f);
+	return linea;
+	
+}
+long buscar_cid_csv(const char *ruta, unsigned int id_buscar, unsigned int rep)
+{
+	FILE *f;
+	char buff[1024];
+	unsigned int id, dur, anio, reps;
+
+	f = fopen(ruta, "r");
+
+	if (f == NULL)
+	{
+		printf("fallo al abrir archivo, el archivo existe?\n");
+		return -1;
+	}
+	i = 0;
+
+	while(fgets(buff,sizeof(buff),f))
+	{
+		sscanf("%u|%u|%u|%u|", &id, &dur, &anio, &reps);
+		if (id == cid)
+		{
+			*rep = reps;
+			fclose(f);
+			return i;
+		}
+		i++;
+	}
+	return -1;
+}
 
 int escribir_archivo_historial(void)
 {
@@ -13,6 +62,7 @@ int escribir_archivo_historial(void)
 	return 0;
 
 }
+
 int existe_historial(void)
 {
 	FILE *f;
@@ -37,6 +87,21 @@ int existe_historial(void)
 int agregar_a_historial(cancion *c)
 {
 	FILE *f;
+	long pos;
+	unsigned int rep;
+
+	pos = buscar_cid(ruta_historial, c->cid, &rep);
+
+	if (pos != -1)
+	{
+		eliminar_linea_csv(ruta_historial, pos);
+		c->total_rep = rep + 1;
+	}
+	else if (contar_lineas(ruta_historial) >= MAX_K)
+	{
+		eliminar_linea_csv(ruta_historial, 0);
+	}
+
 	f = fopen(ruta_historial, "a");
 	if (f == NULL)
 	{
@@ -50,7 +115,6 @@ int agregar_a_historial(cancion *c)
 
 	fclose(f);
 	return 0;
-
 }
 
 void limpiar_csv(const char *ruta)
@@ -61,20 +125,12 @@ void limpiar_csv(const char *ruta)
 }
 
 
-/*
- * IDEA: verificar el caso mas sencillo primero, que se repite la ultima cancion.
- * en caso de no, verificamos el historial cargado, deben ser maximo K canciones
- * si una nueva cancion llena el indice K, eliminamos la primera linea pase lo que pase
- * recorremos de forma lineal el historial buscando el id de la cancion que acrtualiza, si esta leemos
- * total_rep, aumentamos en uno, guardamos al final y eso o tiramos al archivo
- *
- */
 
 void eliminar_linea_csv(const char *ruta, long linea)
 {
 	FILE *in;
 	FILE *out;
-	char linea_actual[1024];
+	char buff[1024];
 	long i;
 	/*
 	 * "r+" abre el archivo al inicio sin sobreescribir, 
@@ -86,7 +142,30 @@ void eliminar_linea_csv(const char *ruta, long linea)
 		printf("fallo abrir archivo, el archivo existe?");
 		return;
 	};
+
+	out = fopen("el.tmp", "w");
+	if ( out == NULL)
+	{
+		printf("fallo al crear el archivo temporal");
+		return;
+	};
+
+	i = 0;
 	
+	/* 
+	 * toma todo lo que es el historial y usa fputs para llevar
+	 * lo del buffer hacia el archivo de salida saltandose
+	 * la linea a eliminar
+	 */
+	while (fgets(buff, sizeof(buff), in) != NULL)
+	{
+		if (i != linea)
+			fputs(buff, out);
+		i++;
+	}
+	
+	remove(ruta);
+	rename("el.tmp", ruta);
 	fclose(in);
 	fclose(out);
 }
