@@ -22,4 +22,4 @@ static_dir = "static"
 path = "docs"
 
 # Base URL
-base_url = ""
+base_url = "https://github.com/falv-u/Proyecto1-EDD/"
