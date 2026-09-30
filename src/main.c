@@ -10,14 +10,13 @@
 int main(void)
 {
 	srand(time(NULL));
-	playlist pl;
-	pl = crear_playlist();
+	playlist pl = crear_playlist();
 	cancion *actual = NULL;
 	int corriendo = 1;
 
 	while (corriendo)
 	{
-		limpia_pantalla();
+		limpiar_pantalla();
 		imprime_cancion(actual);
 		imprimir_playlist(&pl);
 		imprime_menu();
@@ -28,9 +27,17 @@ int main(void)
     		case '2':
     			ui_pausa();
     			break;
+
+            case '3':
+                // ordenamiento
+                break;
+
+            case 'Q':
+            case 'q':
             case '0':
                 corriendo = 0;
       		break;
+
     		default:
     			break;
 		}
