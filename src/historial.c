@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include "songs.h"
-#define MAX_K 19
 
 long contar_lineas(const char *ruta)
 {
@@ -97,7 +96,7 @@ int agregar_a_historial(cancion *c)
 		eliminar_linea_csv(ruta_historial, pos);
 		c->total_rep = rep + 1;
 	}
-	else if (contar_lineas(ruta_historial) >= MAX_K)
+	else if (contar_lineas(ruta_historial) >= MAX_HISTORIAL)
 	{
 		eliminar_linea_csv(ruta_historial, 0);
 	}

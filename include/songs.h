@@ -57,10 +57,6 @@ static const char ruta_historial[] = "./historial.csv";
 /* Genera un ID único para una cancion. */
 uint32_t generar_id(void);
 
-
-/* ----------FUNCIONES CANCIONES ---------*/
-/* Reproduce el mp3 de la ruta del archivo.
-
 /* ----------FUNCIONES CANCIONES ---------*/
 /* @brief Reproduce el mp3 de la ruta del archivo.
  * Usa funcion proveniente del single-header de miniaudio.h y su
@@ -79,10 +75,12 @@ void inicializar_canciones(cancion canciones[]);
 int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado);
 
 /* ----------FUNCIONES PLAYLIST ---------*/
+
 /**
  * Verifica si el archivo CSV de la playlist existe.
  * Retorna 1 si existe, 0 si no.
-=======
+ */
+
 /* ----------FUNCIONES PLAYLIST ---------*/
 /** @brief busca si existe un archivo.
  * Verifica si el archivo CSV de la playlist existe tratando de abrir

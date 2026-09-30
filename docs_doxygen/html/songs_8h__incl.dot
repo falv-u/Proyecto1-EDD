@@ -9,4 +9,5 @@ digraph "include/songs.h"
   Node2 [id="Node000002",label="stdint.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="ui.h",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ui_8h.html",tooltip=" "];
+  Node3 -> Node1 [id="edge3_Node000003_Node000001",color="steelblue1",style="solid",tooltip=" "];
 }

@@ -9,5 +9,11 @@ var ui_8h =
     [ "COLOR_RED", "ui_8h.html#ad86358bf19927183dd7b4ae215a29731", null ],
     [ "COLOR_RESET", "ui_8h.html#a17f760256046df23dd0ab46602f04d02", null ],
     [ "COLOR_YELLOW", "ui_8h.html#a4534b577b74a58b0f4b7be027af664e0", null ],
-    [ "MAX_LINE", "ui_8h.html#a842ed03f27719bc87666bfd1f75415b8", null ]
+    [ "MAX_LINE", "ui_8h.html#a842ed03f27719bc87666bfd1f75415b8", null ],
+    [ "imprime_cancion", "ui_8h.html#aee520e79fcd88699b479a78edf6c420a", null ],
+    [ "imprime_menu", "ui_8h.html#a4f74964b18b7aedb0f19b41d8d71ceee", null ],
+    [ "limpiar_pantalla", "ui_8h.html#abdd815017944fb9abbf54efdabf168ad", null ],
+    [ "ui_input", "ui_8h.html#a1618795fedc4f18d689f90aa00d807bf", null ],
+    [ "ui_pausa", "ui_8h.html#a9f9d9b671fbbd0c8235d590da8f88e97", null ],
+    [ "ui_principal", "ui_8h.html#a0a285eb0c5fe24788d87bbdbd9171c3a", null ]
 ];

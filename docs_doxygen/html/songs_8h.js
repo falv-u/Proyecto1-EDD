@@ -6,6 +6,8 @@ var songs_8h =
     [ "MAX_HISTORIAL", "songs_8h.html#a4d8a2cf2e594cfb4bb3b07737df4a8bb", null ],
     [ "MAXCANCIONES", "songs_8h.html#a569fbe17578996ba2ad4e60cf48e2a1e", null ],
     [ "RANGO_CID", "songs_8h.html#ae813e37622f5736ac966046eb36b477d", null ],
+    [ "cancion", "songs_8h.html#ad88081ac1edb5d9f0f2bc7655584ffe0", null ],
+    [ "playlist", "songs_8h.html#aed833d29ac7a594c84384f2c9b1fb5fe", null ],
     [ "binsearch_cancion", "songs_8h.html#af3d8567b5e88d6182215015ceae45f75", null ],
     [ "crear_playlist", "songs_8h.html#a2374f9dcd2309a2dd405c04029c53f5c", null ],
     [ "dup", "songs_8h.html#ae4b890c1798f2e3bf9faf459ece649ff", null ],

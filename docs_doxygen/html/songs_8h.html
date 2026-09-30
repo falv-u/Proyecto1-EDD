@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('songs_8h.html',''); initResizable(); }
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">songs.h File Reference</div></div>
@@ -133,6 +134,15 @@ Macros</h2></td></tr>
 <tr class="separator:ae813e37622f5736ac966046eb36b477d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d8a2cf2e594cfb4bb3b07737df4a8bb" id="r_a4d8a2cf2e594cfb4bb3b07737df4a8bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#a4d8a2cf2e594cfb4bb3b07737df4a8bb">MAX_HISTORIAL</a>&#160;&#160;&#160;30</td></tr>
 <tr class="separator:a4d8a2cf2e594cfb4bb3b07737df4a8bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:ad88081ac1edb5d9f0f2bc7655584ffe0" id="r_ad88081ac1edb5d9f0f2bc7655584ffe0"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structcancion.html">cancion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#ad88081ac1edb5d9f0f2bc7655584ffe0">cancion</a></td></tr>
+<tr class="memdesc:ad88081ac1edb5d9f0f2bc7655584ffe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura que contiene todos los datos relevantes de una cancion.  <br /></td></tr>
+<tr class="separator:ad88081ac1edb5d9f0f2bc7655584ffe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed833d29ac7a594c84384f2c9b1fb5fe" id="r_aed833d29ac7a594c84384f2c9b1fb5fe"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structplaylist.html">playlist</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#aed833d29ac7a594c84384f2c9b1fb5fe">playlist</a></td></tr>
+<tr class="memdesc:aed833d29ac7a594c84384f2c9b1fb5fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura que contiene los datos de cada playlist.  <br /></td></tr>
+<tr class="separator:aed833d29ac7a594c84384f2c9b1fb5fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -210,6 +220,41 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="ad88081ac1edb5d9f0f2bc7655584ffe0" name="ad88081ac1edb5d9f0f2bc7655584ffe0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad88081ac1edb5d9f0f2bc7655584ffe0">&#9670;&#160;</a></span>cancion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structcancion.html">cancion</a> <a class="el" href="structcancion.html">cancion</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estructura que contiene todos los datos relevantes de una cancion. </p>
+<p>Esta estructura solo contiene dos tipos de datos: para los numeros se usan enteros sin signo con un numero fijo de bytes (8 y 4), y para guardar cadenas de texto se usa un puntero hacia un espacio de memoria asignado por malloc que contenga los datos. </p>
+
+</div>
+</div>
+<a id="aed833d29ac7a594c84384f2c9b1fb5fe" name="aed833d29ac7a594c84384f2c9b1fb5fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed833d29ac7a594c84384f2c9b1fb5fe">&#9670;&#160;</a></span>playlist</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structplaylist.html">playlist</a> <a class="el" href="structplaylist.html">playlist</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estructura que contiene los datos de cada playlist. </p>
+<p>Esta estructura tambien </p>
 
 </div>
 </div>
@@ -343,7 +388,10 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>busca si existe un archivo. Verifica si el archivo CSV de la playlist existe tratando de abrir el contenido en modo lectura. </p>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 1 si existe, 0 si no. </dd></dl>
+<p>Verifica si el archivo CSV de la playlist existe. </p>
+<h1><a class="anchor" id="autotoc_md0"></a>
+Retorna 1 si existe, 0 si no.</h1>
+<p>/* -------&mdash;FUNCIONES PLAYLIST ------&mdash; </p><dl class="section return"><dt>Returns</dt><dd>Retorna 1 si existe, 0 si no. </dd></dl>
 
 </div>
 </div>

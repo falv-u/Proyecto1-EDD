@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dup_0',['dup',['../playlist_8c.html#ae4b890c1798f2e3bf9faf459ece649ff',1,'dup(const char *s):&#160;playlist.c'],['../songs_8h.html#ae4b890c1798f2e3bf9faf459ece649ff',1,'dup(const char *s):&#160;playlist.c']]],
-  ['duracion_1',['duracion',['../structcancion.html#ac9871fe0ee7349b4dbc2eab9d1bc6a1b',1,'cancion']]]
+  ['binsearch_5fcancion_0',['binsearch_cancion',['../search_8c.html#af3d8567b5e88d6182215015ceae45f75',1,'binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado):&#160;search.c'],['../songs_8h.html#af3d8567b5e88d6182215015ceae45f75',1,'binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado):&#160;search.c']]],
+  ['buscar_5fcid_5fcsv_1',['buscar_cid_csv',['../historial_8c.html#ae84ec99d982ff6a1d9b35620ab700aa4',1,'historial.c']]]
 ];

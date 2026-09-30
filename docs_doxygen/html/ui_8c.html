@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('ui_8c.html',''); initResizable(); });
 <div class="contents">
 <div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
 <code>#include &lt;string.h&gt;</code><br />
-<code>#include &quot;<a class="el" href="songs_8h_source.html">songs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ui_8h_source.html">ui.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ui.c:</div>
 <div class="dyncontent">
@@ -108,16 +108,54 @@ Include dependency graph for ui.c:</div>
 Functions</h2></td></tr>
 <tr class="memitem:abdd815017944fb9abbf54efdabf168ad" id="r_abdd815017944fb9abbf54efdabf168ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#abdd815017944fb9abbf54efdabf168ad">limpiar_pantalla</a> (void)</td></tr>
 <tr class="separator:abdd815017944fb9abbf54efdabf168ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc5ffc17240a2c021ca2560025642414" id="r_abc5ffc17240a2c021ca2560025642414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#abc5ffc17240a2c021ca2560025642414">render_cancion</a> (<a class="el" href="structcancion.html">cancion</a> *c)</td></tr>
-<tr class="separator:abc5ffc17240a2c021ca2560025642414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae26ba349763926ea58e48309a65af815" id="r_ae26ba349763926ea58e48309a65af815"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#ae26ba349763926ea58e48309a65af815">render_menu</a> (void)</td></tr>
-<tr class="separator:ae26ba349763926ea58e48309a65af815"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee520e79fcd88699b479a78edf6c420a" id="r_aee520e79fcd88699b479a78edf6c420a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aee520e79fcd88699b479a78edf6c420a">imprime_cancion</a> (<a class="el" href="structcancion.html">cancion</a> *c)</td></tr>
+<tr class="separator:aee520e79fcd88699b479a78edf6c420a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f74964b18b7aedb0f19b41d8d71ceee" id="r_a4f74964b18b7aedb0f19b41d8d71ceee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a4f74964b18b7aedb0f19b41d8d71ceee">imprime_menu</a> (void)</td></tr>
+<tr class="separator:a4f74964b18b7aedb0f19b41d8d71ceee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1618795fedc4f18d689f90aa00d807bf" id="r_a1618795fedc4f18d689f90aa00d807bf"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a1618795fedc4f18d689f90aa00d807bf">ui_input</a> (void)</td></tr>
 <tr class="separator:a1618795fedc4f18d689f90aa00d807bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a285eb0c5fe24788d87bbdbd9171c3a" id="r_a0a285eb0c5fe24788d87bbdbd9171c3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a0a285eb0c5fe24788d87bbdbd9171c3a">ui_principal</a> (void)</td></tr>
 <tr class="separator:a0a285eb0c5fe24788d87bbdbd9171c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f9d9b671fbbd0c8235d590da8f88e97" id="r_a9f9d9b671fbbd0c8235d590da8f88e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a9f9d9b671fbbd0c8235d590da8f88e97">ui_pausa</a> (void)</td></tr>
+<tr class="separator:a9f9d9b671fbbd0c8235d590da8f88e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="aee520e79fcd88699b479a78edf6c420a" name="aee520e79fcd88699b479a78edf6c420a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee520e79fcd88699b479a78edf6c420a">&#9670;&#160;</a></span>imprime_cancion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imprime_cancion </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcancion.html">cancion</a> *&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4f74964b18b7aedb0f19b41d8d71ceee" name="a4f74964b18b7aedb0f19b41d8d71ceee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f74964b18b7aedb0f19b41d8d71ceee">&#9670;&#160;</a></span>imprime_menu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void imprime_menu </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="abdd815017944fb9abbf54efdabf168ad" name="abdd815017944fb9abbf54efdabf168ad"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abdd815017944fb9abbf54efdabf168ad">&#9670;&#160;</a></span>limpiar_pantalla()</h2>
 
@@ -136,32 +174,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="abc5ffc17240a2c021ca2560025642414" name="abc5ffc17240a2c021ca2560025642414"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc5ffc17240a2c021ca2560025642414">&#9670;&#160;</a></span>render_cancion()</h2>
+<a id="a1618795fedc4f18d689f90aa00d807bf" name="a1618795fedc4f18d689f90aa00d807bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1618795fedc4f18d689f90aa00d807bf">&#9670;&#160;</a></span>ui_input()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void render_cancion </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structcancion.html">cancion</a> *&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ae26ba349763926ea58e48309a65af815" name="ae26ba349763926ea58e48309a65af815"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae26ba349763926ea58e48309a65af815">&#9670;&#160;</a></span>render_menu()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void render_menu </td>
+          <td class="memname">char ui_input </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -172,14 +192,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1618795fedc4f18d689f90aa00d807bf" name="a1618795fedc4f18d689f90aa00d807bf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1618795fedc4f18d689f90aa00d807bf">&#9670;&#160;</a></span>ui_input()</h2>
+<a id="a9f9d9b671fbbd0c8235d590da8f88e97" name="a9f9d9b671fbbd0c8235d590da8f88e97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f9d9b671fbbd0c8235d590da8f88e97">&#9670;&#160;</a></span>ui_pausa()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char ui_input </td>
+          <td class="memname">void ui_pausa </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
