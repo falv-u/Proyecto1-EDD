@@ -28,23 +28,23 @@ typedef struct cancion {
 
 /** @brief Estructura que contiene los datos de cada playlist.
  *
- * Esta estructura tambien 
+ * Esta estructura tambien
  */
 typedef struct playlist {
 	cancion *canciones; /* Lista de canciones en arreglo contiguo */
 	uint32_t pid; // ID de la playlist
 	char *nombre; // Nombre de la playlist
-	char *ruta	/* en caso de tener, caso contrario si solo esta alojada en memoria tipo NULL */
+	char *ruta;	/* en caso de tener, caso contrario si solo esta alojada en memoria tipo NULL */
 	int cantidad; /* Cantidad de canciones en la playlist */
 } playlist;
 
 /** @brief la fonoteca es aquella que guardara todas las canciones con su id.
  * La fonoteca contiene todas las canciones, sin repeticion.
- * Estas estan ordenadas por ID de menor a mayor, cosa de poder buscar canciones 
+ * Estas estan ordenadas por ID de menor a mayor, cosa de poder buscar canciones
  * mediante busqueda binaria.
  */
 typedef struct {
-	char *ruta_fonoteca; 
+	char *ruta_fonoteca;
 	uint32_t cantidad;
 } fonoteca;
 
@@ -57,15 +57,15 @@ static const char ruta_historial[] = "./historial.csv";
 /* Genera un ID único para una cancion. */
 uint32_t generar_id(void);
 
-<<<<<<< HEAD
+
 /* ----------FUNCIONES CANCIONES ---------*/
 /* Reproduce el mp3 de la ruta del archivo.
-=======
-/* ----------FUNCIONES CANCIONES ---------*/ 
+
+/* ----------FUNCIONES CANCIONES ---------*/
 /* @brief Reproduce el mp3 de la ruta del archivo.
- * Usa funcion proveniente del single-header de miniaudio.h y su 
+ * Usa funcion proveniente del single-header de miniaudio.h y su
  * implementacion (2 lineas) miniaudio.c. Solo reproduce musica.
->>>>>>> dca19f994323a285233519073fd487576cd53341
+
  * Retorna 0 en exito, -1 si falla. */
 int reproducir_musica(const char *ruta, cancion *c);
 
@@ -78,18 +78,16 @@ void inicializar_canciones(cancion canciones[]);
  * Retorna el índice de la cancion si se encuentra, -1 si no. */
 int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado);
 
-<<<<<<< HEAD
 /* ----------FUNCIONES PLAYLIST ---------*/
 /**
  * Verifica si el archivo CSV de la playlist existe.
  * Retorna 1 si existe, 0 si no.
 =======
-/* ----------FUNCIONES PLAYLIST ---------*/ 
+/* ----------FUNCIONES PLAYLIST ---------*/
 /** @brief busca si existe un archivo.
- * Verifica si el archivo CSV de la playlist existe tratando de abrir 
+ * Verifica si el archivo CSV de la playlist existe tratando de abrir
  * el contenido en modo lectura.
  * @return Retorna 1 si existe, 0 si no.
->>>>>>> dca19f994323a285233519073fd487576cd53341
  * */
 int existe_plcsv(void);
 
@@ -98,12 +96,12 @@ int existe_plcsv(void);
 char *dup(const char *s);
 
 /** @brief Carga las canciones desde un archivo CSV a la playlist.
- *  para cierto archivo de ruta, se busca cargar todos sus datos a 
+ *  para cierto archivo de ruta, se busca cargar todos sus datos a
  *  una playlist, primero se cuentan las lineas que tiene el archivo
  *  sabiendo el numero de canciones se reserva la memoria con malloc.
- *  se separa el texto segun un separador '|', cada dato separado se 
+ *  se separa el texto segun un separador '|', cada dato separado se
  *  guarda en una direccion de memoria en ram, por tanto para no perder
- *  el acceso se guarda en un arreglo char *temporal, una vez guardada 
+ *  el acceso se guarda en un arreglo char *temporal, una vez guardada
  *  esa linea, se hace una verificacion sencilla de exito, y si en caso de que
  *  en alguna parte de el arreglo temporal apunte a NULL, n<datos_de_cancion
  *  en este caso 8, si sucede se salta esa iteracion y esos datos no se guardan
@@ -125,27 +123,27 @@ void imprimir_playlist(const playlist *pl);
 
 /* ----------FUNCIONES HISTORIAL ---------*/
 
-<<<<<<< HEAD
+
 /* verifica si existe el archivo de historial en caso de no,
  * llama a escribir_archivo_historial
  * Retorna 0 si todo salio bien, en caso de no existir y no poder crearse
  * devuelve un 1
  * */
-=======
+
 /* @brief verifica si existe el archivo de historial en disco.
  *
  * trata de abrir el archivo en caso de no poder abrirlo, lo tratara de crear
  * mediante una llamada a la funcion escribir_archivo_historial();
  * Retorna 0 si todo salio bien, en caso de no existir y no poder crearse devuelve un 1
  */
->>>>>>> dca19f994323a285233519073fd487576cd53341
+
 int existe_historial(void);
 
 /* @brief crea o sobreescribe el archivo de ruta_historial.
  *
  * Una funcion que abre el archivo con el parametro "w", si no existe
  * el archivo lo crea, si existe lo sobreescribe. se puede usar
- * para la primera inicializacion del programa o para 
+ * para la primera inicializacion del programa o para
  * limpiar por completo el histoial
  *
  * @return retorna 0 si se pudo escribir en disco, caso contrario retorna 1
