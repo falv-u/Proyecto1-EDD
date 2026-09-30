@@ -18,3 +18,9 @@ folders:
 
 run:
 	@./build/$(EXEC)
+
+docs:
+	doxygen Doxyfile
+
+clean-doc:
+	rm -rf docs_doxygen

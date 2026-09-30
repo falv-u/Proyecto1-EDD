@@ -8,7 +8,6 @@
  * debe tener: busqueda binaria recursiva
  * ctype.h : isalnum, isalpha, isdigit, islower, isupper, tolower, toupper
  */
-
 int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado)
 {
     if (izq > der)
