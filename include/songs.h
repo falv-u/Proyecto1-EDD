@@ -5,9 +5,10 @@
 #define RANGO_CID 100
 #define MAX_HISTORIAL 30
 #include <stdint.h>
+#include "ui.h"
 
 /* id unico que referencia a una sola cancion*/
-typedef struct cancion {
+typedef struct {
 	uint32_t cid; // ID de la cancion
 	uint32_t duracion; // Duracion en segundos
 	uint16_t anio; // Anio de lanzamiento
@@ -20,14 +21,14 @@ typedef struct cancion {
 	//char *ruta; //?? sera necesario <- ariel aca, lo mismo en playlsit
 } cancion;
 
-typedef struct playlist {
+typedef struct {
 	cancion *canciones; // Lista de IDs de canciones
 	uint32_t pid; // ID de la playlist
 	char *nombre; // Nombre de la playlist
 	int cantidad; // Cantidad de canciones en la playlist
 } playlist;
 
-typedef struct fonoteca {
+typedef struct {
     uint32_t *playlists; // Lista de IDs de playlists
     int cantidad; // Cantidad de canciones en la fonoteca
 } fonoteca;
@@ -54,8 +55,10 @@ void inicializar_canciones(cancion canciones[]);
 int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado);
 
 /* ----------FUNCIONES PLAYLIST ---------*/
-/* Verifica si el archivo CSV de la playlist existe.
- * Retorna 1 si existe, 0 si no. */
+/**
+ * Verifica si el archivo CSV de la playlist existe.
+ * Retorna 1 si existe, 0 si no.
+ * */
 int existe_plcsv(void);
 
 /* Duplica una cadena de texto reservando memoria dinámica.
@@ -89,5 +92,4 @@ int existe_historial(void);
  * Retorna 0 si todo salio bien, caso contrario retorna 1
  */
 int escribir_archivo_historial(void);
-
 #endif

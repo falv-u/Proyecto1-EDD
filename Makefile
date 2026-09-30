@@ -6,7 +6,7 @@ EXEC=main.run
 SRC=src/*.c include/miniaudio/miniaudio.c
 INCLUDE=-I./include/
 LIBS=-lm
-CFLAGS=-Wall -Wextra -Wpedantic
+CFLAGS=-Wall -Wextra -Wpedantic -std=c99
 all: folders
 	$(CC) $(CFLAGS) -o build/$(EXEC) $(SRC) $(INCLUDE) $(LIBS)
 
