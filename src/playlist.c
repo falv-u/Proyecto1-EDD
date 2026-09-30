@@ -49,7 +49,7 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 	while (fgets(linea_actual, sizeof(linea_actual), f))
 		if (linea_actual[0] != '\n')
 			total++;
-	rewind(f);
+	rewind(f); /* vuelve al inicio del archivo */
 
 	pl->canciones = malloc(sizeof(cancion) * total);
 	pl->cantidad = 0;

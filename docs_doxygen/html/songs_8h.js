@@ -1,0 +1,23 @@
+var songs_8h =
+[
+    [ "cancion", "structcancion.html", "structcancion" ],
+    [ "playlist", "structplaylist.html", "structplaylist" ],
+    [ "fonoteca", "structfonoteca.html", "structfonoteca" ],
+    [ "MAX_HISTORIAL", "songs_8h.html#a4d8a2cf2e594cfb4bb3b07737df4a8bb", null ],
+    [ "MAXCANCIONES", "songs_8h.html#a569fbe17578996ba2ad4e60cf48e2a1e", null ],
+    [ "RANGO_CID", "songs_8h.html#ae813e37622f5736ac966046eb36b477d", null ],
+    [ "binsearch_cancion", "songs_8h.html#af3d8567b5e88d6182215015ceae45f75", null ],
+    [ "crear_playlist", "songs_8h.html#a2374f9dcd2309a2dd405c04029c53f5c", null ],
+    [ "dup", "songs_8h.html#ae4b890c1798f2e3bf9faf459ece649ff", null ],
+    [ "escribir_archivo_historial", "songs_8h.html#afb2febd2d2e01dc24bfc857e9d3e9ebe", null ],
+    [ "existe_historial", "songs_8h.html#a2f21db8971813de823358b30a5332ac2", null ],
+    [ "existe_plcsv", "songs_8h.html#af75e7969fb9b00f351596ecc01d1c7c0", null ],
+    [ "generar_id", "songs_8h.html#a4ad356699a7bb281e2507c484494a07b", null ],
+    [ "imprimir_playlist", "songs_8h.html#a8d6fbad722a10252e1d025f3c2923ac5", null ],
+    [ "inicializar_canciones", "songs_8h.html#aea5f0d564d27f7f75825a679f9ae3474", null ],
+    [ "liberar_pl", "songs_8h.html#a07debb28045e255ae3a597f099238ffe", null ],
+    [ "playlist_cargar_csv", "songs_8h.html#a980a0d4992e15102a2b6d875663fa019", null ],
+    [ "reproducir_musica", "songs_8h.html#a15c5b4049ef4556d70fa842233ae331d", null ],
+    [ "ruta_historial", "songs_8h.html#a90ebf6aa98c25e1f0e024a69e8261d21", null ],
+    [ "ruta_pl", "songs_8h.html#a2ebe409a4222acf140706ca44236f866", null ]
+];
