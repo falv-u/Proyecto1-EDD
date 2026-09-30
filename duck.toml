@@ -1,0 +1,25 @@
+[project]
+name = "Summy"
+version = "0.1.0"
+
+[input]
+# Unix-style glob of files where API reference documentation is present
+glob = "include/*.h"
+# Additional compiler arguments, add -xc++ for C++ support
+compiler_arguments = []
+
+# [pages]
+# Uncomment this to generate an index page from a markdown file
+index = "README.md"
+
+# Uncomment this to generate a book from a directory
+#book = "pages"
+
+[output]
+# Static directory that is copied over to the output directory
+static_dir = "static"
+# Output directory
+path = "docs"
+
+# Base URL
+base_url = ""

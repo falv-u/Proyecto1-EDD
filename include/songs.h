@@ -55,8 +55,10 @@ void inicializar_canciones(cancion canciones[]);
 int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado);
 
 /* ----------FUNCIONES PLAYLIST ---------*/ 
-/* Verifica si el archivo CSV de la playlist existe.
- * Retorna 1 si existe, 0 si no. */
+/**
+ * Verifica si el archivo CSV de la playlist existe.
+ * Retorna 1 si existe, 0 si no.
+ * */
 int existe_plcsv(void);
 
 /* Duplica una cadena de texto reservando memoria dinámica.

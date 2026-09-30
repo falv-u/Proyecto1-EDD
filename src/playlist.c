@@ -137,7 +137,6 @@ playlist crear_playlist(void)
 	return pl;
 }
 
-// ui.c <-
 void imprimir_playlist(const playlist *pl)
 {
 	int i;
@@ -149,10 +148,10 @@ void imprimir_playlist(const playlist *pl)
 
 	printf("Playlist #%u: %s\n", pl->pid, pl->nombre ? pl->nombre : "(sin nombre)");
 	printf("Canciones: %d\n", pl->cantidad);
-	printf("----------------------------------------------------------------------\n");
+	printf("----------------------------------------------------------------------------------------------------\n");
 	printf("%-4s %-30s %-20s %-20s %-6s %-5s %-5s\n",
 			"ID", "Titulo", "Artista", "Album", "Dur", "Anio", "Rep");
-	printf("----------------------------------------------------------------------\n");
+	printf("-----------------------------------------------------------------------------------------------------\n");
 
 	for (i = 0; i < pl->cantidad; i++) {
 		const cancion *c = &pl->canciones[i];
@@ -165,7 +164,7 @@ void imprimir_playlist(const playlist *pl)
 				c->anio,
 				c->total_rep);
 	}
-	printf("----------------------------------------------------------------------\n");
+	printf("------------------------------------------------------------------------------------------------a---\n");
 }
 
 int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
@@ -186,6 +185,7 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
 	fclose(f);
 
 	n = pl->cantidad;
+	
 	nueva = malloc(sizeof(cancion)*(n+1));
 	if (nueva == NULL)
 	{
@@ -194,10 +194,12 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
 
 	if (pl->canciones != NULL)
 	{
+		/* copiamos a nueva la lista de canciones recordando que dejamos memoria libre al final */
 		memcpy(nueva, pl->canciones , sizeof(cancion)*n);
 		free(pl->canciones);
 	}
 
+	/* para n+1 elementos el ultimo indice n sera la nueva cancion agregada */
 	nueva[n] = *c;
 	pl->canciones = nueva;
 	pl->cantidad = n+1;
