@@ -1,5 +1,4 @@
 #include "songs.h"
-#include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
 
@@ -8,27 +7,51 @@
  * debe tener: busqueda binaria recursiva
  * ctype.h : isalnum, isalpha, isdigit, islower, isupper, tolower, toupper
  */
-int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado)
+
+// compara dos strings sin distinguir mayúsculas/minúsculas
+int compara_strings(char *a, char *b)
 {
-    if (izq > der)
+    if (a == NULL || b == NULL)
+        return 0;
+
+    // mientras la cadena de A o B no termine
+    while (*a != '\0' && *b != '\0')
+    {
+        if (tolower((unsigned char)*a) != tolower((unsigned char)*b))
+            return 0;
+        a++;
+        b++;
+    }
+    // El retorno es 0 o 1 dependiendo si *A es igual a *B
+    return *a == *b;
+}
+
+// busca una cancion por cID dentro de una playlist ordenada por cID
+int binsearch_cancion(playlist *pl, int izq, int der, uint32_t cid_buscado)
+{
+    if (pl == NULL || pl->canciones == NULL)
+        return -1;
+
+    if (izq < 0 || der >= pl->cantidad || izq > der)
         return -1;
 
     int med = izq + (der - izq)/2;
-    if (arr[med].cid == cid_buscado)
+
+    if (pl->canciones[med].cid == cid_buscado)
     {
         return med; // si lo encontramos
     }
-    else if (arr[med].cid < cid_buscado)
+    else if (pl->canciones[med].cid < cid_buscado)
     {
-        return binsearch_cancion(arr, med + 1, der, cid_buscado);
+        return binsearch_cancion(pl, med + 1, der, cid_buscado);
     }
     else
     {
-        return binsearch_cancion(arr, izq, med - 1, cid_buscado);
+        return binsearch_cancion(pl, izq, med - 1, cid_buscado);
     }
 }
 
-// busqueda por nombre y titulo
+/* Busqueda por titulo, sin distinguir mayusculas (exacta). */
 int search_titulo(cancion *arr, int n, char *titulo_buscado)
 {
     if (arr == NULL || titulo_buscado == NULL)
@@ -36,56 +59,42 @@ int search_titulo(cancion *arr, int n, char *titulo_buscado)
 
     for (int i = 0; i < n; i++)
     {
-        if (arr[i].titulo != NULL)
-        {
-
-            // comparar titulo (falta pasarlo a lowercase..)
-            if (strcmp(arr[i].titulo, titulo_buscado) == 0)
-            {
-                return i;
-            }
-        }
+        // comparar titulo (falta pasarlo a lowercase..)
+        if (arr[i].titulo != NULL && compara_strings(arr[i].titulo, titulo_buscado))
+            return i;
     }
-
     return -1;
 }
 
-// busqueda por artista (todas las de 1 artista)
-int search_artista(cancion *arr, int n, char *artista_buscado)
+/* Busqueda por artista, sin distinguir mayusculas (Todas las de un artista, nombre exacto) */
+int search_artista(cancion *arr, int n, char *artista_buscado, int *resultados, int max_resultados)
 {
     if (arr == NULL || artista_buscado == NULL)
         return -1;
 
-    // lo convertimos a minusculas para comparar, usando la funcion creada
-    char *buscado_lower = a_minusculas(artista_buscado);
-    if (buscado_lower == NULL)
-        return -1;
+    if (max_resultados < 0)
+        return 1;
 
+    int j = 0;
     for (int i = 0; i < n; i++)
     {
-        if (arr[i].artista != NULL)
+        // Utilizamos la funcion comparadora de strings a lowercase
+        if (arr[i].artista != NULL && compara_strings(arr[i].artista, artista_buscado))
         {
-            char *artista_lower = a_minusculas(arr[i].artista);
-            if (artista_lower != NULL)
-            {
-                // comparar artista
-                if (strcmp(artista_lower, buscado_lower) == 0)
-                {
-                    free(buscado_lower);
-                    free(artista_lower);
-                    return i;
-                }
-                free(artista_lower);
-            }
+            // el contador j no puede superar los max resultados indicados en la llamada a la funcion.
+            if (resultados != NULL && j < max_resultados)
+                resultados[j] = i;
+            j++;
         }
     }
-    free(buscado_lower);
-    return -1;
+
+    return j;
 }
 
 // funcion : convertira string a lowercase/minusculas
 // *str debe ser un string valido (no NULL),
 // funcion es char* : necesitamos comparar sin danhar datos del arreglo de canciones...
+/*
 char* a_minusculas(char *str)
 {
     if (str == NULL)
@@ -104,3 +113,4 @@ char* a_minusculas(char *str)
 
     return res;
 }
+*/
