@@ -1,0 +1,21 @@
+# Summary
+
+# Referencia de API
+- [Struct Cancion](../docs/record.cancion.html)
+- [Struct Fonoteca](../docs/record.fonoteca.html)
+- [Struct Playlist](../docs/record.playlist.html)
+- [Función binsearch_cancion](../docs/function.binsearch_cancion.html)
+- [Función crear_playlist](../docs/function.crear_playlist.html)
+- [Función dup](../docs/function.dup.html)
+- [Función escribir_archivo_historial](../docs/function.escribir_archivo_historial.html)
+- [Función existe_historial](../docs/function.existe_historial.html)
+- [Función existe_plcsv](../docs/function.existe_plcsv.html)
+- [Función generar_id](../docs/function.generar_id.html)
+- [Función imprimir_playlist](../docs/function.imprimir_playlist.html)
+- [Función inicializar_canciones](../docs/function.inicializar_canciones.html)
+- [Función liberar_pl](../docs/function.liberar_pl.html)
+- [Función playlist_cargar_csv](../docs/function.playlist_cargar_csv.html)
+- [Función reproducir_musica](../docs/function.reproducir_musica.html)
+- [Alias cancion](../docs/alias.cancion.html)
+- [Alias fonoteca](../docs/alias.fonoteca.html)
+- [Alias playlist](../docs/alias.playlist.html)
