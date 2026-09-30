@@ -119,8 +119,10 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura que contiene todos los datos relevantes de una cancion.  <a href="structcancion.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structplaylist.html">playlist</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura que contiene los datos de cada playlist.  <a href="structplaylist.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structfonoteca.html">fonoteca</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">la fonoteca es aquella que guardara todas las canciones con su id. La fonoteca contiene todas las canciones, sin repeticion. Estas estan ordenadas por ID de menor a mayor, cosa de poder buscar canciones mediante busqueda binaria.  <a href="structfonoteca.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -143,10 +145,12 @@ Functions</h2></td></tr>
 <tr class="memitem:af3d8567b5e88d6182215015ceae45f75" id="r_af3d8567b5e88d6182215015ceae45f75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#af3d8567b5e88d6182215015ceae45f75">binsearch_cancion</a> (<a class="el" href="structcancion.html">cancion</a> *arr, int izq, int der, uint32_t cid_buscado)</td></tr>
 <tr class="separator:af3d8567b5e88d6182215015ceae45f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af75e7969fb9b00f351596ecc01d1c7c0" id="r_af75e7969fb9b00f351596ecc01d1c7c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#af75e7969fb9b00f351596ecc01d1c7c0">existe_plcsv</a> (void)</td></tr>
+<tr class="memdesc:af75e7969fb9b00f351596ecc01d1c7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">busca si existe un archivo. Verifica si el archivo CSV de la playlist existe tratando de abrir el contenido en modo lectura.  <br /></td></tr>
 <tr class="separator:af75e7969fb9b00f351596ecc01d1c7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae4b890c1798f2e3bf9faf459ece649ff" id="r_ae4b890c1798f2e3bf9faf459ece649ff"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#ae4b890c1798f2e3bf9faf459ece649ff">dup</a> (const char *s)</td></tr>
 <tr class="separator:ae4b890c1798f2e3bf9faf459ece649ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980a0d4992e15102a2b6d875663fa019" id="r_a980a0d4992e15102a2b6d875663fa019"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#a980a0d4992e15102a2b6d875663fa019">playlist_cargar_csv</a> (<a class="el" href="structplaylist.html">playlist</a> *pl, const char *ruta)</td></tr>
+<tr class="memdesc:a980a0d4992e15102a2b6d875663fa019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga las canciones desde un archivo CSV a la playlist. para cierto archivo de ruta, se busca cargar todos sus datos a una playlist, primero se cuentan las lineas que tiene el archivo sabiendo el numero de canciones se reserva la memoria con malloc. se separa el texto segun un separador '|', cada dato separado se guarda en una direccion de memoria en ram, por tanto para no perder el acceso se guarda en un arreglo char *temporal, una vez guardada esa linea, se hace una verificacion sencilla de exito, y si en caso de que en alguna parte de el arreglo temporal apunte a NULL, n&lt;datos_de_cancion en este caso 8, si sucede se salta esa iteracion y esos datos no se guardan en memoria. si caso contrario todo sale bien esos datos son transformados a sus respectivas unidades y se guardan en la playlist.  <br /></td></tr>
 <tr class="separator:a980a0d4992e15102a2b6d875663fa019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07debb28045e255ae3a597f099238ffe" id="r_a07debb28045e255ae3a597f099238ffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#a07debb28045e255ae3a597f099238ffe">liberar_pl</a> (<a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
 <tr class="separator:a07debb28045e255ae3a597f099238ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -337,7 +341,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Verifica si el archivo CSV de la playlist existe. Retorna 1 si existe, 0 si no. </p>
+
+<p>busca si existe un archivo. Verifica si el archivo CSV de la playlist existe tratando de abrir el contenido en modo lectura. </p>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 1 si existe, 0 si no. </dd></dl>
 
 </div>
 </div>
@@ -438,6 +444,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Carga las canciones desde un archivo CSV a la playlist. para cierto archivo de ruta, se busca cargar todos sus datos a una playlist, primero se cuentan las lineas que tiene el archivo sabiendo el numero de canciones se reserva la memoria con malloc. se separa el texto segun un separador '|', cada dato separado se guarda en una direccion de memoria en ram, por tanto para no perder el acceso se guarda en un arreglo char *temporal, una vez guardada esa linea, se hace una verificacion sencilla de exito, y si en caso de que en alguna parte de el arreglo temporal apunte a NULL, n&lt;datos_de_cancion en este caso 8, si sucede se salta esa iteracion y esos datos no se guardan en memoria. si caso contrario todo sale bien esos datos son transformados a sus respectivas unidades y se guardan en la playlist. </p>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 en éxito, 121 si no puede abrir el archivo. </dd></dl>
 
 </div>
 </div>

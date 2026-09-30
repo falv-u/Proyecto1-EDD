@@ -23,7 +23,7 @@ typedef struct cancion {
     char    *artista;    /**< Artista o banda */
     char    *album;      /**< Album al que pertenece */
     char    *genero;     /**< Genero musical */
-};
+} cancion;
 
 
 /** @brief Estructura que contiene los datos de cada playlist.
@@ -36,7 +36,7 @@ typedef struct playlist {
 	char *nombre; // Nombre de la playlist
 	char *ruta	/* en caso de tener, caso contrario si solo esta alojada en memoria tipo NULL */
 	int cantidad; /* Cantidad de canciones en la playlist */
-};
+} playlist;
 
 /** @brief la fonoteca es aquella que guardara todas las canciones con su id.
  * La fonoteca contiene todas las canciones, sin repeticion.
