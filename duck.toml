@@ -8,12 +8,12 @@ glob = "include/*.h"
 # Additional compiler arguments, add -xc++ for C++ support
 compiler_arguments = []
 
-# [pages]
+[pages]
 # Uncomment this to generate an index page from a markdown file
-index = "README.md"
+index = "INDEX.md"
 
 # Uncomment this to generate a book from a directory
-#book = "pages"
+book = "pages"
 
 [output]
 # Static directory that is copied over to the output directory
@@ -22,4 +22,4 @@ static_dir = "static"
 path = "docs"
 
 # Base URL
-base_url = "https://github.com/falv-u/Proyecto1-EDD/"
+base_url = "https://falv-u.github.io/Proyecto1-EDD"
