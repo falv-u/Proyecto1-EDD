@@ -76,6 +76,32 @@ int main(void)
 				ui_pausa();
 				break;
 
+			case 'A':
+            case 'a':
+                listar_artistas(&pl);
+                ui_pausa();
+                break;
+
+            case 'G':
+            case 'g':
+                interactuar_generos(&pl);
+                ui_pausa();
+                break;
+
+            case 'R':
+            case 'r':
+                // Utiliza la función del archivo ranking.c
+                canciones_mas_escuchada(&pl);
+                ui_pausa();
+                break;
+
+            case 'F':
+            case 'f':
+                // Placeholder para cuando programen la lógica de la Fila de Reproducción (Cola)
+                printf(COLOR_YELLOW "\n  [ Módulo de Fila de Reproducción en construcción ]\n" COLOR_RESET);
+                ui_pausa();
+                break;
+
             case 'Q':
             case 'q':
             case '0':

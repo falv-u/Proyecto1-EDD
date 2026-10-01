@@ -77,10 +77,10 @@ void inicializar_canciones(cancion canciones[]);
  * Retorna el índice de la cancion si se encuentra, -1 si no. */
 int binsearch_cancion(playlist *pl, int izq, int der, uint32_t cid_buscado);
 
-/* Lista todos los artistas disponibles en el catálogo sin repetir */
+/* Lista todos los artistas disponibles en el catalogo sin repetir */
 void listar_artistas(const playlist *pl);
 
-/* Pide un género al usuario, busca las canciones, cuenta el total y las lista */
+/* Pide un genero al usuario, busca las canciones, cuenta el total y las lista */
 void interactuar_generos(playlist *pl);
 
 /* ----------FUNCIONES PLAYLIST ---------*/

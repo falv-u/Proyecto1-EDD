@@ -260,7 +260,7 @@ void listar_artistas(const playlist *pl)
     }
 }
 
-void interactuar_genero(playlist *pl)
+void interactuar_generos(playlist *pl)
 {
     if (pl == NULL || pl->canciones == NULL || pl->cantidad <= 0)
     {
@@ -290,7 +290,7 @@ void interactuar_genero(playlist *pl)
     int encontrados = search_genero(pl, genero_buscado, resultados, max_resultados);
     if (encontrados > 0)
     {
-        printf(COLOR_GREEN "\n  Se encontraron %d canciones del género '%s':\n" COLOR_RESET, encontrados, genero_buscado);
+        printf(COLOR_GREEN "\n  Se encontraron %d canciones del genero '%s':\n" COLOR_RESET, encontrados, genero_buscado);
         for (int i = 0; i < encontrados; i++) 
         {
             cancion *c = &pl->canciones[resultados[i]];
@@ -299,7 +299,7 @@ void interactuar_genero(playlist *pl)
     }
     else
     {
-        printf(COLOR_RED "\n  No se encontraron canciones del género '%s'." COLOR_RESET, genero_buscado);
+        printf(COLOR_RED "\n  No se encontraron canciones del genero '%s'." COLOR_RESET, genero_buscado);
     }
     free(resultados);
 }

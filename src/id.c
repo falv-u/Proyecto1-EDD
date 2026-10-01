@@ -9,7 +9,7 @@ uint32_t generar_id(void)
 	uint32_t num_lineas = 0;
 	char caracter = '\0';
 
-    archivo = fopen("./assets/list.csv", "r");
+    archivo = fopen("./playlist.csv", "r");
     if(archivo == NULL)
     {
         printf("Error al abrir list.csv\n");

@@ -28,17 +28,18 @@ void imprime_cancion(cancion *c)
 void imprime_menu(void)
 {
     printf("\n");
-    
+
     // Opciones reproduccion
     printf(COLOR_BLUE "  [P]" COLOR_RESET " Play/Pause   ");
     printf(COLOR_BLUE "[N]" COLOR_RESET " Siguiente   ");
     printf(COLOR_BLUE "[B]" COLOR_RESET " Anterior   ");
     printf(COLOR_BLUE "[L]" COLOR_RESET " Cargar CSV   ");
 
+    printf("\n  Ordenar por:\n");
     // Opciones catalogo y estadisticas
     printf(COLOR_MAGENTA "  [A]" COLOR_RESET " Artistas   ");
     printf(COLOR_MAGENTA "  [G]" COLOR_RESET " Generos   ");
-    printf(COLOR_MAGENTA "  [R]" COLOR_RESET " Ranking   ");
+    printf(COLOR_MAGENTA "  [R]" COLOR_RESET " Ranking  ");
     printf(COLOR_MAGENTA "  [S]" COLOR_RESET " Busqueda  ");
 
     // Salir
@@ -110,7 +111,7 @@ void ui_cancion_busqueda(int indice, cancion *c)
     }
 }
 
-void ui_sin_resultados(char *artista)
+void ui_sin_resultados(char *solicitud)
 {
-    printf(COLOR_RED "\n  Sin resultados para el artista '%s'." COLOR_RESET, artista);
+    printf(COLOR_RED "\n  Sin resultados para %s." COLOR_RESET, solicitud);
 }
