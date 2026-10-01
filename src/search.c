@@ -2,6 +2,10 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+/* parte de francisco. */
+cancion busqueda_global_lenta(playlist *pl, int prioridad, unsigned int dato_numerico, char *dato_texto)
+{
+}
 /*
  * designado: Ariel
  * debe tener: busqueda binaria recursiva
