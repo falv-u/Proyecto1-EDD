@@ -89,7 +89,7 @@ int existe_plcsv(void);
 
 /* @brief Duplica una cadena de texto reservando memoria dinámica.
  * @return Retorna un puntero a la nueva cadena, o NULL si falla. */
-char *dup(const char *s);
+char *copiar_cadena(const char *s);
 
 /** @brief Carga las canciones desde un archivo CSV a la playlist.
  *  para cierto archivo de ruta, se busca cargar todos sus datos a
@@ -115,6 +115,16 @@ playlist crear_playlist(void);
 /* imprime toda la lista de canciones de una playlist */
 void imprimir_playlist(const playlist *pl);
 
+/*
+ * Funcion de creado que usa funciones auxiliares para modularidad, en si esta
+ * funcion solo define por si misma el id de una playlist y su nombre.
+ */
+
+playlist crear_playlist(void);
+
+
+int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl);
+
 /* ----------FUNCIONES HISTORIAL ---------*/
 
 /* @brief verifica si existe el archivo de historial en disco.
@@ -136,4 +146,6 @@ int existe_historial(void);
  * @return retorna 0 si se pudo escribir en disco, caso contrario retorna 1
  */
 int escribir_archivo_historial(void);
+
+/*****/
 #endif

@@ -20,7 +20,7 @@ int existe_plcsv(void)
  * Funcion que copia una cadena de texto y devuelve el puntero a esa nueva cadena
  * usada en 'playlist_cargar_csv' poder reutilizar buffer sin perder informacion.
  */
-char *dup(const char *s)
+char *copiar_cadena(const char *s)
 {
 	char *p = malloc(strlen(s) + 1);
 	if (p)
