@@ -43,27 +43,86 @@ void canciones_mas_escuchada(const playlist *pl)
 		       pl->canciones[idx[i]].total_rep);
 }
 
-
-void artista_mas_escuchado(playlist *pl)
+void mas_escuchado(const playlist *pl)
 {
-	int i,j,mejor,repetido;
+	int i, j, mejor, repetido;
+
 	if (pl == NULL || pl->canciones == NULL || pl->cantidad <= 0)
-	{	
+	{
 		printf("playlist invalida\n");
 		return;
 	}
 
-	for ( i = 0; i < pl->cantidad; i++)
+	for (i = 0; i < pl->cantidad; i++)
 	{
 		if (pl->canciones[i].artista == NULL)
-			continue;	
-		if (compara_strings(pl->canciones[j].artista, pl->canciones[i].artista)
-			&& pl->canciones[j].total_rep > pl->canciones[mejor].total_rep)
-			mejor = j;
+			continue;
+
+		/* saltar si este artista ya salio antes */
+		repetido = 0;
+		for (j = 0; j < i && !repetido; j++)
+			if (compara_strings(pl->canciones[j].artista, pl->canciones[i].artista))
+				repetido = 1;
+		if (repetido)
+			continue;
+
+		/* primera vez: buscar su cancion mas escuchada */
+		mejor = i;
+		for (j = i + 1; j < pl->cantidad; j++)
+			if (compara_strings(pl->canciones[j].artista, pl->canciones[i].artista)
+			    && pl->canciones[j].total_rep > pl->canciones[mejor].total_rep)
+				mejor = j;
 
 		printf("%-25s %s (%u reps)\n",
 		       pl->canciones[mejor].artista,
 		       pl->canciones[mejor].titulo,
 		       pl->canciones[mejor].total_rep);
 	}
+}
+
+int mas_escuchada_de(const playlist *pl, char *c, int campo)
+{
+	int i; 
+	int mejor;
+	mejor = -1;
+
+	if (pl == NULL || pl->canciones == NULL || c == NULL || campo < 0 || campo < 2)
+		return -1;
+
+	switch (campo)
+	{
+		case 1:
+		for (i = 0; i < pl->cantidad; i++)
+		{
+			if (compara_strings(pl->canciones[i].artista, c)
+					&& (mejor == -1 || pl->canciones[i].total_rep > pl->canciones[mejor].total_rep))
+				mejor = i;
+		}
+		break;
+
+		case 2:
+		for (i = 0; i < pl->cantidad; i++)
+		{
+			if (compara_strings(pl->canciones[i].genero, c)
+					&& (mejor == -1 || pl->canciones[i].total_rep > pl->canciones[mejor].total_rep))
+				mejor = i;
+		}
+		break;
+
+		default:
+		printf("campo invalido...como llegaste aqui?\n");
+		return -1;
+	}
+
+	return mejor;
+}
+
+int mas_escuchada_artista(const playlist *pl, char *c)
+{
+	return mas_escuchada_de(pl, c, 1);
+}
+
+int mas_escuchada_genero(const playlist *pl, char *c)
+{
+	return mas_escuchada_de(pl, c, 2);
 }
