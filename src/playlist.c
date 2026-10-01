@@ -87,10 +87,10 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		c->duracion  = strtoul(t[1], NULL, 10);
 		c->anio      = strtoul(t[2], NULL, 10);
 		c->total_rep = strtoul(t[3], NULL, 10);
-		c->titulo    = dup(t[4]);
-		c->artista   = dup(t[5]);
-		c->album     = dup(t[6]);
-		c->genero    = dup(t[7]);
+		c->titulo    = copiar_cadena(t[4]);
+		c->artista   = copiar_cadena(t[5]);
+		c->album     = copiar_cadena(t[6]);
+		c->genero    = copiar_cadena(t[7]);
 	}
 	fclose(f);
 	return 0;
