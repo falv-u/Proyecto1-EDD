@@ -4,6 +4,7 @@
 #define MAXCANCIONES 3
 #define RANGO_CID 100
 #define MAX_HISTORIAL 30
+#define MAX_COLA 300
 #include <stdint.h>
 
 /** @brief Estructura que contiene todos los datos relevantes de una cancion.
@@ -75,6 +76,12 @@ void inicializar_canciones(cancion canciones[]);
 /* Busca la cancion en la fonoteca por un string ingresado por el usuario.
  * Retorna el índice de la cancion si se encuentra, -1 si no. */
 int binsearch_cancion(playlist *pl, int izq, int der, uint32_t cid_buscado);
+
+/* Lista todos los artistas disponibles en el catálogo sin repetir */
+void listar_artistas(const playlist *pl);
+
+/* Pide un género al usuario, busca las canciones, cuenta el total y las lista */
+void interactuar_generos(playlist *pl);
 
 /* ----------FUNCIONES PLAYLIST ---------*/
 /**

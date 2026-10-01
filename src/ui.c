@@ -28,10 +28,20 @@ void imprime_cancion(cancion *c)
 void imprime_menu(void)
 {
     printf("\n");
+    
+    // Opciones reproduccion
     printf(COLOR_BLUE "  [P]" COLOR_RESET " Play/Pause   ");
     printf(COLOR_BLUE "[N]" COLOR_RESET " Siguiente   ");
     printf(COLOR_BLUE "[B]" COLOR_RESET " Anterior   ");
     printf(COLOR_BLUE "[L]" COLOR_RESET " Cargar CSV   ");
+
+    // Opciones catalogo y estadisticas
+    printf(COLOR_MAGENTA "  [A]" COLOR_RESET " Artistas   ");
+    printf(COLOR_MAGENTA "  [G]" COLOR_RESET " Generos   ");
+    printf(COLOR_MAGENTA "  [R]" COLOR_RESET " Ranking   ");
+    printf(COLOR_MAGENTA "  [S]" COLOR_RESET " Busqueda  ");
+
+    // Salir
     printf(COLOR_RED  "[Q]" COLOR_RESET " Salir\n");
 }
 
@@ -78,4 +88,29 @@ void ui_pausa(void)
 {
     printf(COLOR_CYAN "\nPresione Enter para continuar...." COLOR_RESET);
     getchar();
+}
+
+/* Funciones UI para busqueda */
+
+void ui_pedir_artista(void)
+{
+    printf(COLOR_CYAN "\n  >> Introduce el nombre del artista a buscar: " COLOR_RESET);
+}
+
+void ui_resultados_busqueda(int cantidad, char *artista)
+{
+    printf(COLOR_GREEN "\n  Encontrados %d resultados para el artista '%s'." COLOR_RESET, cantidad, artista);
+}
+
+void ui_cancion_busqueda(int indice, cancion *c)
+{
+    if (c != NULL && c->artista != NULL && c->titulo != NULL)
+    {
+        printf("    %d. %s - %s\n", indice, c->artista, c->titulo);
+    }
+}
+
+void ui_sin_resultados(char *artista)
+{
+    printf(COLOR_RED "\n  Sin resultados para el artista '%s'." COLOR_RESET, artista);
 }

@@ -52,7 +52,7 @@ int main(void)
 
 			case 'B':
 			case 'b':
-				if (p.cantidad > 0) // Anterior canción
+				if (pl.cantidad > 0) // Anterior canción
 				{
 					// Ciclicamente (%)
 					// le sumamos + pl.cantidad para que no hayan negativos. 
