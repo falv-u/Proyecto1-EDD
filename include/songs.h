@@ -5,7 +5,6 @@
 #define RANGO_CID 100
 #define MAX_HISTORIAL 30
 #include <stdint.h>
-#include "ui.h"
 
 /** @brief Estructura que contiene todos los datos relevantes de una cancion.
  *
@@ -72,7 +71,7 @@ void inicializar_canciones(cancion canciones[]);
 /* ARREGLAR */
 /* Busca la cancion en la fonoteca por un string ingresado por el usuario.
  * Retorna el índice de la cancion si se encuentra, -1 si no. */
-int binsearch_cancion(cancion *arr, int izq, int der, uint32_t cid_buscado);
+int binsearch_cancion(playlist *pl, int izq, int der, uint32_t cid_buscado);
 
 /* ----------FUNCIONES PLAYLIST ---------*/
 /**
