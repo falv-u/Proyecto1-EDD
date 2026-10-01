@@ -6,6 +6,16 @@
 
 void canciones_mas_escuchada(const playlist *pl)
 {
+	if (pl->cantidad == NULL)
+	{
+		printf("playlist con canciones NULL...\n");
+		return;
+	}
+	if (pl->cantidad <= 0)
+	{
+		printf("valores invalidos\n");
+		return;
+	}
 	/* posiciones de las canciones */
 	int idx[pl->cantidad];
 	int i, j, tmp, n;
