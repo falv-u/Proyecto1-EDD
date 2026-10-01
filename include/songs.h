@@ -166,4 +166,5 @@ int escribir_archivo_historial(void);
  * es menor que el siguiente, en casi verdadero intercambia.
  */
 void canciones_mas_escuchada(const playlist *pl);
+int agregar_a_historial(playlist *h, const cancion *c);
 #endif
