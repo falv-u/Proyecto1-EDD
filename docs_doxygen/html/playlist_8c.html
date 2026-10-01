@@ -110,14 +110,15 @@ Functions</h2></td></tr>
 <tr class="memitem:af75e7969fb9b00f351596ecc01d1c7c0" id="r_af75e7969fb9b00f351596ecc01d1c7c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#af75e7969fb9b00f351596ecc01d1c7c0">existe_plcsv</a> (void)</td></tr>
 <tr class="memdesc:af75e7969fb9b00f351596ecc01d1c7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">busca si existe un archivo. Verifica si el archivo CSV de la playlist existe tratando de abrir el contenido en modo lectura.  <br /></td></tr>
 <tr class="separator:af75e7969fb9b00f351596ecc01d1c7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4b890c1798f2e3bf9faf459ece649ff" id="r_ae4b890c1798f2e3bf9faf459ece649ff"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#ae4b890c1798f2e3bf9faf459ece649ff">dup</a> (const char *s)</td></tr>
-<tr class="separator:ae4b890c1798f2e3bf9faf459ece649ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e68e67d873ac89cd253a7d67a4f06b4" id="r_a5e68e67d873ac89cd253a7d67a4f06b4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a5e68e67d873ac89cd253a7d67a4f06b4">copiar_cadena</a> (const char *s)</td></tr>
+<tr class="separator:a5e68e67d873ac89cd253a7d67a4f06b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980a0d4992e15102a2b6d875663fa019" id="r_a980a0d4992e15102a2b6d875663fa019"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a980a0d4992e15102a2b6d875663fa019">playlist_cargar_csv</a> (<a class="el" href="structplaylist.html">playlist</a> *pl, const char *ruta)</td></tr>
 <tr class="memdesc:a980a0d4992e15102a2b6d875663fa019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga las canciones desde un archivo CSV a la playlist. para cierto archivo de ruta, se busca cargar todos sus datos a una playlist, primero se cuentan las lineas que tiene el archivo sabiendo el numero de canciones se reserva la memoria con malloc. se separa el texto segun un separador '|', cada dato separado se guarda en una direccion de memoria en ram, por tanto para no perder el acceso se guarda en un arreglo char *temporal, una vez guardada esa linea, se hace una verificacion sencilla de exito, y si en caso de que en alguna parte de el arreglo temporal apunte a NULL, n&lt;datos_de_cancion en este caso 8, si sucede se salta esa iteracion y esos datos no se guardan en memoria. si caso contrario todo sale bien esos datos son transformados a sus respectivas unidades y se guardan en la playlist.  <br /></td></tr>
 <tr class="separator:a980a0d4992e15102a2b6d875663fa019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07debb28045e255ae3a597f099238ffe" id="r_a07debb28045e255ae3a597f099238ffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a07debb28045e255ae3a597f099238ffe">liberar_pl</a> (<a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
 <tr class="separator:a07debb28045e255ae3a597f099238ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2374f9dcd2309a2dd405c04029c53f5c" id="r_a2374f9dcd2309a2dd405c04029c53f5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplaylist.html">playlist</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a2374f9dcd2309a2dd405c04029c53f5c">crear_playlist</a> (void)</td></tr>
+<tr class="memdesc:a2374f9dcd2309a2dd405c04029c53f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion de creado que usa funciones auxiliares para modularidad, en si esta funcion solo define por si misma el id de una playlist y su nombre.  <br /></td></tr>
 <tr class="separator:a2374f9dcd2309a2dd405c04029c53f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d6fbad722a10252e1d025f3c2923ac5" id="r_a8d6fbad722a10252e1d025f3c2923ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a8d6fbad722a10252e1d025f3c2923ac5">imprimir_playlist</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
 <tr class="separator:a8d6fbad722a10252e1d025f3c2923ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -159,6 +160,24 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a5e68e67d873ac89cd253a7d67a4f06b4" name="a5e68e67d873ac89cd253a7d67a4f06b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e68e67d873ac89cd253a7d67a4f06b4">&#9670;&#160;</a></span>copiar_cadena()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char * copiar_cadena </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2374f9dcd2309a2dd405c04029c53f5c" name="a2374f9dcd2309a2dd405c04029c53f5c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2374f9dcd2309a2dd405c04029c53f5c">&#9670;&#160;</a></span>crear_playlist()</h2>
 
@@ -175,23 +194,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ae4b890c1798f2e3bf9faf459ece649ff" name="ae4b890c1798f2e3bf9faf459ece649ff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae4b890c1798f2e3bf9faf459ece649ff">&#9670;&#160;</a></span>dup()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * dup </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>s</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Funcion de creado que usa funciones auxiliares para modularidad, en si esta funcion solo define por si misma el id de una playlist y su nombre. </p>
+<dl class="section return"><dt>Returns</dt><dd>Playlist </dd></dl>
 
 </div>
 </div>
@@ -212,10 +216,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>busca si existe un archivo. Verifica si el archivo CSV de la playlist existe tratando de abrir el contenido en modo lectura. </p>
-<p>Verifica si el archivo CSV de la playlist existe. </p>
-<h1><a class="anchor" id="autotoc_md0"></a>
-Retorna 1 si existe, 0 si no.</h1>
-<p>/* -------&mdash;FUNCIONES PLAYLIST ------&mdash; </p><dl class="section return"><dt>Returns</dt><dd>Retorna 1 si existe, 0 si no. </dd></dl>
+<p>Verifica si el archivo CSV de la playlist existe. Retorna 1 si existe, 0 si no. </p><dl class="section return"><dt>Returns</dt><dd>Retorna 1 si existe, 0 si no. </dd></dl>
 
 </div>
 </div>

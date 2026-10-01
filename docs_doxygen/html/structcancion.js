@@ -7,5 +7,5 @@ var structcancion =
     [ "duracion", "structcancion.html#ac9871fe0ee7349b4dbc2eab9d1bc6a1b", null ],
     [ "genero", "structcancion.html#a93a1cb809843a402b499439334e62d57", null ],
     [ "titulo", "structcancion.html#a21207655283bc44b77e64d58c0a7ef86", null ],
-    [ "total_rep", "structcancion.html#af9c6a262fc7a3b2109ca596900614e6f", null ]
+    [ "total_rep", "structcancion.html#a5e653d4f0455b29daccee478e621b5d0", null ]
 ];

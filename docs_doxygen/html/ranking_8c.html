@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Summy: src/id.c File Reference</title>
+<title>Summy: src/ranking.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -64,7 +64,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('id_8c.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('ranking_8c.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -91,41 +91,65 @@ $(document).ready(function(){initNavTree('id_8c.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">id.c File Reference</div></div>
+  <div class="headertitle"><div class="title">ranking.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
-<code>#include &lt;stdint.h&gt;</code><br />
-<code>#include &lt;stdlib.h&gt;</code><br />
-<code>#include &lt;time.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="songs_8h_source.html">songs.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for id.c:</div>
+Include dependency graph for ranking.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="id_8c__incl.png" border="0" usemap="#asrc_2id_8c" alt=""/></div>
+<div class="center"><img src="ranking_8c__incl.png" border="0" usemap="#asrc_2ranking_8c" alt=""/></div>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a56f6cc9f4e62518f1219456f61c1772f" id="r_a56f6cc9f4e62518f1219456f61c1772f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ranking_8c.html#a56f6cc9f4e62518f1219456f61c1772f">N_ME</a>&#160;&#160;&#160;10</td></tr>
+<tr class="separator:a56f6cc9f4e62518f1219456f61c1772f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4ad356699a7bb281e2507c484494a07b" id="r_a4ad356699a7bb281e2507c484494a07b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="id_8c.html#a4ad356699a7bb281e2507c484494a07b">generar_id</a> (void)</td></tr>
-<tr class="separator:a4ad356699a7bb281e2507c484494a07b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72c09dc374477a67f701e9929b209417" id="r_a72c09dc374477a67f701e9929b209417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ranking_8c.html#a72c09dc374477a67f701e9929b209417">canciones_mas_escuchada</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
+<tr class="memdesc:a72c09dc374477a67f701e9929b209417"><td class="mdescLeft">&#160;</td><td class="mdescRight">muestra el top de canciones mas escuchadas  <br /></td></tr>
+<tr class="separator:a72c09dc374477a67f701e9929b209417"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a4ad356699a7bb281e2507c484494a07b" name="a4ad356699a7bb281e2507c484494a07b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ad356699a7bb281e2507c484494a07b">&#9670;&#160;</a></span>generar_id()</h2>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a56f6cc9f4e62518f1219456f61c1772f" name="a56f6cc9f4e62518f1219456f61c1772f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56f6cc9f4e62518f1219456f61c1772f">&#9670;&#160;</a></span>N_ME</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint32_t generar_id </td>
+          <td class="memname">#define N_ME&#160;&#160;&#160;10</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a72c09dc374477a67f701e9929b209417" name="a72c09dc374477a67f701e9929b209417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72c09dc374477a67f701e9929b209417">&#9670;&#160;</a></span>canciones_mas_escuchada()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void canciones_mas_escuchada </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>muestra el top de canciones mas escuchadas </p>
+<p>recibe como parametro la playlist, donde se crea un arreglo de pl-&gt;cantidad canciones, en donde solo se guardan los indices de las canciones y por ordenamiento burbuja revisa caso a caso si el total de repeticiones de la cancion en el indice idx es menor que el siguiente, en casi verdadero intercambia. </p>
 
 </div>
 </div>
@@ -134,7 +158,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="id_8c.html">id.c</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="ranking_8c.html">ranking.c</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

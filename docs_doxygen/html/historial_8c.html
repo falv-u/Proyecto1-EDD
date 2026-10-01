@@ -110,8 +110,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ae84ec99d982ff6a1d9b35620ab700aa4" id="r_ae84ec99d982ff6a1d9b35620ab700aa4"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#ae84ec99d982ff6a1d9b35620ab700aa4">buscar_cid_csv</a> (const char *ruta, unsigned int id_buscar, unsigned int rep)</td></tr>
 <tr class="separator:ae84ec99d982ff6a1d9b35620ab700aa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb2febd2d2e01dc24bfc857e9d3e9ebe" id="r_afb2febd2d2e01dc24bfc857e9d3e9ebe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#afb2febd2d2e01dc24bfc857e9d3e9ebe">escribir_archivo_historial</a> (void)</td></tr>
+<tr class="memdesc:afb2febd2d2e01dc24bfc857e9d3e9ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">crea o sobreescribe el archivo de ruta_historial.  <br /></td></tr>
 <tr class="separator:afb2febd2d2e01dc24bfc857e9d3e9ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f21db8971813de823358b30a5332ac2" id="r_a2f21db8971813de823358b30a5332ac2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#a2f21db8971813de823358b30a5332ac2">existe_historial</a> (void)</td></tr>
+<tr class="memdesc:a2f21db8971813de823358b30a5332ac2"><td class="mdescLeft">&#160;</td><td class="mdescRight">verifica si existe el archivo de historial en disco.  <br /></td></tr>
 <tr class="separator:a2f21db8971813de823358b30a5332ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65931606c819845656bdc5dae1534866" id="r_a65931606c819845656bdc5dae1534866"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#a65931606c819845656bdc5dae1534866">agregar_a_historial</a> (<a class="el" href="structcancion.html">cancion</a> *c)</td></tr>
 <tr class="separator:a65931606c819845656bdc5dae1534866"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -255,6 +257,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>crea o sobreescribe el archivo de ruta_historial. </p>
+<p>Una funcion que abre el archivo con el parametro "w", si no existe el archivo lo crea, si existe lo sobreescribe. se puede usar para la primera inicializacion del programa o para limpiar por completo el histoial</p>
+<dl class="section return"><dt>Returns</dt><dd>retorna 0 si se pudo escribir en disco, caso contrario retorna 1 </dd></dl>
+
 </div>
 </div>
 <a id="a2f21db8971813de823358b30a5332ac2" name="a2f21db8971813de823358b30a5332ac2"></a>
@@ -272,6 +278,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>verifica si existe el archivo de historial en disco. </p>
+<p>trata de abrir el archivo en caso de no poder abrirlo, lo tratara de crear mediante una llamada a la funcion <a class="el" href="songs_8h.html#afb2febd2d2e01dc24bfc857e9d3e9ebe" title="crea o sobreescribe el archivo de ruta_historial.">escribir_archivo_historial()</a>; Retorna 0 si todo salio bien, en caso de no existir y no poder crearse devuelve un 1 </p>
 
 </div>
 </div>

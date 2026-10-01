@@ -16,8 +16,8 @@
 typedef struct cancion {
     uint32_t cid;        /**< ID de la cancion, se busca que no tenga repeticion */
     uint32_t duracion;   /**< Duracion en segundos, entero de 8 bytes sin signo */
+    uint32_t total_rep;  /**< Total de veces reproducida, entero de 4 bytes sin signo */
     uint16_t anio;       /**< Anio de lanzamiento, entero de 4 bytes sin signo */
-    uint16_t total_rep;  /**< Total de veces reproducida, entero de 4 bytes sin signo */
     char    *titulo;     /**< Titulo de la cancion, asignado con malloc */
     char    *artista;    /**< Artista o banda */
     char    *album;      /**< Album al que pertenece */
@@ -110,14 +110,13 @@ int playlist_cargar_csv(playlist *pl, const char *ruta);
 /* @brief Libera toda la memoria asociada a una playlist. */
 void liberar_pl(playlist *pl);
 
-playlist crear_playlist(void);
-
 /* imprime toda la lista de canciones de una playlist */
 void imprimir_playlist(const playlist *pl);
 
-/*
+/** @brief
  * Funcion de creado que usa funciones auxiliares para modularidad, en si esta
  * funcion solo define por si misma el id de una playlist y su nombre.
+ * @return Playlist
  */
 
 playlist crear_playlist(void);
@@ -127,7 +126,7 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl);
 
 /* ----------FUNCIONES HISTORIAL ---------*/
 
-/* @brief verifica si existe el archivo de historial en disco.
+/** @brief verifica si existe el archivo de historial en disco.
  *
  * trata de abrir el archivo en caso de no poder abrirlo, lo tratara de crear
  * mediante una llamada a la funcion escribir_archivo_historial();
@@ -136,7 +135,7 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl);
 
 int existe_historial(void);
 
-/* @brief crea o sobreescribe el archivo de ruta_historial.
+/** @brief crea o sobreescribe el archivo de ruta_historial.
  *
  * Una funcion que abre el archivo con el parametro "w", si no existe
  * el archivo lo crea, si existe lo sobreescribe. se puede usar
@@ -147,5 +146,14 @@ int existe_historial(void);
  */
 int escribir_archivo_historial(void);
 
-/*****/
+/* Ranking */
+/** @brief muestra el top de canciones mas escuchadas
+ *
+ * recibe como parametro la playlist, donde se crea un arreglo
+ * de pl->cantidad canciones, en donde solo se guardan los indices
+ * de las canciones y por ordenamiento burbuja revisa caso a caso
+ * si el total de repeticiones de la cancion en el indice idx 
+ * es menor que el siguiente, en casi verdadero intercambia.
+ */
+void canciones_mas_escuchada(const playlist *pl);
 #endif

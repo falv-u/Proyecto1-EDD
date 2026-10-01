@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['playlist_5fcargar_5fcsv_0',['playlist_cargar_csv',['../playlist_8c.html#a980a0d4992e15102a2b6d875663fa019',1,'playlist_cargar_csv(playlist *pl, const char *ruta):&#160;playlist.c'],['../songs_8h.html#a980a0d4992e15102a2b6d875663fa019',1,'playlist_cargar_csv(playlist *pl, const char *ruta):&#160;playlist.c']]]
+  ['reproducir_5fmusica_0',['reproducir_musica',['../songs_8h.html#a15c5b4049ef4556d70fa842233ae331d',1,'songs.h']]],
+  ['reproduir_5fmusica_1',['reproduir_musica',['../audio_8c.html#ae5d57c6676f2bf56f5f333dd925fdea7',1,'audio.c']]]
 ];

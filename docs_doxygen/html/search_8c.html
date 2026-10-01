@@ -96,7 +96,6 @@ $(document).ready(function(){initNavTree('search_8c.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="songs_8h_source.html">songs.h</a>&quot;</code><br />
-<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;stdlib.h&gt;</code><br />
 <code>#include &lt;ctype.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -107,36 +106,20 @@ Include dependency graph for search.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af3d8567b5e88d6182215015ceae45f75" id="r_af3d8567b5e88d6182215015ceae45f75"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#af3d8567b5e88d6182215015ceae45f75">binsearch_cancion</a> (<a class="el" href="structcancion.html">cancion</a> *arr, int izq, int der, uint32_t cid_buscado)</td></tr>
-<tr class="separator:af3d8567b5e88d6182215015ceae45f75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0282fb5113dd95a0fd07f4608c63af6f" id="r_a0282fb5113dd95a0fd07f4608c63af6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcancion.html">cancion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#a0282fb5113dd95a0fd07f4608c63af6f">busqueda_global_lenta</a> (<a class="el" href="structplaylist.html">playlist</a> *pl, int prioridad, unsigned int dato_numerico, char *dato_texto)</td></tr>
+<tr class="separator:a0282fb5113dd95a0fd07f4608c63af6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a204dbeb62c6fea10056242655a3ee8fe" id="r_a204dbeb62c6fea10056242655a3ee8fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#a204dbeb62c6fea10056242655a3ee8fe">compara_strings</a> (char *a, char *b)</td></tr>
+<tr class="separator:a204dbeb62c6fea10056242655a3ee8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae40cd11e41382bb67d5d6125427d19e" id="r_aae40cd11e41382bb67d5d6125427d19e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#aae40cd11e41382bb67d5d6125427d19e">binsearch_cancion</a> (<a class="el" href="structplaylist.html">playlist</a> *pl, int izq, int der, uint32_t cid_buscado)</td></tr>
+<tr class="separator:aae40cd11e41382bb67d5d6125427d19e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1cf0341a6248d6631bad0f48e64792da" id="r_a1cf0341a6248d6631bad0f48e64792da"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#a1cf0341a6248d6631bad0f48e64792da">search_titulo</a> (<a class="el" href="structcancion.html">cancion</a> *arr, int n, char *titulo_buscado)</td></tr>
 <tr class="separator:a1cf0341a6248d6631bad0f48e64792da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2877aa4ec445b3d2153cfc96ba4f729c" id="r_a2877aa4ec445b3d2153cfc96ba4f729c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#a2877aa4ec445b3d2153cfc96ba4f729c">search_artista</a> (<a class="el" href="structcancion.html">cancion</a> *arr, int n, char *artista_buscado)</td></tr>
-<tr class="separator:a2877aa4ec445b3d2153cfc96ba4f729c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00f4413974f60607551c7675913f0918" id="r_a00f4413974f60607551c7675913f0918"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#a00f4413974f60607551c7675913f0918">a_minusculas</a> (char *str)</td></tr>
-<tr class="separator:a00f4413974f60607551c7675913f0918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f12c9364a955da4329fb85decf42bfd" id="r_a8f12c9364a955da4329fb85decf42bfd"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#a8f12c9364a955da4329fb85decf42bfd">search_artista</a> (<a class="el" href="structcancion.html">cancion</a> *arr, int n, char *artista_buscado, int *resultados, int max_resultados)</td></tr>
+<tr class="separator:a8f12c9364a955da4329fb85decf42bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a00f4413974f60607551c7675913f0918" name="a00f4413974f60607551c7675913f0918"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00f4413974f60607551c7675913f0918">&#9670;&#160;</a></span>a_minusculas()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">char * a_minusculas </td>
-          <td>(</td>
-          <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>str</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af3d8567b5e88d6182215015ceae45f75" name="af3d8567b5e88d6182215015ceae45f75"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3d8567b5e88d6182215015ceae45f75">&#9670;&#160;</a></span>binsearch_cancion()</h2>
+<a id="aae40cd11e41382bb67d5d6125427d19e" name="aae40cd11e41382bb67d5d6125427d19e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae40cd11e41382bb67d5d6125427d19e">&#9670;&#160;</a></span>binsearch_cancion()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,8 +127,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int binsearch_cancion </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structcancion.html">cancion</a> *&#160;</td>
-          <td class="paramname"><em>arr</em>, </td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -175,8 +158,76 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a2877aa4ec445b3d2153cfc96ba4f729c" name="a2877aa4ec445b3d2153cfc96ba4f729c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2877aa4ec445b3d2153cfc96ba4f729c">&#9670;&#160;</a></span>search_artista()</h2>
+<a id="a0282fb5113dd95a0fd07f4608c63af6f" name="a0282fb5113dd95a0fd07f4608c63af6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0282fb5113dd95a0fd07f4608c63af6f">&#9670;&#160;</a></span>busqueda_global_lenta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcancion.html">cancion</a> busqueda_global_lenta </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>prioridad</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>dato_numerico</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>dato_texto</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a204dbeb62c6fea10056242655a3ee8fe" name="a204dbeb62c6fea10056242655a3ee8fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a204dbeb62c6fea10056242655a3ee8fe">&#9670;&#160;</a></span>compara_strings()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int compara_strings </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8f12c9364a955da4329fb85decf42bfd" name="a8f12c9364a955da4329fb85decf42bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f12c9364a955da4329fb85decf42bfd">&#9670;&#160;</a></span>search_artista()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +248,19 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>artista_buscado</em>&#160;</td>
+          <td class="paramname"><em>artista_buscado</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>resultados</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>max_resultados</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
