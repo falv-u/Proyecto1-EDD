@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['fonoteca_0',['fonoteca',['../structfonoteca.html',1,'']]]
+  ['historial_2ec_0',['historial.c',['../historial_8c.html',1,'']]]
 ];

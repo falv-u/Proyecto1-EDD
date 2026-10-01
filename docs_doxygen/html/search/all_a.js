@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['id_2ec_0',['id.c',['../id_8c.html',1,'']]],
-  ['imprime_5fcancion_1',['imprime_cancion',['../ui_8c.html#aee520e79fcd88699b479a78edf6c420a',1,'imprime_cancion(cancion *c):&#160;ui.c'],['../ui_8h.html#aee520e79fcd88699b479a78edf6c420a',1,'imprime_cancion(cancion *c):&#160;ui.c']]],
-  ['imprime_5fmenu_2',['imprime_menu',['../ui_8c.html#a4f74964b18b7aedb0f19b41d8d71ceee',1,'imprime_menu(void):&#160;ui.c'],['../ui_8h.html#a4f74964b18b7aedb0f19b41d8d71ceee',1,'imprime_menu(void):&#160;ui.c']]],
-  ['imprimir_5fplaylist_3',['imprimir_playlist',['../playlist_8c.html#a8d6fbad722a10252e1d025f3c2923ac5',1,'imprimir_playlist(const playlist *pl):&#160;playlist.c'],['../songs_8h.html#a8d6fbad722a10252e1d025f3c2923ac5',1,'imprimir_playlist(const playlist *pl):&#160;playlist.c']]],
-  ['inicializar_5fcanciones_4',['inicializar_canciones',['../song_8c.html#aea5f0d564d27f7f75825a679f9ae3474',1,'inicializar_canciones(cancion canciones[]):&#160;song.c'],['../songs_8h.html#aea5f0d564d27f7f75825a679f9ae3474',1,'inicializar_canciones(cancion canciones[]):&#160;song.c']]],
-  ['insertion_5fsort_5',['insertion_sort',['../sort_8c.html#ab4e9aaca83ddaf73d65cadacbb2f9442',1,'sort.c']]]
+  ['main_0',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
+  ['main_2ec_1',['main.c',['../main_8c.html',1,'']]],
+  ['max_5fhistorial_2',['MAX_HISTORIAL',['../songs_8h.html#a4d8a2cf2e594cfb4bb3b07737df4a8bb',1,'songs.h']]],
+  ['max_5fline_3',['MAX_LINE',['../ui_8h.html#a842ed03f27719bc87666bfd1f75415b8',1,'ui.h']]],
+  ['maxcanciones_4',['MAXCANCIONES',['../songs_8h.html#a569fbe17578996ba2ad4e60cf48e2a1e',1,'songs.h']]]
 ];

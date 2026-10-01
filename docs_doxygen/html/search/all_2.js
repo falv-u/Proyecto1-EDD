@@ -1,11 +1,22 @@
 var searchData=
 [
-  ['a_5fminusculas_0',['a_minusculas',['../search_8c.html#a00f4413974f60607551c7675913f0918',1,'search.c']]],
-  ['agregar_5fa_5fhistorial_1',['agregar_a_historial',['../historial_8c.html#a65931606c819845656bdc5dae1534866',1,'historial.c']]],
-  ['agregar_5fcancion_5fplaylist_2',['agregar_cancion_playlist',['../playlist_8c.html#a7618558656695c0a873eff28fb520ff5',1,'playlist.c']]],
-  ['agregar_5freproduccion_5fa_5fultimo_5fhistorial_3',['agregar_reproduccion_a_ultimo_historial',['../historial_8c.html#accead95c25e75b764ce397c35d24f071',1,'historial.c']]],
-  ['album_4',['album',['../structcancion.html#a1d257a92822e42736478556ac4981257',1,'cancion']]],
-  ['anio_5',['anio',['../structcancion.html#acb97c201c93030d42298e7827b17226e',1,'cancion']]],
-  ['artista_6',['artista',['../structcancion.html#a49132a282dd4662ca83daab811f8f525',1,'cancion']]],
-  ['audio_2ec_7',['audio.c',['../audio_8c.html',1,'']]]
+  ['cancion_0',['cancion',['../songs_8h.html#ad88081ac1edb5d9f0f2bc7655584ffe0',1,'cancion:&#160;songs.h'],['../structcancion.html',1,'cancion']]],
+  ['canciones_1',['canciones',['../structplaylist.html#ad30044441484b5ba8db08b00d186d20d',1,'playlist']]],
+  ['canciones_5fmas_5fescuchada_2',['canciones_mas_escuchada',['../ranking_8c.html#a72c09dc374477a67f701e9929b209417',1,'canciones_mas_escuchada(const playlist *pl):&#160;ranking.c'],['../songs_8h.html#a72c09dc374477a67f701e9929b209417',1,'canciones_mas_escuchada(const playlist *pl):&#160;ranking.c']]],
+  ['cantidad_3',['cantidad',['../structplaylist.html#ae43ca328f7775489add2c3dbd059320f',1,'playlist::cantidad'],['../structfonoteca.html#af6df45af62b5dcceb85d991b9062cd4f',1,'fonoteca::cantidad']]],
+  ['cid_4',['cid',['../structcancion.html#a3c88b619a23a1f27b56dacf3027f2bf4',1,'cancion']]],
+  ['color_5fblue_5',['COLOR_BLUE',['../ui_8h.html#a23c70d699a5a775bc2e1ebeb8603f630',1,'ui.h']]],
+  ['color_5fbold_6',['COLOR_BOLD',['../ui_8h.html#a302607d6f585b7e9ba1c3eab8d2199d5',1,'ui.h']]],
+  ['color_5fcyan_7',['COLOR_CYAN',['../ui_8h.html#a82573859711fce56f1aa0a76b18a9b18',1,'ui.h']]],
+  ['color_5fdim_8',['COLOR_DIM',['../ui_8h.html#a82f3830461d1f2f3a8384936fb926920',1,'ui.h']]],
+  ['color_5fgreen_9',['COLOR_GREEN',['../ui_8h.html#afc9149f5de51bd9ac4f5ebbfa153f018',1,'ui.h']]],
+  ['color_5fmagenta_10',['COLOR_MAGENTA',['../ui_8h.html#a8deb0beccea721b35bdb1b4f7264fe75',1,'ui.h']]],
+  ['color_5fred_11',['COLOR_RED',['../ui_8h.html#ad86358bf19927183dd7b4ae215a29731',1,'ui.h']]],
+  ['color_5freset_12',['COLOR_RESET',['../ui_8h.html#a17f760256046df23dd0ab46602f04d02',1,'ui.h']]],
+  ['color_5fyellow_13',['COLOR_YELLOW',['../ui_8h.html#a4534b577b74a58b0f4b7be027af664e0',1,'ui.h']]],
+  ['compara_5fstrings_14',['compara_strings',['../search_8c.html#a204dbeb62c6fea10056242655a3ee8fe',1,'search.c']]],
+  ['contar_5flineas_15',['contar_lineas',['../historial_8c.html#ab737fd7954bcbab65afbb460057ec00d',1,'historial.c']]],
+  ['copiar_5fcadena_16',['copiar_cadena',['../playlist_8c.html#a5e68e67d873ac89cd253a7d67a4f06b4',1,'copiar_cadena(const char *s):&#160;playlist.c'],['../songs_8h.html#a5e68e67d873ac89cd253a7d67a4f06b4',1,'copiar_cadena(const char *s):&#160;playlist.c']]],
+  ['crear_5fcancion_17',['crear_cancion',['../song_8c.html#ac046ab6d6cd2b3bfaa679aebf84c0aaf',1,'song.c']]],
+  ['crear_5fplaylist_18',['crear_playlist',['../playlist_8c.html#a2374f9dcd2309a2dd405c04029c53f5c',1,'crear_playlist(void):&#160;playlist.c'],['../songs_8h.html#a2374f9dcd2309a2dd405c04029c53f5c',1,'crear_playlist(void):&#160;playlist.c']]]
 ];

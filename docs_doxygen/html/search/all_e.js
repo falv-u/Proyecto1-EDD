@@ -1,7 +1,9 @@
 var searchData=
 [
-  ['pid_0',['pid',['../structplaylist.html#a3b5cc71c961d6dd251f42e47149f059d',1,'playlist']]],
-  ['playlist_1',['playlist',['../structplaylist.html',1,'playlist'],['../songs_8h.html#aed833d29ac7a594c84384f2c9b1fb5fe',1,'playlist:&#160;songs.h']]],
-  ['playlist_2ec_2',['playlist.c',['../playlist_8c.html',1,'']]],
-  ['playlist_5fcargar_5fcsv_3',['playlist_cargar_csv',['../playlist_8c.html#a980a0d4992e15102a2b6d875663fa019',1,'playlist_cargar_csv(playlist *pl, const char *ruta):&#160;playlist.c'],['../songs_8h.html#a980a0d4992e15102a2b6d875663fa019',1,'playlist_cargar_csv(playlist *pl, const char *ruta):&#160;playlist.c']]]
+  ['search_2ec_0',['search.c',['../search_8c.html',1,'']]],
+  ['search_5fartista_1',['search_artista',['../search_8c.html#a8f12c9364a955da4329fb85decf42bfd',1,'search.c']]],
+  ['search_5ftitulo_2',['search_titulo',['../search_8c.html#a1cf0341a6248d6631bad0f48e64792da',1,'search.c']]],
+  ['song_2ec_3',['song.c',['../song_8c.html',1,'']]],
+  ['songs_2eh_4',['songs.h',['../songs_8h.html',1,'']]],
+  ['sort_2ec_5',['sort.c',['../sort_8c.html',1,'']]]
 ];
