@@ -216,3 +216,28 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
 	
 	return 0;
 }
+
+/* Escribe el playlist en ruta, una cancion por linea (separador ';').
+ * Retorna 0 si salio bien, 1 si falla. */
+int exportar_playlist(const playlist *pl, const char *ruta)
+{
+	FILE *f;
+	int i;
+
+	if (pl == NULL || pl->canciones == NULL || ruta == NULL)
+		return 1;
+
+	f = fopen(ruta, "w");
+	if (f == NULL)
+		return 1;
+
+	for (i = 0; i < pl->cantidad; i++)
+		fprintf(f, "%u;%u;%u;%u;%s;%s;%s;%s\n",
+		        pl->canciones[i].cid, pl->canciones[i].duracion,
+		        pl->canciones[i].anio, pl->canciones[i].total_rep,
+		        pl->canciones[i].titulo, pl->canciones[i].artista,
+		        pl->canciones[i].album, pl->canciones[i].genero);
+
+	fclose(f);
+	return 0;
+}
