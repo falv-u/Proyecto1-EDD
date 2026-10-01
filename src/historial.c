@@ -1,194 +1,70 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "songs.h"
 
-long contar_lineas(const char *ruta)
+/* Crea un historial vacio con espacio para MAX_HISTORIAL canciones.
+ * Si falla malloc queda con canciones == NULL y cantidad 0. */
+playlist crear_historial(void)
 {
-	FILE *f;
-	char buff[1024];
-	long linea;	
-	f = fopen(ruta, "r");
-	if ( f == NULL )
-	{
-		printf("error, el archivo existe? \m");
-		return -1;
-	}
-	
-	/* 
-	 * mientras logre leer una linea fgets dara un valor 
-	 * distinto de NULL, cuando se llama de nuevo fgets
-	 * mueve el cursor del archivo, se detentra cuando
-	 * fgets de NULL
-	 */
+	playlist h;
 
-	while(fgets(buff,sizeof(buff),f))
-		linea++;
-	
-	fclose(f);
-	return linea;
-	
+	h.pid = 0;
+	h.nombre = NULL;
+	h.ruta = NULL;
+	h.cantidad = 0;
+	h.canciones = malloc(sizeof(cancion) * MAX_HISTORIAL);
+	return h;
 }
-long buscar_cid_csv(const char *ruta, unsigned int id_buscar, unsigned int rep)
+
+/* Busca un cid en el historial.
+ * Retorna su posicion, o -1 si no esta. */
+int buscar_en_historial(const playlist *h, uint32_t cid)
 {
-	FILE *f;
-	char buff[1024];
-	unsigned int id, dur, anio, reps;
+	int i;
 
-	f = fopen(ruta, "r");
-
-	if (f == NULL)
-	{
-		printf("fallo al abrir archivo, el archivo existe?\n");
-		return -1;
-	}
-	i = 0;
-
-	while(fgets(buff,sizeof(buff),f))
-	{
-		sscanf("%u|%u|%u|%u|", &id, &dur, &anio, &reps);
-		if (id == cid)
-		{
-			*rep = reps;
-			fclose(f);
+	for (i = 0; i < h->cantidad; i++)
+		if (h->canciones[i].cid == cid)
 			return i;
-		}
-		i++;
-	}
 	return -1;
 }
 
-int escribir_archivo_historial(void)
+/* Quita la cancion en pos y corre las siguientes una posicion
+ * a la izquierda. Asume que pos es valida. */
+void quitar_de_historial(playlist *h, int pos)
 {
-	FILE *f;
-	f = fopen("ruta_historial", "w");
-	if ( f == NULL ) 
-	{
-		printf("error al crearlo...\n");
+	int i;
+
+	for (i = pos + 1; i < h->cantidad; i++)
+		h->canciones[i - 1] = h->canciones[i];
+	h->cantidad--;
+}
+
+/* Agrega una cancion como la mas reciente (al final).
+ * Si ya estaba, se mueve al final. Si esta lleno, descarta la mas antigua.
+ * Retorna 0 en exito, 1 si h o c son invalidos. */
+int agregar_a_historial(playlist *h, const cancion *c)
+{
+	int pos;
+
+	if (h == NULL || h->canciones == NULL || c == NULL)
 		return 1;
-	}
-	return 0;
 
-}
-
-int existe_historial(void)
-{
-	FILE *f;
-	int ver;
-	f = fopen(ruta_historial, "r");
-	if (f == NULL)
-	{
-		printf("archivo no encontrado, creandolo...\n");
-		ver = escribir_archivo_historial();
-		if (ver == 0)
-			printf("archivo escrito correctamente en %s\n", ruta_historial);		
-		if (ver == 1)
-		{
-			printf("algo ha salido mal, archivo no escrito en disco\n");
-			return 1;
-		}
-	}
-		
-	return 0;
-}
-
-int agregar_a_historial(cancion *c)
-{
-	FILE *f;
-	long pos;
-	unsigned int rep;
-
-	pos = buscar_cid(ruta_historial, c->cid, &rep);
+	pos = buscar_en_historial(h, c->cid);
 
 	if (pos != -1)
-	{
-		eliminar_linea_csv(ruta_historial, pos);
-		c->total_rep = rep + 1;
-	}
-	else if (contar_lineas(ruta_historial) >= MAX_HISTORIAL)
-	{
-		eliminar_linea_csv(ruta_historial, 0);
-	}
+		quitar_de_historial(h, pos);
+	else if (h->cantidad == MAX_HISTORIAL)
+		quitar_de_historial(h, 0);
 
-	f = fopen(ruta_historial, "a");
-	if (f == NULL)
-	{
-		printf("error abriendo historial...\n");
-		return 121;
-	}
-
-	fprintf(f, "%u|%u|%u|%u|%s|%s|%s|%s\n",
-			c->cid, c->duracion, c->anio, c->total_rep,
-			c->titulo, c->artista, c->album, c->genero);
-
-	fclose(f);
+	h->canciones[h->cantidad] = *c;
+	h->cantidad++;
 	return 0;
 }
 
-void limpiar_csv(const char *ruta)
+/* Libera solo el arreglo. Los textos pertenecen al catalogo. */
+void liberar_historial(playlist *h)
 {
-	FILE *f;
-	f = fopen(ruta, "w");
-	fclose(f);
+	free(h->canciones);
+	h->canciones = NULL;
+	h->cantidad = 0;
 }
-
-
-
-void eliminar_linea_csv(const char *ruta, long linea)
-{
-	FILE *in;
-	FILE *out;
-	char buff[1024];
-	long i;
-	/*
-	 * "r+" abre el archivo al inicio sin sobreescribir, 
-	 * sin embargo no tiene capacidad de crearlo si no existe
-	 */
-	in = fopen(ruta, "r+");
-	if ( in == NULL)
-	{
-		printf("fallo abrir archivo, el archivo existe?");
-		return;
-	};
-
-	out = fopen("el.tmp", "w");
-	if ( out == NULL)
-	{
-		printf("fallo al crear el archivo temporal");
-		return;
-	};
-
-	i = 0;
-	
-	/* 
-	 * toma todo lo que es el historial y usa fputs para llevar
-	 * lo del buffer hacia el archivo de salida saltandose
-	 * la linea a eliminar
-	 */
-	while (fgets(buff, sizeof(buff), in) != NULL)
-	{
-		if (i != linea)
-			fputs(buff, out);
-		i++;
-	}
-	
-	remove(ruta);
-	rename("el.tmp", ruta);
-	fclose(in);
-	fclose(out);
-}
-
-void agregar_reproduccion_a_ultimo_historial(cancion *c)
-{
-	FILE *f;
-	char linea[1024];
-	long int pos;
-	f = fopen(ruta_historial, "a");
-
-	if (f == NULL)
-	{
-		printf("error al abrir archivo...\n");
-		return;
-	}
-
-}
-
-
