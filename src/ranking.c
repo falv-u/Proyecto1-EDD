@@ -6,9 +6,9 @@
 
 void canciones_mas_escuchada(const playlist *pl)
 {
-	if (pl->cantidad == NULL)
+	if (pl == NULL || pl->canciones == NULL)
 	{
-		printf("playlist con canciones NULL...\n");
+		printf("playlist apunta NULL...\n");
 		return;
 	}
 	if (pl->cantidad <= 0)
@@ -43,3 +43,27 @@ void canciones_mas_escuchada(const playlist *pl)
 		       pl->canciones[idx[i]].total_rep);
 }
 
+
+void artista_mas_escuchado(playlist *pl)
+{
+	int i,j,mejor,repetido;
+	if (pl == NULL || pl->canciones == NULL || pl->cantidad <= 0)
+	{	
+		printf("playlist invalida\n");
+		return;
+	}
+
+	for ( i = 0; i < pl->cantidad; i++)
+	{
+		if (pl->canciones[i].artista == NULL)
+			continue;	
+		if (compara_strings(pl->canciones[j].artista, pl->canciones[i].artista)
+			&& pl->canciones[j].total_rep > pl->canciones[mejor].total_rep)
+			mejor = j;
+
+		printf("%-25s %s (%u reps)\n",
+		       pl->canciones[mejor].artista,
+		       pl->canciones[mejor].titulo,
+		       pl->canciones[mejor].total_rep);
+	}
+}
