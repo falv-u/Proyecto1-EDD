@@ -134,6 +134,9 @@ playlist crear_playlist(void);
 
 int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl);
 
+/* @brief Ordena la playlist mediante merge sort utilizando el criterio especificado. */
+void merge_sort(playlist *p, int low, int high);
+
 /* ----------FUNCIONES HISTORIAL ---------*/
 
 /** @brief verifica si existe el archivo de historial en disco.
@@ -162,7 +165,7 @@ int escribir_archivo_historial(void);
  * recibe como parametro la playlist, donde se crea un arreglo
  * de pl->cantidad canciones, en donde solo se guardan los indices
  * de las canciones y por ordenamiento burbuja revisa caso a caso
- * si el total de repeticiones de la cancion en el indice idx 
+ * si el total de repeticiones de la cancion en el indice idx
  * es menor que el siguiente, en casi verdadero intercambia.
  */
 void canciones_mas_escuchada(const playlist *pl);

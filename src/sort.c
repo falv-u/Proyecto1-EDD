@@ -1,5 +1,6 @@
 #include "songs.h"
 #include <stdlib.h>
+#include <string.h>
 
 // --- IDEA SORT ---- les parece bien Selection sort???
 // pipe: le doy, segun un articulo q vi por ahi selection sirve para cuando el arreglo esta muy desordenado, mas que insertion
@@ -16,35 +17,35 @@ void insertion_sort_int(playlist *pl, int criterio)
         switch(criterio)
         {
         	case 0:
-	        while (j >= 0 && pl->canciones[j].cid > key.cid)
+	        while (j >= 0 && strcmp(pl->canciones[j].titulo, key.titulo) <= 0)
 	        {
 	            pl->canciones[j + 1] = pl->canciones[j];
 	            j--;
 	        }
 	        break;
         	case 1:
-	        while (j >= 0 && pl->canciones[j].duracion > key.duracion)
+	        while (j >= 0 && strcmp(pl->canciones[j].artista, key.artista) <= 0)
 	        {
 	            pl->canciones[j + 1] = pl->canciones[j];
 	            j--;
 	        }
 	        break;
          	case 2:
-	        while (j >= 0 && pl->canciones[j].anio > key.anio)
+	        while (j >= 0 && strcmp(pl->canciones[j].album, key.album) <= 0)
 	        {
 	            pl->canciones[j + 1] = pl->canciones[j];
 	            j--;
 	        }
 	        break;
           	case 3:
-	        while (j >= 0 && pl->canciones[j].total_rep > key.total_rep)
+	        while (j >= 0 && strcmp(pl->canciones[j].genero, key.genero) <= 0)
 	        {
 	            pl->canciones[j + 1] = pl->canciones[j];
 	            j--;
 	        }
 	        break;
           	default:
-	        while (j >= 0 && pl->canciones[j].cid > key.cid)
+	        while (j >= 0 && strcmp(pl->canciones[j].titulo, key.titulo) <= 0)
 	        {
 	            pl->canciones[j + 1] = pl->canciones[j];
 	            j--;
