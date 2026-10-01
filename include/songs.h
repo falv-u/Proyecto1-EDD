@@ -56,6 +56,9 @@ static const char ruta_historial[] = "./historial.csv";
 /* Genera un ID único para una cancion. */
 uint32_t generar_id(void);
 
+/* Compara dos strings sin distinguir mayusculas/minusculas */
+int compara_strings(char *a, char *b)
+
 /* ----------FUNCIONES CANCIONES ---------*/
 /* @brief Reproduce el mp3 de la ruta del archivo.
  * Usa funcion proveniente del single-header de miniaudio.h y su
