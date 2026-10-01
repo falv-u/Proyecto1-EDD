@@ -60,7 +60,7 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		/*
 		 * string tokenizer (tokenizador de strings)
 		 * Divide un string en pedazos segun los caracteres que le pases como separadores.
-		 * strtok(linea, "|\n") es pedir que corte esta línea cada vez que encuentres | o \n
+		 * strtok(linea, ";\n") es pedir que corte esta línea cada vez que encuentres ; o \n
 		 *
 		 */
 
@@ -70,7 +70,7 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		 * siendo n la cantidad de datos a extraer, para el avance se reasigna p
 		 * pasandole el valor NULL a strtok para que continue donde quedo anteriormente
 		 */
-		for (char *p = strtok(linea_actual, "|\n"); p && n < 8; p = strtok(NULL, "|\n"))
+		for (char *p = strtok(linea_actual, ";\n"); p && n < 8; p = strtok(NULL, ";\n"))
 			/* esto se lee como t[n] = p y luego n = n+1 ya que es un post-incremento */
 			t[n++] = p;
 		/*
@@ -189,7 +189,7 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
 		return 121;
 	}
 
-	fprintf(f, "%u|%u|%u|%u|%s|%s|%s|%s\n",
+	fprintf(f, "%u;%u;%u;%u;%s;%s;%s;%s\n",
 			c->cid, c->duracion, c->anio, c->total_rep,
 			c->titulo, c->artista, c->album, c->genero);
 	fclose(f);

@@ -115,6 +115,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a72c09dc374477a67f701e9929b209417" id="r_a72c09dc374477a67f701e9929b209417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ranking_8c.html#a72c09dc374477a67f701e9929b209417">canciones_mas_escuchada</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
 <tr class="memdesc:a72c09dc374477a67f701e9929b209417"><td class="mdescLeft">&#160;</td><td class="mdescRight">muestra el top de canciones mas escuchadas  <br /></td></tr>
 <tr class="separator:a72c09dc374477a67f701e9929b209417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7930207e8a3791fc31c20c8e0541982" id="r_ae7930207e8a3791fc31c20c8e0541982"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ranking_8c.html#ae7930207e8a3791fc31c20c8e0541982">mas_escuchado</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
+<tr class="separator:ae7930207e8a3791fc31c20c8e0541982"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8423cc0d19d27b0c0ea6946ad2e9a498" id="r_a8423cc0d19d27b0c0ea6946ad2e9a498"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ranking_8c.html#a8423cc0d19d27b0c0ea6946ad2e9a498">mas_escuchada_de</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl, char *c, int campo)</td></tr>
+<tr class="separator:a8423cc0d19d27b0c0ea6946ad2e9a498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0faa18dac0f94722f4d060b0fb726ef4" id="r_a0faa18dac0f94722f4d060b0fb726ef4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ranking_8c.html#a0faa18dac0f94722f4d060b0fb726ef4">mas_escuchada_artista</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl, char *c)</td></tr>
+<tr class="separator:a0faa18dac0f94722f4d060b0fb726ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269093226ce7a12f4549f84afa19be1c" id="r_a269093226ce7a12f4549f84afa19be1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ranking_8c.html#a269093226ce7a12f4549f84afa19be1c">mas_escuchada_genero</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl, char *c)</td></tr>
+<tr class="separator:a269093226ce7a12f4549f84afa19be1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a56f6cc9f4e62518f1219456f61c1772f" name="a56f6cc9f4e62518f1219456f61c1772f"></a>
@@ -150,6 +158,114 @@ Functions</h2></td></tr>
 
 <p>muestra el top de canciones mas escuchadas </p>
 <p>recibe como parametro la playlist, donde se crea un arreglo de pl-&gt;cantidad canciones, en donde solo se guardan los indices de las canciones y por ordenamiento burbuja revisa caso a caso si el total de repeticiones de la cancion en el indice idx es menor que el siguiente, en casi verdadero intercambia. </p>
+
+</div>
+</div>
+<a id="a0faa18dac0f94722f4d060b0fb726ef4" name="a0faa18dac0f94722f4d060b0fb726ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0faa18dac0f94722f4d060b0fb726ef4">&#9670;&#160;</a></span>mas_escuchada_artista()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mas_escuchada_artista </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8423cc0d19d27b0c0ea6946ad2e9a498" name="a8423cc0d19d27b0c0ea6946ad2e9a498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8423cc0d19d27b0c0ea6946ad2e9a498">&#9670;&#160;</a></span>mas_escuchada_de()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mas_escuchada_de </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>campo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a269093226ce7a12f4549f84afa19be1c" name="a269093226ce7a12f4549f84afa19be1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a269093226ce7a12f4549f84afa19be1c">&#9670;&#160;</a></span>mas_escuchada_genero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mas_escuchada_genero </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae7930207e8a3791fc31c20c8e0541982" name="ae7930207e8a3791fc31c20c8e0541982"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7930207e8a3791fc31c20c8e0541982">&#9670;&#160;</a></span>mas_escuchado()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mas_escuchado </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>

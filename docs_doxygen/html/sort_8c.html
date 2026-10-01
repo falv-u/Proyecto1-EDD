@@ -105,22 +105,110 @@ Include dependency graph for sort.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab4e9aaca83ddaf73d65cadacbb2f9442" id="r_ab4e9aaca83ddaf73d65cadacbb2f9442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#ab4e9aaca83ddaf73d65cadacbb2f9442">insertion_sort</a> (<a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
-<tr class="separator:ab4e9aaca83ddaf73d65cadacbb2f9442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5e20109d02b4a57f98631c051c3303f" id="r_ad5e20109d02b4a57f98631c051c3303f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#ad5e20109d02b4a57f98631c051c3303f">insertion_sort_int</a> (<a class="el" href="structplaylist.html">playlist</a> *pl, int criterio)</td></tr>
+<tr class="separator:ad5e20109d02b4a57f98631c051c3303f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94907cb251a7d16ec6e335e5656ed3d1" id="r_a94907cb251a7d16ec6e335e5656ed3d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a94907cb251a7d16ec6e335e5656ed3d1">merge</a> (<a class="el" href="structplaylist.html">playlist</a> *p, int low, int med, int high)</td></tr>
+<tr class="separator:a94907cb251a7d16ec6e335e5656ed3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c15fb87ef4c85e3e2c7e44cbe6f046e" id="r_a2c15fb87ef4c85e3e2c7e44cbe6f046e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a2c15fb87ef4c85e3e2c7e44cbe6f046e">merge_sort</a> (<a class="el" href="structplaylist.html">playlist</a> *p, int low, int high)</td></tr>
+<tr class="separator:a2c15fb87ef4c85e3e2c7e44cbe6f046e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ab4e9aaca83ddaf73d65cadacbb2f9442" name="ab4e9aaca83ddaf73d65cadacbb2f9442"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4e9aaca83ddaf73d65cadacbb2f9442">&#9670;&#160;</a></span>insertion_sort()</h2>
+<a id="ad5e20109d02b4a57f98631c051c3303f" name="ad5e20109d02b4a57f98631c051c3303f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5e20109d02b4a57f98631c051c3303f">&#9670;&#160;</a></span>insertion_sort_int()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void insertion_sort </td>
+          <td class="memname">void insertion_sort_int </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
-          <td class="paramname"><em>pl</em></td><td>)</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>criterio</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94907cb251a7d16ec6e335e5656ed3d1" name="a94907cb251a7d16ec6e335e5656ed3d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94907cb251a7d16ec6e335e5656ed3d1">&#9670;&#160;</a></span>merge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void merge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>med</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>high</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a2c15fb87ef4c85e3e2c7e44cbe6f046e" name="a2c15fb87ef4c85e3e2c7e44cbe6f046e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c15fb87ef4c85e3e2c7e44cbe6f046e">&#9670;&#160;</a></span>merge_sort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void merge_sort </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>p</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>high</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

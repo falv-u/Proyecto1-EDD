@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ranking_2ec_0',['ranking.c',['../ranking_8c.html',1,'']]]
+  ['playlist_2ec_0',['playlist.c',['../playlist_8c.html',1,'']]]
 ];

@@ -1,6 +1,8 @@
 var dir_68267d1309a1af8e8297ef4c3efbcdba =
 [
     [ "audio.c", "audio_8c.html", "audio_8c" ],
+    [ "catalogo.c", "catalogo_8c.html", "catalogo_8c" ],
+    [ "cola.c", "cola_8c.html", "cola_8c" ],
     [ "historial.c", "historial_8c.html", "historial_8c" ],
     [ "id.c", "id_8c.html", "id_8c" ],
     [ "main.c", "main_8c.html", "main_8c" ],

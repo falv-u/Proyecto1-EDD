@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['n_5fme_0',['N_ME',['../ranking_8c.html#a56f6cc9f4e62518f1219456f61c1772f',1,'ranking.c']]]
+  ['dur_5fmax_0',['DUR_MAX',['../catalogo_8c.html#a14e20614e21694cf203f7734447a09d6',1,'catalogo.c']]],
+  ['dur_5fmin_1',['DUR_MIN',['../catalogo_8c.html#af34e3ab099d3d31820b8b168dbb685aa',1,'catalogo.c']]]
 ];

@@ -1,9 +1,14 @@
 var searchData=
 [
-  ['search_2ec_0',['search.c',['../search_8c.html',1,'']]],
-  ['search_5fartista_1',['search_artista',['../search_8c.html#a8f12c9364a955da4329fb85decf42bfd',1,'search.c']]],
-  ['search_5ftitulo_2',['search_titulo',['../search_8c.html#a1cf0341a6248d6631bad0f48e64792da',1,'search.c']]],
-  ['song_2ec_3',['song.c',['../song_8c.html',1,'']]],
-  ['songs_2eh_4',['songs.h',['../songs_8h.html',1,'']]],
-  ['sort_2ec_5',['sort.c',['../sort_8c.html',1,'']]]
+  ['rango_5fcid_0',['RANGO_CID',['../songs_8h.html#ae813e37622f5736ac966046eb36b477d',1,'songs.h']]],
+  ['ranking_2ec_1',['ranking.c',['../ranking_8c.html',1,'']]],
+  ['rep_5fmax_2',['REP_MAX',['../catalogo_8c.html#a56b27c42d9639c8251962e5d1fcddb98',1,'catalogo.c']]],
+  ['reproducir_5fde_5fcola_3',['reproducir_de_cola',['../cola_8c.html#a660f78d86a59360a87b045ceb51bc671',1,'cola.c']]],
+  ['reproducir_5fmusica_4',['reproducir_musica',['../songs_8h.html#a15c5b4049ef4556d70fa842233ae331d',1,'songs.h']]],
+  ['reproduir_5fmusica_5',['reproduir_musica',['../audio_8c.html#ae5d57c6676f2bf56f5f333dd925fdea7',1,'audio.c']]],
+  ['reps_6',['reps',['../structtema.html#aedf1da2c89e51c63b4b72c67a710a389',1,'tema']]],
+  ['ruta_7',['ruta',['../structplaylist.html#a8538cd16cfc556fb9d05ad5adee05461',1,'playlist']]],
+  ['ruta_5ffonoteca_8',['ruta_fonoteca',['../structfonoteca.html#ac938f441a73661684efc93bc9302b2da',1,'fonoteca']]],
+  ['ruta_5fhistorial_9',['ruta_historial',['../songs_8h.html#a90ebf6aa98c25e1f0e024a69e8261d21',1,'songs.h']]],
+  ['ruta_5fpl_10',['ruta_pl',['../songs_8h.html#a2ebe409a4222acf140706ca44236f866',1,'songs.h']]]
 ];
