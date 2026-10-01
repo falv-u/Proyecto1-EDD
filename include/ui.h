@@ -35,4 +35,11 @@ int ui_principal(void);
 /* Pausa la ejecucion del programa hasta que el usuario presione Enter. */
 void ui_pausa(void);
 
+/* ----------FUNCIONES UI BUSQUEDA ---------*/
+/* Funcion UI para pedir el artista a buscar */
+void ui_pedir_artista(void);
+void ui_resultados_busqueda_header(int encontrados, char *artista);
+void ui_cancion_busqueda(int num, cancion *c);
+void ui_sin_resultados(char *artista);
+
 #endif
