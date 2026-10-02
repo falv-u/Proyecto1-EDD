@@ -63,7 +63,7 @@ int agregar_a_historial(playlist *h, const cancion *c)
 	}
 	else if (h->cantidad == MAX_HISTORIAL)
 	{
-		printf("Eliminada cancion mas antigua\n", pos+1);
+		printf("Eliminada cancion mas antigua\n");
 		quitar_de_historial(h, 0);
 	}
 
