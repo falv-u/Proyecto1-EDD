@@ -63,14 +63,6 @@ void limpiar_pantalla(void)
     // Limpieza de pantalla.
     printf("\033[H\033[J");
     system("clear");
-
-    // Banner hecho en ASCII art (opcional)
-    printf(COLOR_CYAN);
-    printf(" .▄▄ · ▄• ▄▌• ▌ ▄ ·. • ▌ ▄ ·.  ▄· ▄▌\n");
-    printf(" ▐█ ▀. █▪██▌·██ ▐███▪·██ ▐███▪▐█▪██▌\n");
-    printf(" ▄▀▀▀█▄█▌▐█▌▐█ ▌▐▌▐█·▐█ ▌▐▌▐█·▐█▌▐█▪\n");
-    printf(" ▐█▄▪▐█▐█▄█▌██ ██▌▐█▌██ ██▌▐█▌ ▐█▀·.\n");
-    printf("  ▀▀▀▀  ▀▀▀ ▀▀  █▪▀▀▀▀▀  █▪▀▀▀  ▀ • \n" COLOR_RESET);
 }
 
 void imprime_cancion(cancion *c)
@@ -110,6 +102,14 @@ void imprime_menu(void)
 
     // Salir
     printf(COLOR_RED  "[q]" COLOR_RESET " Salir\n");
+
+    // Banner hecho en ASCII art (opcional)
+    printf(COLOR_CYAN);
+    printf(" .▄▄ · ▄• ▄▌• ▌ ▄ ·. • ▌ ▄ ·.  ▄· ▄▌\n");
+    printf(" ▐█ ▀. █▪██▌·██ ▐███▪·██ ▐███▪▐█▪██▌\n");
+    printf(" ▄▀▀▀█▄█▌▐█▌▐█ ▌▐▌▐█·▐█ ▌▐▌▐█·▐█▌▐█▪\n");
+    printf(" ▐█▄▪▐█▐█▄█▌██ ██▌▐█▌██ ██▌▐█▌ ▐█▀·.\n");
+    printf("  ▀▀▀▀  ▀▀▀ ▀▀  █▪▀▀▀▀▀  █▪▀▀▀  ▀ • \n" COLOR_RESET);
 }
 
 char ui_input(void)

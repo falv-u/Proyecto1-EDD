@@ -27,9 +27,9 @@ int main(void)
 	while (corriendo)
 	{
 		limpiar_pantalla();
-		imprime_cancion(actual);
 		imprimir_playlist(&pl);
 		imprime_menu();
+		imprime_cancion(actual);
 
 		char opc = ui_input();
 		switch (opc)
