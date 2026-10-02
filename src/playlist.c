@@ -146,8 +146,19 @@ playlist crear_playlist(void)
 		exit(1);
 	strcpy(pl.nombre, buff);
 
-	if (existe_plcsv()) {
-		playlist_cargar_csv(&pl, ruta_pl);
+	/* Si el archivo del catalogo no existe, generar uno aleatoriamente */
+	if (!existe(ruta_catalogo)) {
+		printf("Catalogo no encontrado, generando %d canciones aleatoriamente...\n", N_CATALOGO_DEFAULT);
+		if (generar_catalogo_si_no_existe(ruta_catalogo, N_CATALOGO_DEFAULT) != 0) {
+			fprintf(stderr, "Error al generar el catalogo. Saliendo...\n");
+			exit(1);
+		}
+	}
+
+	/* Cargar el catalogo desde el archivo CSV */
+	if (playlist_cargar_csv(&pl, ruta_catalogo) != 0) {
+		fprintf(stderr, "Error al cargar el catalogo. Saliendo...\n");
+		exit(1);
 	}
 
 	return pl;

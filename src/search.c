@@ -242,7 +242,7 @@ void listar_artistas(const playlist *pl)
     for (int i = 0; i < pl->cantidad; i++)
     {
         // Si no hay artista lo saltamos
-        if (pl->canciones[i].artista != NULL) continue;
+        if (pl->canciones[i].artista == NULL) continue;
 
         // Comprobar si el artista ya fue impreso revisando las posiciones anteriores
         // desde 0 hasta i-1

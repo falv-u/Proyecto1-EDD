@@ -194,7 +194,7 @@ void ui_menu_fila(playlist *cola, playlist *catalogo)
     if (cola->cantidad == 0) 
         printf(COLOR_YELLOW "\n  [La fila esta vacia. Usa [F] para agregar canciones.]" COLOR_RESET);
 
-    printf("\n\tOpciones:\n(1) Agregar inicio por ID (2) Quitar 1ra (3) Vaciar (0) Volver\n");
+    printf("\n\tOpciones:\n(1) Agregar inicio por ID (2) Quitar 1ra (3) Vaciar (4) Quitar por posición (5) Quitar por ID (0) Volver\n");
     char opc = ui_input();
 
     if (opc == '1')
@@ -226,6 +226,43 @@ void ui_menu_fila(playlist *cola, playlist *catalogo)
     {
         vaciar_cola(cola);
         printf(COLOR_GREEN "  Fila vaciada.\n" COLOR_RESET);
+        ui_pausa();
+    }
+    else if (opc == '4')
+    {
+        int pos;
+        printf("  Ingrese posición a quitar (1-%d): ", cola->cantidad);
+        if (scanf("%d", &pos) == 1)
+        {
+            while (getchar() != '\n');
+            if (pos >= 1 && pos <= cola->cantidad)
+            {
+                quitar_de_cola_pos(cola, pos-1);
+                printf(COLOR_GREEN "  Posición %d retirada de la fila.\n" COLOR_RESET);
+            }
+            else
+            {
+                printf(COLOR_RED "  Posición fuera de rango.\n" COLOR_RESET);
+            }
+        }
+        ui_pausa();
+    }
+    else if (opc == '5')
+    {
+        unsigned int id;
+        printf("  Ingrese ID de la canción a quitar: ");
+        if (scanf("%u", &id) == 1)
+        {
+            while (getchar() != '\n');
+            if (quitar_de_cola_id(cola, id) == 0)
+            {
+                printf(COLOR_GREEN "  Canción con ID %u retirada de la fila.\n" COLOR_RESET);
+            }
+            else
+            {
+                printf(COLOR_RED "  Error: ID no encontrado o no se pudo retirar.\n" COLOR_RESET);
+            }
+        }
         ui_pausa();
     }
 }
@@ -316,12 +353,32 @@ void ui_menu_ordenar(playlist *catalogo)
     
     char opc = ui_input();
 
-    /* Convierte el caracter a entero para poder usarlo como indice */
-    if (opc >= '0' && opc <= '3')
+    /* Elija el algoritmo de ordenamiento */
+    char opc_alg = ui_input();
+    if (opc_alg == '1')
     {
-        int criterio = opc - '0';
-        insertion_sort_int(catalogo, criterio);
+        printf("  [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n");
+        char opc_crit = ui_input();
+        if (opc_crit >= '0' && opc_crit <= '3')
+        {
+            int criterio = opc_crit - '0';
+            insertion_sort_int(catalogo, criterio);
+            printf(COLOR_GREEN "  Catalogo ordenado!\n" COLOR_RESET);
+        }
+        else
+        {
+            printf(COLOR_RED "  Opcion invalida.\n" COLOR_RESET);
+        }
+    }
+    else if (opc_alg == '2')
+    {
+        printf(COLOR_CYAN "  Ordenando por ID con Merge Sort (recursivo)...\n" COLOR_RESET);
+        merge_sort(catalogo, 0, catalogo->cantidad - 1);
         printf(COLOR_GREEN "  Catalogo ordenado!\n" COLOR_RESET);
+    }
+    else if (opc_alg == '0')
+    {
+        // Volver al menu anterior
     }
     else
     {

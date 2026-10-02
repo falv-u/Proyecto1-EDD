@@ -14,6 +14,7 @@
 #define ANIO_MAX 2026
 #define REP_MAX 100000
 #define N_MAXIMO 5000000
+#define N_CATALOGO_DEFAULT 100
 
 #define N_ARTISTAS 15
 #define N_GENEROS 9
