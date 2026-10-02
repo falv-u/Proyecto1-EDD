@@ -111,8 +111,6 @@ Functions</h2></td></tr>
 <tr class="separator:ab4c51349dc110318c89d08d7ad688b97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb491789b27c7652553bb9950a674cdc" id="r_afb491789b27c7652553bb9950a674cdc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#afb491789b27c7652553bb9950a674cdc">quitar_de_cola_pos</a> (<a class="el" href="structplaylist.html">playlist</a> *cola, int pos)</td></tr>
 <tr class="separator:afb491789b27c7652553bb9950a674cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3f949ec9ee828170509f7786f32beac" id="r_ae3f949ec9ee828170509f7786f32beac"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#ae3f949ec9ee828170509f7786f32beac">vaciar_cola</a> (<a class="el" href="structplaylist.html">playlist</a> *cola)</td></tr>
-<tr class="separator:ae3f949ec9ee828170509f7786f32beac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a660f78d86a59360a87b045ceb51bc671" id="r_a660f78d86a59360a87b045ceb51bc671"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a660f78d86a59360a87b045ceb51bc671">reproducir_de_cola</a> (<a class="el" href="structplaylist.html">playlist</a> *cola, <a class="el" href="structplaylist.html">playlist</a> *catalogo, <a class="el" href="structplaylist.html">playlist</a> *historial)</td></tr>
 <tr class="separator:a660f78d86a59360a87b045ceb51bc671"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e37fd29f424e70d91c63a9ea0688b63" id="r_a2e37fd29f424e70d91c63a9ea0688b63"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a2e37fd29f424e70d91c63a9ea0688b63">buscar_cid_playlist</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl, uint32_t cid)</td></tr>
@@ -121,38 +119,64 @@ Functions</h2></td></tr>
 <tr class="separator:ad5e20109d02b4a57f98631c051c3303f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a56c4d2f01c63cc56612e6ba366eb55" id="r_a6a56c4d2f01c63cc56612e6ba366eb55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a6a56c4d2f01c63cc56612e6ba366eb55">ejecuta_busqueda_artista</a> (<a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
 <tr class="separator:a6a56c4d2f01c63cc56612e6ba366eb55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0faa18dac0f94722f4d060b0fb726ef4" id="r_a0faa18dac0f94722f4d060b0fb726ef4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a0faa18dac0f94722f4d060b0fb726ef4">mas_escuchada_artista</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl, char *c)</td></tr>
+<tr class="separator:a0faa18dac0f94722f4d060b0fb726ef4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269093226ce7a12f4549f84afa19be1c" id="r_a269093226ce7a12f4549f84afa19be1c"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a269093226ce7a12f4549f84afa19be1c">mas_escuchada_genero</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl, char *c)</td></tr>
+<tr class="separator:a269093226ce7a12f4549f84afa19be1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa86ff5d7413780ab11d4bd932e510ad9" id="r_aa86ff5d7413780ab11d4bd932e510ad9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcancion.html">cancion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aa86ff5d7413780ab11d4bd932e510ad9">ui_toggle_play_pause</a> (<a class="el" href="structcancion.html">cancion</a> *actual, int *en_pausa, <a class="el" href="structplaylist.html">playlist</a> *cola, <a class="el" href="structplaylist.html">playlist</a> *pl, <a class="el" href="structplaylist.html">playlist</a> *historial)</td></tr>
+<tr class="memdesc:aa86ff5d7413780ab11d4bd932e510ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Play/Pause.  <br /></td></tr>
 <tr class="separator:aa86ff5d7413780ab11d4bd932e510ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abdd815017944fb9abbf54efdabf168ad" id="r_abdd815017944fb9abbf54efdabf168ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#abdd815017944fb9abbf54efdabf168ad">limpiar_pantalla</a> (void)</td></tr>
+<tr class="memdesc:abdd815017944fb9abbf54efdabf168ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Limpia la terminal.  <br /></td></tr>
 <tr class="separator:abdd815017944fb9abbf54efdabf168ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee520e79fcd88699b479a78edf6c420a" id="r_aee520e79fcd88699b479a78edf6c420a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aee520e79fcd88699b479a78edf6c420a">imprime_cancion</a> (<a class="el" href="structcancion.html">cancion</a> *c)</td></tr>
+<tr class="memdesc:aee520e79fcd88699b479a78edf6c420a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime la cancion actual en la terminal.  <br /></td></tr>
 <tr class="separator:aee520e79fcd88699b479a78edf6c420a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f74964b18b7aedb0f19b41d8d71ceee" id="r_a4f74964b18b7aedb0f19b41d8d71ceee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a4f74964b18b7aedb0f19b41d8d71ceee">imprime_menu</a> (void)</td></tr>
+<tr class="memdesc:a4f74964b18b7aedb0f19b41d8d71ceee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime el menu de opciones en la terminal.  <br /></td></tr>
 <tr class="separator:a4f74964b18b7aedb0f19b41d8d71ceee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1618795fedc4f18d689f90aa00d807bf" id="r_a1618795fedc4f18d689f90aa00d807bf"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a1618795fedc4f18d689f90aa00d807bf">ui_input</a> (void)</td></tr>
+<tr class="memdesc:a1618795fedc4f18d689f90aa00d807bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee una entrada del usuario en la terminal.  <br /></td></tr>
 <tr class="separator:a1618795fedc4f18d689f90aa00d807bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0a285eb0c5fe24788d87bbdbd9171c3a" id="r_a0a285eb0c5fe24788d87bbdbd9171c3a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a0a285eb0c5fe24788d87bbdbd9171c3a">ui_principal</a> (void)</td></tr>
+<tr class="memdesc:a0a285eb0c5fe24788d87bbdbd9171c3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion principal de la interfaz de usuario.  <br /></td></tr>
 <tr class="separator:a0a285eb0c5fe24788d87bbdbd9171c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f9d9b671fbbd0c8235d590da8f88e97" id="r_a9f9d9b671fbbd0c8235d590da8f88e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a9f9d9b671fbbd0c8235d590da8f88e97">ui_pausa</a> (void)</td></tr>
+<tr class="memdesc:a9f9d9b671fbbd0c8235d590da8f88e97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pausa la ejecucion del programa [no es Play/pause] hasta que el usuario presione Enter.  <br /></td></tr>
 <tr class="separator:a9f9d9b671fbbd0c8235d590da8f88e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf439cccc099059ea6ad9a69790823d" id="r_aebf439cccc099059ea6ad9a69790823d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#aebf439cccc099059ea6ad9a69790823d">ui_pedir_artista</a> (void)</td></tr>
+<tr class="memdesc:aebf439cccc099059ea6ad9a69790823d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pide el artista a buscar.  <br /></td></tr>
 <tr class="separator:aebf439cccc099059ea6ad9a69790823d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26e40b40009d08a82a5e8dc3b29b2d72" id="r_a26e40b40009d08a82a5e8dc3b29b2d72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a26e40b40009d08a82a5e8dc3b29b2d72">ui_resultados_busqueda</a> (int cantidad, char *artista)</td></tr>
+<tr class="memdesc:a26e40b40009d08a82a5e8dc3b29b2d72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra los resultados de busqueda por artista.  <br /></td></tr>
 <tr class="separator:a26e40b40009d08a82a5e8dc3b29b2d72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f9c6198d40ddc21e47b4715e2d92b82" id="r_a3f9c6198d40ddc21e47b4715e2d92b82"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a3f9c6198d40ddc21e47b4715e2d92b82">ui_cancion_busqueda</a> (int indice, <a class="el" href="structcancion.html">cancion</a> *c)</td></tr>
+<tr class="memdesc:a3f9c6198d40ddc21e47b4715e2d92b82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra una cancion encontrada en la busqueda.  <br /></td></tr>
 <tr class="separator:a3f9c6198d40ddc21e47b4715e2d92b82"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56f7f3c45e3733b8de4431a75af57af7" id="r_a56f7f3c45e3733b8de4431a75af57af7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a56f7f3c45e3733b8de4431a75af57af7">ui_sin_resultados</a> (char *solicitud)</td></tr>
+<tr class="memdesc:a56f7f3c45e3733b8de4431a75af57af7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra mensaje de no resultados.  <br /></td></tr>
 <tr class="separator:a56f7f3c45e3733b8de4431a75af57af7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f2b7d0470387f9f741b1d95e33c37f8" id="r_a6f2b7d0470387f9f741b1d95e33c37f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a6f2b7d0470387f9f741b1d95e33c37f8">ui_menu_fila</a> (<a class="el" href="structplaylist.html">playlist</a> *cola, <a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="memdesc:a6f2b7d0470387f9f741b1d95e33c37f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fila de reproduccion.  <br /></td></tr>
 <tr class="separator:a6f2b7d0470387f9f741b1d95e33c37f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a419c25136443c205541f5a8f61e1bd03" id="r_a419c25136443c205541f5a8f61e1bd03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a419c25136443c205541f5a8f61e1bd03">ui_mostrar_historial</a> (const <a class="el" href="structplaylist.html">playlist</a> *historial)</td></tr>
-<tr class="separator:a419c25136443c205541f5a8f61e1bd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e558f5e1c36f0177fcf0bd13323bec0" id="r_a6e558f5e1c36f0177fcf0bd13323bec0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a6e558f5e1c36f0177fcf0bd13323bec0">ui_menu_historial</a> (const <a class="el" href="structplaylist.html">playlist</a> *historial)</td></tr>
+<tr class="memdesc:a6e558f5e1c36f0177fcf0bd13323bec0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Historial.  <br /></td></tr>
+<tr class="separator:a6e558f5e1c36f0177fcf0bd13323bec0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d1494b99efb2c389b0d7c81431a78bc" id="r_a8d1494b99efb2c389b0d7c81431a78bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a8d1494b99efb2c389b0d7c81431a78bc">ui_menu_busqueda</a> (<a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="memdesc:a8d1494b99efb2c389b0d7c81431a78bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra el menu de busqueda.  <br /></td></tr>
 <tr class="separator:a8d1494b99efb2c389b0d7c81431a78bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75408838e6e78132cb7d59d87af0cc17" id="r_a75408838e6e78132cb7d59d87af0cc17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a75408838e6e78132cb7d59d87af0cc17">ui_menu_ordenar</a> (<a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="memdesc:a75408838e6e78132cb7d59d87af0cc17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra el menu de ordenar.  <br /></td></tr>
 <tr class="separator:a75408838e6e78132cb7d59d87af0cc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad18692a794521545575d2c234127127c" id="r_ad18692a794521545575d2c234127127c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#ad18692a794521545575d2c234127127c">ui_menu_exportar</a> (const <a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="memdesc:ad18692a794521545575d2c234127127c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra el menu de exportar.  <br /></td></tr>
 <tr class="separator:ad18692a794521545575d2c234127127c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a096987eb96db6d6414e0d153bdf9f8e3" id="r_a096987eb96db6d6414e0d153bdf9f8e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a096987eb96db6d6414e0d153bdf9f8e3">ui_menu_ranking</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
+<tr class="memdesc:a096987eb96db6d6414e0d153bdf9f8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra el menu de ranking.  <br /></td></tr>
+<tr class="separator:a096987eb96db6d6414e0d153bdf9f8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e0e63d124d265ea021327bfc03c7e9d" id="r_a8e0e63d124d265ea021327bfc03c7e9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8c.html#a8e0e63d124d265ea021327bfc03c7e9d">ui_menu_extras</a> (void)</td></tr>
+<tr class="memdesc:a8e0e63d124d265ea021327bfc03c7e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra el menu de extras.  <br /></td></tr>
+<tr class="separator:a8e0e63d124d265ea021327bfc03c7e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ab4c51349dc110318c89d08d7ad688b97" name="ab4c51349dc110318c89d08d7ad688b97"></a>
@@ -245,6 +269,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Imprime la cancion actual en la terminal. </p>
+
 </div>
 </div>
 <a id="a4f74964b18b7aedb0f19b41d8d71ceee" name="a4f74964b18b7aedb0f19b41d8d71ceee"></a>
@@ -262,6 +288,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Imprime el menu de opciones en la terminal. </p>
 
 </div>
 </div>
@@ -305,6 +333,64 @@ Functions</h2></td></tr>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Limpia la terminal. </p>
+
+</div>
+</div>
+<a id="a0faa18dac0f94722f4d060b0fb726ef4" name="a0faa18dac0f94722f4d060b0fb726ef4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0faa18dac0f94722f4d060b0fb726ef4">&#9670;&#160;</a></span>mas_escuchada_artista()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mas_escuchada_artista </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a269093226ce7a12f4549f84afa19be1c" name="a269093226ce7a12f4549f84afa19be1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a269093226ce7a12f4549f84afa19be1c">&#9670;&#160;</a></span>mas_escuchada_genero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int mas_escuchada_genero </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>c</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -399,6 +485,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Muestra una cancion encontrada en la busqueda. </p>
+
 </div>
 </div>
 <a id="a1618795fedc4f18d689f90aa00d807bf" name="a1618795fedc4f18d689f90aa00d807bf"></a>
@@ -416,6 +504,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Lee una entrada del usuario en la terminal. </p>
 
 </div>
 </div>
@@ -435,6 +525,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Muestra el menu de busqueda. </p>
+
 </div>
 </div>
 <a id="ad18692a794521545575d2c234127127c" name="ad18692a794521545575d2c234127127c"></a>
@@ -452,6 +544,28 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Muestra el menu de exportar. </p>
+
+</div>
+</div>
+<a id="a8e0e63d124d265ea021327bfc03c7e9d" name="a8e0e63d124d265ea021327bfc03c7e9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e0e63d124d265ea021327bfc03c7e9d">&#9670;&#160;</a></span>ui_menu_extras()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ui_menu_extras </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Muestra el menu de extras. </p>
 
 </div>
 </div>
@@ -481,6 +595,28 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Fila de reproduccion. </p>
+
+</div>
+</div>
+<a id="a6e558f5e1c36f0177fcf0bd13323bec0" name="a6e558f5e1c36f0177fcf0bd13323bec0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e558f5e1c36f0177fcf0bd13323bec0">&#9670;&#160;</a></span>ui_menu_historial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ui_menu_historial </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>historial</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Historial. </p>
+
 </div>
 </div>
 <a id="a75408838e6e78132cb7d59d87af0cc17" name="a75408838e6e78132cb7d59d87af0cc17"></a>
@@ -499,23 +635,27 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Muestra el menu de ordenar. </p>
+
 </div>
 </div>
-<a id="a419c25136443c205541f5a8f61e1bd03" name="a419c25136443c205541f5a8f61e1bd03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a419c25136443c205541f5a8f61e1bd03">&#9670;&#160;</a></span>ui_mostrar_historial()</h2>
+<a id="a096987eb96db6d6414e0d153bdf9f8e3" name="a096987eb96db6d6414e0d153bdf9f8e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a096987eb96db6d6414e0d153bdf9f8e3">&#9670;&#160;</a></span>ui_menu_ranking()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void ui_mostrar_historial </td>
+          <td class="memname">void ui_menu_ranking </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
-          <td class="paramname"><em>historial</em></td><td>)</td>
+          <td class="paramname"><em>pl</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Muestra el menu de ranking. </p>
 
 </div>
 </div>
@@ -535,6 +675,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pausa la ejecucion del programa [no es Play/pause] hasta que el usuario presione Enter. </p>
+
 </div>
 </div>
 <a id="aebf439cccc099059ea6ad9a69790823d" name="aebf439cccc099059ea6ad9a69790823d"></a>
@@ -553,6 +695,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pide el artista a buscar. </p>
+
 </div>
 </div>
 <a id="a0a285eb0c5fe24788d87bbdbd9171c3a" name="a0a285eb0c5fe24788d87bbdbd9171c3a"></a>
@@ -570,6 +714,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Funcion principal de la interfaz de usuario. </p>
 
 </div>
 </div>
@@ -599,6 +745,8 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Muestra los resultados de busqueda por artista. </p>
+
 </div>
 </div>
 <a id="a56f7f3c45e3733b8de4431a75af57af7" name="a56f7f3c45e3733b8de4431a75af57af7"></a>
@@ -616,6 +764,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Muestra mensaje de no resultados. </p>
 
 </div>
 </div>
@@ -663,23 +813,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ae3f949ec9ee828170509f7786f32beac" name="ae3f949ec9ee828170509f7786f32beac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3f949ec9ee828170509f7786f32beac">&#9670;&#160;</a></span>vaciar_cola()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int vaciar_cola </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
-          <td class="paramname"><em>cola</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Play/Pause. </p>
 
 </div>
 </div>

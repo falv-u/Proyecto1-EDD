@@ -1,15 +1,5 @@
 var catalogo_8c =
 [
-    [ "tema", "structtema.html", "structtema" ],
-    [ "ANIO_MAX", "catalogo_8c.html#a38d121997e7adb21ca525817cebfdf81", null ],
-    [ "ANIO_MIN", "catalogo_8c.html#a4b5342f6a85070363d54f480bcd56ea9", null ],
-    [ "DUR_MAX", "catalogo_8c.html#a14e20614e21694cf203f7734447a09d6", null ],
-    [ "DUR_MIN", "catalogo_8c.html#af34e3ab099d3d31820b8b168dbb685aa", null ],
-    [ "N_ARTISTAS", "catalogo_8c.html#a9465d065c2df5979bb2c9d99db07b369", null ],
-    [ "N_GENEROS", "catalogo_8c.html#a829cec4c23f0aa1f1d868b48fce82962", null ],
-    [ "N_MAXIMO", "catalogo_8c.html#ab7044341e2e9b6f2eab449b22104baf9", null ],
-    [ "N_PALABRAS", "catalogo_8c.html#acfa81a44bf8886b06b6ea87d012c7eb2", null ],
-    [ "REP_MAX", "catalogo_8c.html#a56b27c42d9639c8251962e5d1fcddb98", null ],
     [ "canciones_por_genero", "catalogo_8c.html#ab5b5dcf2f21ef87b202577506562b685", null ],
     [ "contar_por_archivo", "catalogo_8c.html#a952ed1bf8f44fba8b756ebcad6da0894", null ],
     [ "es_valido", "catalogo_8c.html#a9281b0d66d6074c1c84200edcd27d698", null ],

@@ -136,8 +136,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aadbd680534309bf25d349a99e8580690" id="r_aadbd680534309bf25d349a99e8580690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#aadbd680534309bf25d349a99e8580690">listar_artistas</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
 <tr class="memdesc:aadbd680534309bf25d349a99e8580690"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime en la consola el listado de artistas disponibles sin repetir nombres.  <br /></td></tr>
 <tr class="separator:aadbd680534309bf25d349a99e8580690"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3004e48afae0cd460c72235f84d24b3f" id="r_a3004e48afae0cd460c72235f84d24b3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#a3004e48afae0cd460c72235f84d24b3f">interactuar_generos</a> (<a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
-<tr class="separator:a3004e48afae0cd460c72235f84d24b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9811127946ae4950e36e6eb80e15907" id="r_ad9811127946ae4950e36e6eb80e15907"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="search_8c.html#ad9811127946ae4950e36e6eb80e15907">interactuar_genero</a> (<a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
+<tr class="memdesc:ad9811127946ae4950e36e6eb80e15907"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solicita un genero al usuario por teclado, cuenta las ocurrencias y lista las canciones.  <br /></td></tr>
+<tr class="separator:ad9811127946ae4950e36e6eb80e15907"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aae40cd11e41382bb67d5d6125427d19e" name="aae40cd11e41382bb67d5d6125427d19e"></a>
@@ -312,14 +313,14 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a3004e48afae0cd460c72235f84d24b3f" name="a3004e48afae0cd460c72235f84d24b3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3004e48afae0cd460c72235f84d24b3f">&#9670;&#160;</a></span>interactuar_generos()</h2>
+<a id="ad9811127946ae4950e36e6eb80e15907" name="ad9811127946ae4950e36e6eb80e15907"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9811127946ae4950e36e6eb80e15907">&#9670;&#160;</a></span>interactuar_genero()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void interactuar_generos </td>
+          <td class="memname">void interactuar_genero </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
           <td class="paramname"><em>pl</em></td><td>)</td>
@@ -327,6 +328,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Solicita un genero al usuario por teclado, cuenta las ocurrencias y lista las canciones. </p>
+<p>Pide la cadena del genero por consola, reserva dinamicamente un arreglo auxiliar para almacenar los indices coincidentes, invoca a <a class="el" href="songs_8h.html#afa4ded3d7b9ecd818e1d559a4f3885fa" title="Localiza canciones pertenecientes a un genero y recopila sus indices.">search_genero()</a> para obtener el conteo y recorre los resultados imprimiendo artista y titulo de cada cancion.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pl</td><td>Puntero a la estructura donde se consultaran los generos. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

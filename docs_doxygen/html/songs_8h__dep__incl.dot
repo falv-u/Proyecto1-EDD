@@ -20,15 +20,17 @@ digraph "include/songs.h"
   Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="src/cola.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cola_8c.html",tooltip=" "];
   Node1 -> Node9 [id="edge8_Node000001_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="src/historial.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$historial_8c.html",tooltip=" "];
-  Node1 -> Node3 [id="edge9_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node10 [id="edge10_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="src/playlist.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$playlist_8c.html",tooltip=" "];
+  Node9 [id="Node000009",label="src/extras.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$extras_8c.html",tooltip=" "];
+  Node1 -> Node10 [id="edge9_Node000001_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="src/historial.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$historial_8c.html",tooltip=" "];
+  Node1 -> Node3 [id="edge10_Node000001_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node11 [id="edge11_Node000001_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="src/ranking.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ranking_8c.html",tooltip=" "];
-  Node1 -> Node4 [id="edge12_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node1 -> Node12 [id="edge13_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node12 [id="Node000012",label="src/song.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$song_8c.html",tooltip=" "];
+  Node11 [id="Node000011",label="src/playlist.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$playlist_8c.html",tooltip=" "];
+  Node1 -> Node12 [id="edge12_Node000001_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="src/ranking.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$ranking_8c.html",tooltip=" "];
+  Node1 -> Node4 [id="edge13_Node000001_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node1 -> Node13 [id="edge14_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node13 [id="Node000013",label="src/sort.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sort_8c.html",tooltip=" "];
+  Node13 [id="Node000013",label="src/song.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$song_8c.html",tooltip=" "];
+  Node1 -> Node14 [id="edge15_Node000001_Node000014",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node14 [id="Node000014",label="src/sort.c",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$sort_8c.html",tooltip=" "];
 }
