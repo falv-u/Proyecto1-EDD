@@ -153,16 +153,6 @@ cancion crear_cancion(const char titulo[], const char artista[], const char albu
  */
 void eliminar_cancion(cancion *c);
 
-/** @brief Inicializa un arreglo estatico de canciones leyendo un CSV por bloques.
- *
- * Abre el archivo list.csv en modo lectura y lee secuencialmente lineas aplicando
- * formato con fscanf para extraer titulo, artista, album y genero, asignando
- * estructuras de canciones en el arreglo hasta completar MAXCANCIONES elementos.
- *
- * @param canciones Arreglo de estructuras cancion donde se almacenaran los datos.
- */
-void inicializar_canciones(cancion canciones[]);
-
 /* ----------------------- FUNCIONES CATALOGO ----------------------- */
 
 /** @brief Asigna valores aleatorios a los campos de una estructura tema.

@@ -32,24 +32,3 @@ void eliminar_cancion(cancion *c)
 	free(c->album);
 	free(c->genero);
 }
-
-void inicializar_canciones(cancion canciones[])
-{
-	char titulo[100], artista[100], album[100], genero[100];
-	FILE* archivo;
-
-	archivo = fopen("./assets/list.csv", "r");
-	if (archivo == NULL)
-	{
-		printf("Error al abrir list.csv\n");
-		exit(1);
-	}
-
-	for (int i = 0; i < MAXCANCIONES; i++)
-	{
-		fscanf(archivo, "%[^|],%[^|],%[^|],%[^\n]\n", titulo, artista, album, genero);
-		canciones[i] = crear_cancion(titulo, artista, album, genero);
-	}
-
-	fclose(archivo);
-}
