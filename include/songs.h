@@ -707,4 +707,7 @@ int mas_escuchada_artista(const playlist *pl, char *c);
  */
 int mas_escuchada_genero(const playlist *pl, char *c);
 
+/** @brief Muestra los creditos del proyecto. */
+void mostrar_creditos(void);
+
 #endif /* CANCIONES */
