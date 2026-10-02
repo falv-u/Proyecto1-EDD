@@ -128,6 +128,7 @@ Functions</h2></td></tr>
 <tr class="memitem:a952ed1bf8f44fba8b756ebcad6da0894" id="r_a952ed1bf8f44fba8b756ebcad6da0894"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#a952ed1bf8f44fba8b756ebcad6da0894">contar_por_archivo</a> (const char *ruta)</td></tr>
 <tr class="separator:a952ed1bf8f44fba8b756ebcad6da0894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5b5dcf2f21ef87b202577506562b685" id="r_ab5b5dcf2f21ef87b202577506562b685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#ab5b5dcf2f21ef87b202577506562b685">canciones_por_genero</a> (const <a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="memdesc:ab5b5dcf2f21ef87b202577506562b685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Despliega el ranking de las N canciones con mayor reproduccion del sistema.  <br /></td></tr>
 <tr class="separator:ab5b5dcf2f21ef87b202577506562b685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -150,11 +151,19 @@ Variables</h2></td></tr>
           <td class="memname">void canciones_por_genero </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
-          <td class="paramname"><em>catalogo</em></td><td>)</td>
+          <td class="paramname"><em>pl</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Despliega el ranking de las N canciones con mayor reproduccion del sistema. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pl</td><td>Puntero de solo lectura a la estructura con las canciones a rankear. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

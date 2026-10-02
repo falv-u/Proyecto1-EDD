@@ -3,7 +3,7 @@ var searchData=
   ['cancion_0',['cancion',['../structcancion.html',1,'cancion'],['../songs_8h.html#ad88081ac1edb5d9f0f2bc7655584ffe0',1,'cancion:&#160;songs.h']]],
   ['canciones_1',['canciones',['../structplaylist.html#ad30044441484b5ba8db08b00d186d20d',1,'playlist']]],
   ['canciones_5fmas_5fescuchada_2',['canciones_mas_escuchada',['../songs_8h.html#a72c09dc374477a67f701e9929b209417',1,'canciones_mas_escuchada(const playlist *pl):&#160;ranking.c'],['../ranking_8c.html#a72c09dc374477a67f701e9929b209417',1,'canciones_mas_escuchada(const playlist *pl):&#160;ranking.c']]],
-  ['canciones_5fpor_5fgenero_3',['canciones_por_genero',['../catalogo_8c.html#ab5b5dcf2f21ef87b202577506562b685',1,'catalogo.c']]],
+  ['canciones_5fpor_5fgenero_3',['canciones_por_genero',['../catalogo_8c.html#ab5b5dcf2f21ef87b202577506562b685',1,'canciones_por_genero(const playlist *catalogo):&#160;catalogo.c'],['../songs_8h.html#aee20686704b8cce347f0379dec2a8a92',1,'canciones_por_genero(const playlist *pl):&#160;catalogo.c']]],
   ['cantidad_4',['cantidad',['../structfonoteca.html#af6df45af62b5dcceb85d991b9062cd4f',1,'fonoteca::cantidad'],['../structplaylist.html#ae43ca328f7775489add2c3dbd059320f',1,'playlist::cantidad']]],
   ['catalogo_2ec_5',['catalogo.c',['../catalogo_8c.html',1,'']]],
   ['cid_6',['cid',['../structcancion.html#a3c88b619a23a1f27b56dacf3027f2bf4',1,'cancion']]],

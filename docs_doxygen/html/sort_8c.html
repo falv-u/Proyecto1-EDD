@@ -109,12 +109,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ad5e20109d02b4a57f98631c051c3303f" id="r_ad5e20109d02b4a57f98631c051c3303f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#ad5e20109d02b4a57f98631c051c3303f">insertion_sort_int</a> (<a class="el" href="structplaylist.html">playlist</a> *pl, int criterio)</td></tr>
 <tr class="memdesc:ad5e20109d02b4a57f98631c051c3303f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordena el arreglo de canciones in-situ mediante el algoritmo Insertion Sort iterativo.  <br /></td></tr>
 <tr class="separator:ad5e20109d02b4a57f98631c051c3303f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94907cb251a7d16ec6e335e5656ed3d1" id="r_a94907cb251a7d16ec6e335e5656ed3d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a94907cb251a7d16ec6e335e5656ed3d1">merge</a> (<a class="el" href="structplaylist.html">playlist</a> *p, int low, int med, int high)</td></tr>
-<tr class="memdesc:a94907cb251a7d16ec6e335e5656ed3d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fusiona ordenadamente dos subarreglos contiguos de canciones en O(n).  <br /></td></tr>
-<tr class="separator:a94907cb251a7d16ec6e335e5656ed3d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c15fb87ef4c85e3e2c7e44cbe6f046e" id="r_a2c15fb87ef4c85e3e2c7e44cbe6f046e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a2c15fb87ef4c85e3e2c7e44cbe6f046e">merge_sort</a> (<a class="el" href="structplaylist.html">playlist</a> *p, int low, int high)</td></tr>
-<tr class="memdesc:a2c15fb87ef4c85e3e2c7e44cbe6f046e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordena el arreglo de canciones recursivamente aplicando Merge Sort.  <br /></td></tr>
-<tr class="separator:a2c15fb87ef4c85e3e2c7e44cbe6f046e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaae8204e5250c506408ae4db3c93a4a9" id="r_aaae8204e5250c506408ae4db3c93a4a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#aaae8204e5250c506408ae4db3c93a4a9">merge</a> (<a class="el" href="structplaylist.html">playlist</a> *p, int low, int med, int high, int criterio)</td></tr>
+<tr class="memdesc:aaae8204e5250c506408ae4db3c93a4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fusiona ordenadamente dos subarreglos contiguos de canciones en O(n).  <br /></td></tr>
+<tr class="separator:aaae8204e5250c506408ae4db3c93a4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96da2b52bd2a683e09773e2c849623bc" id="r_a96da2b52bd2a683e09773e2c849623bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="sort_8c.html#a96da2b52bd2a683e09773e2c849623bc">merge_sort</a> (<a class="el" href="structplaylist.html">playlist</a> *p, int low, int high, int criterio)</td></tr>
+<tr class="memdesc:a96da2b52bd2a683e09773e2c849623bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ordena el arreglo de canciones recursivamente aplicando Merge Sort.  <br /></td></tr>
+<tr class="separator:a96da2b52bd2a683e09773e2c849623bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ad5e20109d02b4a57f98631c051c3303f" name="ad5e20109d02b4a57f98631c051c3303f"></a>
@@ -144,7 +144,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ordena el arreglo de canciones in-situ mediante el algoritmo Insertion Sort iterativo. </p>
-<p>Recorre la coleccion desde el segundo elemento (i = 1 hasta n - 1), almacenando la estructura actual en una variable de respaldo (key) y desplazando hacia la derecha aquellos elementos previos que resulten mayores segun el criterio configurado: 0 para titulo, 1 para artista, 2 para album, 3 para genero, 4 para cid, 5 para duracion, 6 para anio, y 7 para total de reproducciones.</p>
+<p>Recorre la coleccion desde el segundo elemento (i = 1 hasta n - 1), almacenando la estructura actual en una variable de respaldo (key) y desplazando hacia la derecha aquellos elementos previos que resulten mayores segun el criterio configurado: 0 para cid, 1 para duracion, 2 para anio, 3 para total_rep, 4 para titulo, 5 para artista, 6 para album, y 7 para genero.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pl</td><td>Puntero a la playlist cuyo arreglo de canciones sera ordenado en memoria. </td></tr>
@@ -155,8 +155,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a94907cb251a7d16ec6e335e5656ed3d1" name="a94907cb251a7d16ec6e335e5656ed3d1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94907cb251a7d16ec6e335e5656ed3d1">&#9670;&#160;</a></span>merge()</h2>
+<a id="aaae8204e5250c506408ae4db3c93a4a9" name="aaae8204e5250c506408ae4db3c93a4a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaae8204e5250c506408ae4db3c93a4a9">&#9670;&#160;</a></span>merge()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +183,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>high</em>&#160;</td>
+          <td class="paramname"><em>high</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>criterio</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -201,14 +207,15 @@ Functions</h2></td></tr>
     <tr><td class="paramname">low</td><td>Indice de inicio del primer subarreglo. </td></tr>
     <tr><td class="paramname">med</td><td>Indice intermedio de division entre ambas mitades. </td></tr>
     <tr><td class="paramname">high</td><td>Indice de finalizacion del segundo subarreglo. </td></tr>
+    <tr><td class="paramname">criterio</td><td>Criterio de ordenamiento utilizado para guiar las comparaciones. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a2c15fb87ef4c85e3e2c7e44cbe6f046e" name="a2c15fb87ef4c85e3e2c7e44cbe6f046e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c15fb87ef4c85e3e2c7e44cbe6f046e">&#9670;&#160;</a></span>merge_sort()</h2>
+<a id="a96da2b52bd2a683e09773e2c849623bc" name="a96da2b52bd2a683e09773e2c849623bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96da2b52bd2a683e09773e2c849623bc">&#9670;&#160;</a></span>merge_sort()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,7 +236,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>high</em>&#160;</td>
+          <td class="paramname"><em>high</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>criterio</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -240,12 +253,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Ordena el arreglo de canciones recursivamente aplicando Merge Sort. </p>
-<p>Aplica el paradigma divide y venceras: calcula el punto medio entre los indices low y high, se llama recursivamente para ordenar la mitad izquierda y la mitad derecha por separado, y finalmente combina ambas secuencias mediante la funcion <a class="el" href="songs_8h.html#a94907cb251a7d16ec6e335e5656ed3d1" title="Fusiona ordenadamente dos subarreglos contiguos de canciones en O(n).">merge()</a>.</p>
+<p>Aplica el paradigma divide y venceras: calcula el punto medio entre los indices low y high, se llama recursivamente para ordenar la mitad izquierda y la mitad derecha por separado, y finalmente combina ambas secuencias mediante la funcion <a class="el" href="songs_8h.html#aaae8204e5250c506408ae4db3c93a4a9" title="Fusiona ordenadamente dos subarreglos contiguos de canciones en O(n).">merge()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>Puntero a la estructura playlist que sera ordenada recursivamente. </td></tr>
     <tr><td class="paramname">low</td><td>Limite inferior del subarreglo actual. </td></tr>
     <tr><td class="paramname">high</td><td>Limite superior del subarreglo actual. </td></tr>
+    <tr><td class="paramname">criterio</td><td>Criterio de ordenamiento utilizado para guiar las comparaciones. </td></tr>
   </table>
   </dd>
 </dl>
