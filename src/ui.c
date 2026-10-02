@@ -105,7 +105,8 @@ void imprime_menu(void)
     printf("\n  \t" COLOR_BOLD "Opciones:\n" COLOR_RESET);
     // Opciones Catalogo
     printf(COLOR_MAGENTA "  [t]" COLOR_RESET " Ordenar      ");
-    printf(COLOR_MAGENTA "  [e]" COLOR_RESET " Exportar      ");
+    printf(COLOR_MAGENTA "  [e]" COLOR_RESET " Exportar    ");
+    printf(COLOR_MAGENTA "  [x]" COLOR_RESET " Extras     ");
 
     // Salir
     printf(COLOR_RED  "[q]" COLOR_RESET " Salir\n");
@@ -238,7 +239,7 @@ void ui_menu_fila(playlist *cola, playlist *catalogo)
             if (pos >= 1 && pos <= cola->cantidad)
             {
                 quitar_de_cola_pos(cola, pos-1);
-                printf(COLOR_GREEN "  Posición %d retirada de la fila.\n" COLOR_RESET);
+                printf(COLOR_GREEN "  Posición %d retirada de la fila.\n" COLOR_RESET, pos);
             }
             else
             {
@@ -256,7 +257,7 @@ void ui_menu_fila(playlist *cola, playlist *catalogo)
             while (getchar() != '\n');
             if (quitar_de_cola_id(cola, id) == 0)
             {
-                printf(COLOR_GREEN "  Canción con ID %u retirada de la fila.\n" COLOR_RESET);
+                printf(COLOR_GREEN "  Canción con ID %u retirada de la fila.\n" COLOR_RESET, id);
             }
             else
             {
@@ -350,8 +351,6 @@ void ui_menu_ordenar(playlist *catalogo)
 {
     printf(COLOR_CYAN "\n  --- Ordenar [Insertion Sort] ---\n" COLOR_RESET);
     printf("  [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n");
-    
-    char opc = ui_input();
 
     /* Elija el algoritmo de ordenamiento */
     char opc_alg = ui_input();
@@ -499,4 +498,28 @@ void ui_menu_ranking(const playlist *pl)
         }
         ui_pausa();
     }
+}
+
+void ui_menu_extras(playlist *catalogo)
+{
+    printf(COLOR_CYAN "\n  --- Extras ---\n" COLOR_RESET);
+    printf("  [1] Reproducir playlist\n");
+    printf("  [2] Mostrar creditos\n");
+    printf("  [0] Salir\n");
+
+    char opc = ui_input();
+    if (opc == '1')
+    {
+        reproducir_playlist_csv();
+        ui_pausa();
+    }
+    if (opc == '2')
+    {
+        mostrar_creditos();
+    }
+    else if (opc == '0')
+    {
+        printf(COLOR_YELLOW "\n  [Saliendo...]" COLOR_RESET);
+    }
+    ui_pausa();
 }

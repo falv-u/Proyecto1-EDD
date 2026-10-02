@@ -69,6 +69,16 @@ void ui_cancion_busqueda(int num, cancion *c);
 /** @brief Muestra mensaje de no resultados */
 void ui_sin_resultados(char *artista);
 
-#endif
+/* ----------FUNCIONES UI EXTRAS ---------*/
 /** @brief Muestra el menu de extras */
 void ui_menu_extras(playlist *catalogo);
+
+/** @brief Reproduce una playlist desde un archivo CSV.
+ *
+ * Lee el archivo playlist.csv, para cada cancion construye la ruta del archivo
+ * de audio en ./assets/{artista} - {titulo}.mp3 y lo reproduce usando
+ * reproduir_musica. Solo esta parte reproduce musica de verdad.
+ */
+void reproducir_playlist_csv(void);
+
+#endif

@@ -119,6 +119,11 @@ int main(void)
 			case 'e':
 				ui_menu_exportar(&pl);
 				break;
+
+			case 'X':
+			case 'x':
+				ui_menu_extras(&pl);
+				break;
 			
 			/* [Q] Salir */
 			case 'Q':

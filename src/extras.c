@@ -44,7 +44,8 @@ void mostrar_creditos(void) {
  * @param c Puntero a la cancion en reproduccion para actualizar su contador total_rep.
  * @return Retorna 0 en caso de exito, -1 si el motor de audio falla al inicializarse.
  */
-int reproduir_musica(const char *ruta, cancion *c) {
+int reproducir_musica(const char *ruta, cancion *c) 
+{
     ma_result result;
     ma_engine engine;
     result = ma_engine_init(NULL, &engine);
@@ -62,7 +63,8 @@ int reproduir_musica(const char *ruta, cancion *c) {
 }
 
 /** @brief Funcion de pausa (no implementada). */
-void pausar(void) {
+void pausar(void) 
+{
     printf("Pausa no implementada.\n");
     printf("Presione Enter para continuar...");
     getchar();
@@ -99,13 +101,15 @@ void reproducir_playlist_csv(void) {
         snprintf(ruta, sizeof(ruta), "./assets/%s - %s.mp3", c->artista, c->titulo);
         
         FILE *f = fopen(ruta, "r");
+
         if (f)
-	{
+	    {  
             fclose(f);
             printf("Reproduciendo: %s - %s\n", c->artista, c->titulo);
             reproduir_musica(ruta, c);
-        } else
-	{
+        } 
+        else
+	    {
             printf("Advertencia: No se encontró el archivo de audio para %s - %s\n", c->artista, c->titulo);
         }
     }
