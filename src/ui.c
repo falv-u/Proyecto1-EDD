@@ -113,7 +113,8 @@ void imprime_menu(void)
 	// Opciones Catalogo
 	printf(COLOR_MAGENTA "  [t]" COLOR_RESET " Ordenar      ");
 	printf(COLOR_MAGENTA "  [e]" COLOR_RESET " Exportar    ");
-	printf(COLOR_MAGENTA "  [x]" COLOR_RESET " Extras     ");
+	printf(COLOR_MAGENTA "  [x]" COLOR_RESET " Extras   ");
+	printf(COLOR_MAGENTA "  [a]" COLOR_RESET " L.Artistas    ");
 
 	// Salir
 	printf(COLOR_RED  "[q]" COLOR_RESET " Salir\n");
@@ -148,7 +149,8 @@ char ui_input(void)
 	// comprobar que el input solo contiene caracteres permitidos: 0-9, a-z, A-Z
 	for (i = 0; i < len - 1; i++)
 	{
-		if (input[i] < 48 || (input[i] > 57 && input[i] < 97) || input[i] > 122)
+		char c = input[i];
+		if (!((c >= '0' && c <= '9') || (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')))
 			return '\0';
 	}
 
@@ -426,6 +428,7 @@ void ui_menu_ordenar(playlist *catalogo)
 	{
 		printf(COLOR_CYAN "\n  --- Criterio [Insertion Sort] ---\n" COLOR_RESET);
 		printf("  [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n");
+		printf("  [4] Titulo  [5] Artista  [6] Album  [7] Genero\n");
 		char opc_crit = ui_input();
 		if (opc_crit >= '0' && opc_crit <= '3')
 		{

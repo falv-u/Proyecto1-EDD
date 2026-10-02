@@ -249,7 +249,7 @@ void listar_artistas(const playlist *pl)
 		int repetido = 0;
 		for (int j = 0; j < i; j++)
 		{
-			if (pl->canciones[j].artista != NULL && compara_strings(pl->canciones[j].artista, pl->canciones[j].artista))
+			if (pl->canciones[j].artista != NULL && compara_strings(pl->canciones[j].artista, pl->canciones[i].artista))
 			{
 				repetido = 1;
 				break;
