@@ -125,7 +125,7 @@ void insertion_sort_int(playlist *pl, int criterio)
 // [version recursiva]
 // de ariel a pipe: borre mergesort hecho por mi porque estaba mal realizado. puedes usar quicksort si deseas.
 
-void merge(playlist *p, int low, int med, int high)
+void merge(playlist *p, int low, int med, int high, int criterio)
 {
 	// Declaracion de variables
 	int i, j, k;
@@ -172,8 +172,41 @@ void merge(playlist *p, int low, int med, int high)
 		}
 		else
 		{
-			//if ((subarr_left->canciones + i)->duracion <= (subarr_right->canciones + j)->duracion)
-			if (subarr_left[i].cid <= subarr_right[j].cid)
+			int es_mayor = 0;
+
+			// Comparacion según el criterio
+			switch (criterio)
+			{
+				case 0:
+					es_mayor = (subarr_left[i].cid > subarr_right[j].cid);
+					break;
+				case 1:
+					es_mayor = (subarr_left[i].duracion > subarr_right[j].duracion);
+					break;
+				case 2:
+					es_mayor = (subarr_left[i].anio > subarr_right[j].anio);
+					break;
+				case 3:
+					es_mayor = (subarr_left[i].total_rep > subarr_right[j].total_rep);
+					break;
+				case 4:
+					es_mayor = (strcmp(subarr_left[i].titulo, subarr_right[j].titulo) > 0);
+					break;
+				case 5:
+					es_mayor = (strcmp(subarr_left[i].artista, subarr_right[j].artista) > 0);
+					break;
+				case 6:
+					es_mayor = (strcmp(subarr_left[i].album, subarr_right[j].album) > 0);
+					break;
+				case 7:
+					es_mayor = (strcmp(subarr_left[i].genero, subarr_right[j].genero) > 0);
+					break;
+				default:
+					es_mayor = (subarr_left[i].cid > subarr_right[j].cid);
+					break;
+			}
+
+			if (!es_mayor)
 			{
 				p->canciones[k] = subarr_left[i];
 				//p->canciones[k] = *(subarr_left->canciones + i);
@@ -193,7 +226,7 @@ void merge(playlist *p, int low, int med, int high)
 	free(subarr_right);
 }
 
-void merge_sort(playlist *p, int low, int high)
+void merge_sort(playlist *p, int low, int high, int criterio)
 {
 	if (low < high)
 	{
@@ -201,11 +234,11 @@ void merge_sort(playlist *p, int low, int high)
 		int med = (low + high)/2;
 
 		// Resolver el problema de manera recursiva hasta llegar a una solucion trivial
-		merge_sort(p, low, med);
-		merge_sort(p, med + 1, high);
+		merge_sort(p, low, med, criterio);
+		merge_sort(p, med + 1, high, criterio);
 
 		// Fusion de resultados parciales
-		merge(p, low, med, high);
+		merge(p, low, med, high, criterio);
 	}
 }
 
@@ -218,7 +251,7 @@ void merge_sort(playlist *p, int low, int high)
   int i;
   int *p1 = (int *)malloc(8 * sizeof(int));
 
-  merge_sort(p1, 0, p1.cantidad - 1);
+  merge_sort(p1, 0, p1.cantidad - 1, 0); // 0 = criterio ID
 
   for (i = 0; i < p1.cantidad; i++)
   {

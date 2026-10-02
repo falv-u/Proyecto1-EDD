@@ -613,8 +613,8 @@ void interactuar_genero(playlist *pl);
  * Recorre la coleccion desde el segundo elemento (i = 1 hasta n - 1), almacenando la
  * estructura actual en una variable de respaldo (key) y desplazando hacia la derecha
  * aquellos elementos previos que resulten mayores segun el criterio configurado:
- * 0 para titulo, 1 para artista, 2 para album, 3 para genero, 4 para cid, 5 para duracion,
- * 6 para anio, y 7 para total de reproducciones.
+ * 0 para cid, 1 para duracion, 2 para anio, 3 para total_rep, 4 para titulo,
+ * 5 para artista, 6 para album, y 7 para genero.
  *
  * @param pl Puntero a la playlist cuyo arreglo de canciones sera ordenado en memoria.
  * @param criterio Criterio de ordenamiento utilizado para guiar las comparaciones.
@@ -632,8 +632,9 @@ void insertion_sort_int(playlist *pl, int criterio);
  * @param low Indice de inicio del primer subarreglo.
  * @param med Indice intermedio de division entre ambas mitades.
  * @param high Indice de finalizacion del segundo subarreglo.
+ * @param criterio Criterio de ordenamiento utilizado para guiar las comparaciones.
  */
-void merge(playlist *p, int low, int med, int high);
+void merge(playlist *p, int low, int med, int high, int criterio);
 
 /** @brief Ordena el arreglo de canciones recursivamente aplicando Merge Sort.
  *
@@ -644,8 +645,9 @@ void merge(playlist *p, int low, int med, int high);
  * @param p Puntero a la estructura playlist que sera ordenada recursivamente.
  * @param low Limite inferior del subarreglo actual.
  * @param high Limite superior del subarreglo actual.
+ * @param criterio Criterio de ordenamiento utilizado para guiar las comparaciones.
  */
-void merge_sort(playlist *p, int low, int high);
+void merge_sort(playlist *p, int low, int high, int criterio);
 
 /* ----------------------- FUNCIONES RANKING ----------------------- */
 
