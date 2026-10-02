@@ -1,0 +1,152 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+#include "songs.h"
+#include "ui.h"
+
+/* Inicializadores de cola e historial */
+playlist crear_playlist_vacia(int capacidad);
+playlist crear_historial(void);
+void liberar_arreglo_playlist(playlist *pl);
+void liberar_historial(playlist *h);
+
+int main(void)
+{
+	srand(time(NULL));
+	playlist pl = crear_playlist();
+	playlist historial = crear_historial();
+	playlist cola = crear_playlist_vacia(MAX_COLA);
+	cancion *actual = NULL;
+
+	int corriendo = 1;
+	int en_pausa = 0;
+	int indice_actual = -1; // para recorrer pl.canciones
+
+	while (corriendo)
+	{
+		limpiar_pantalla();
+		imprime_cancion(actual);
+		imprimir_playlist(&pl);
+		imprime_menu();
+
+		char opc = ui_input();
+		switch (opc)
+		{
+			/* ~~~~~~ Reproduccion ~~~~~~*/
+			/* [P] Reproducir cancion desde la cola */
+			case 'P':
+			case 'p':
+				actual = ui_toggle_play_pause(actual, &en_pausa, &cola, &pl, &historial);
+				ui_pausa();
+    			break;
+
+			/* [F] Fila de reproduccion */
+			case 'F':
+			case 'f':
+				ui_menu_fila(&cola, &pl);
+				break;
+
+			/* [H] Historial */
+			case 'H':
+			case 'h':
+				ui_menu_historial(&historial);
+				break;
+
+			/* [N] Siguiente cancion */
+			case 'N':
+			case 'n':
+				if (pl.cantidad > 0) // Siguiente canción
+				{
+					// Ciclicamente (%)
+					indice_actual = (indice_actual + 1) % pl.cantidad;
+					actual = &pl.canciones[indice_actual];
+					en_pausa = 0;
+				}
+				break;
+
+			/* [B] Anterior cancion */
+			case 'B':
+			case 'b':
+				if (pl.cantidad > 0) // Anterior canción
+				{
+					// Ciclicamente (%): le sumamos + pl.cantidad para que no hayan negativos. 
+					indice_actual = (indice_actual - 1 + pl.cantidad) % pl.cantidad;
+					actual = &pl.canciones[indice_actual];
+					en_pausa = 0;
+				}
+				break;
+
+			/* ~~~~~~ Busquedas ~~~~~~*/
+			/* [S] Busqueda binaria por ID/artista */
+			case 'S':
+			case 's':
+				ui_menu_busqueda(&pl);
+				break;
+
+			/* [A] Listar artistas [BORRADO, MOVERLO A UI.C] */
+			case 'A':
+            case 'a':
+                listar_artistas(&pl);
+                ui_pausa();
+                break;
+
+			/* [G] Buscar generos */
+            case 'G':
+            case 'g':
+                interactuar_genero(&pl);
+                ui_pausa();
+                break;
+
+			/* [R] Ranking */
+            case 'R':
+            case 'r':
+                // Utiliza la función del archivo ranking.c
+                ui_menu_ranking(&pl);
+                ui_pausa();
+                break;
+
+			/* ~~~~~~ Opciones ~~~~~~*/
+			/* [T] Ordenar */
+			case 'T':
+			case 't':
+				ui_menu_ordenar(&pl);
+				break;
+			
+			/* [E] Exportar */
+			case 'e':
+                break;
+
+            /* [X] Extras */
+            case 'x':
+            case 'X':
+                ui_menu_extras(&pl);
+                break;
+				ui_menu_exportar(&pl);
+				break;
+			
+			/* [Q] Salir */
+			case 'Q':
+            case 'q':
+            case '0':
+                corriendo = 0;
+      		break;
+			
+    		default:
+    			break;
+		}
+	}
+
+	liberar_pl(&pl);
+	liberar_arreglo_playlist(&cola);
+	liberar_historial(&historial);
+
+	if (corriendo == 0)
+	{
+		printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		printf(COLOR_GREEN "\t[Summy finalizado correctamente]" COLOR_RESET "\n~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	}
+		
+	return 0;
+}
