@@ -24,6 +24,8 @@ void mostrar_creditos(void) {
 	printf("\tpermitirnos terminar esto en tiempo record\n");
 	printf("\tA zed por ser zed.\n");
 	printf("\tYT music por dar ambiente en el entorno colaborativo\n");
+	printf("\tY UNA DISCULPA POR: \b\n");
+	printf("\tentregarlo tarde\n");
 	printf("\tNO AGRADECEMOS A: \b\n");
 	printf("\tDoxygen por hacer que nuestros comentarios se vean sucios\n");
 	printf("\ty generar paginas de documentacion no muy agraciadas\n\n");
