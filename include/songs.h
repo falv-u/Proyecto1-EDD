@@ -185,11 +185,10 @@ void llenar(tema *t);
  */
 int es_valido(const tema *t);
 
-/** @brief Algoritmo Fisher-Yates para barajar registros de forma aleatoria en O(n).
+/** @brief Algoritmo para barajar de forma aleatoria .
  *
  * Itera desde el final del arreglo hacia el inicio, seleccionando un indice aleatorio
- * equiprobable entre 0 e i, e intercambiando la estructura actual con la seleccionada
- * para garantizar una distribucion uniforme de los temas.
+ * entre 0 e i, e intercambiando la estructura actual con la seleccionada
  *
  * @param v Arreglo contiguo de temas en memoria a ser mezclado.
  * @param n Cantidad total de elementos dentro del arreglo.
@@ -209,7 +208,7 @@ int existe(const char *ruta);
 /** @brief Escribe n registros aleatorios en un archivo CSV empleando un archivo temporal.
  *
  * Reserva memoria dinamica para n estructuras tema, las inicializa aleatoriamente
- * asegurando consistencia numerica, las mezcla con Fisher-Yates y las escribe en
+ * asegurando consistencia numerica, las mezcla y las escribe en
  * un archivo con extension .tmp. Si todo el proceso y el cierre de archivo ocurren
  * sin errores I/O, renombra atomicamente el archivo temporal a la ruta destino final.
  *

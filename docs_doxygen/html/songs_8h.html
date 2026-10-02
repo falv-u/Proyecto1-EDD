@@ -195,7 +195,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:a9281b0d66d6074c1c84200edcd27d698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida que los campos numericos de un tema esten dentro de los limites reales.  <br /></td></tr>
 <tr class="separator:a9281b0d66d6074c1c84200edcd27d698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f3ec01aefe3b4c35813a8f7e1d276c2" id="r_a7f3ec01aefe3b4c35813a8f7e1d276c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#a7f3ec01aefe3b4c35813a8f7e1d276c2">mezclar</a> (<a class="el" href="structtema.html">tema</a> *v, int n)</td></tr>
-<tr class="memdesc:a7f3ec01aefe3b4c35813a8f7e1d276c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algoritmo Fisher-Yates para barajar registros de forma aleatoria en O(n).  <br /></td></tr>
+<tr class="memdesc:a7f3ec01aefe3b4c35813a8f7e1d276c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algoritmo para barajar de forma aleatoria .  <br /></td></tr>
 <tr class="separator:a7f3ec01aefe3b4c35813a8f7e1d276c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c9be0259e840b22fee79deb3773a936" id="r_a5c9be0259e840b22fee79deb3773a936"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="songs_8h.html#a5c9be0259e840b22fee79deb3773a936">existe</a> (const char *ruta)</td></tr>
 <tr class="memdesc:a5c9be0259e840b22fee79deb3773a936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si un archivo existe en el sistema de almacenamiento.  <br /></td></tr>
@@ -1242,7 +1242,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Escribe n registros aleatorios en un archivo CSV empleando un archivo temporal. </p>
-<p>Reserva memoria dinamica para n estructuras tema, las inicializa aleatoriamente asegurando consistencia numerica, las mezcla con Fisher-Yates y las escribe en un archivo con extension .tmp. Si todo el proceso y el cierre de archivo ocurren sin errores I/O, renombra atomicamente el archivo temporal a la ruta destino final.</p>
+<p>Reserva memoria dinamica para n estructuras tema, las inicializa aleatoriamente asegurando consistencia numerica, las mezcla y las escribe en un archivo con extension .tmp. Si todo el proceso y el cierre de archivo ocurren sin errores I/O, renombra atomicamente el archivo temporal a la ruta destino final.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ruta</td><td>Nombre o camino del archivo CSV a generar. </td></tr>
@@ -1954,8 +1954,8 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Algoritmo Fisher-Yates para barajar registros de forma aleatoria en O(n). </p>
-<p>Itera desde el final del arreglo hacia el inicio, seleccionando un indice aleatorio equiprobable entre 0 e i, e intercambiando la estructura actual con la seleccionada para garantizar una distribucion uniforme de los temas.</p>
+<p>Algoritmo para barajar de forma aleatoria . </p>
+<p>Itera desde el final del arreglo hacia el inicio, seleccionando un indice aleatorio entre 0 e i, e intercambiando la estructura actual con la seleccionada</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">v</td><td>Arreglo contiguo de temas en memoria a ser mezclado. </td></tr>
