@@ -350,12 +350,12 @@ void ui_menu_busqueda(playlist *catalogo)
 void ui_menu_ordenar(playlist *catalogo)
 {
     printf(COLOR_CYAN "\n  --- Ordenar [Insertion Sort] ---\n" COLOR_RESET);
-    printf("  [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n");
-
-    /* Elija el algoritmo de ordenamiento */
+    printf("  [1] Insertion Sort (criterio)  [2] Merge Sort  [0] Volver al menu\n");
+    
     char opc_alg = ui_input();
     if (opc_alg == '1')
     {
+        printf(COLOR_CYAN "\n  --- Criterio [Insertion Sort] ---\n" COLOR_RESET);
         printf("  [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n");
         char opc_crit = ui_input();
         if (opc_crit >= '0' && opc_crit <= '3')
@@ -371,13 +371,16 @@ void ui_menu_ordenar(playlist *catalogo)
     }
     else if (opc_alg == '2')
     {
-        printf(COLOR_CYAN "  Ordenando por ID con Merge Sort (recursivo)...\n" COLOR_RESET);
-        merge_sort(catalogo, 0, catalogo->cantidad - 1);
-        printf(COLOR_GREEN "  Catalogo ordenado!\n" COLOR_RESET);
+        if (catalogo != NULL && catalogo->cantidad > 0)
+        {
+            printf(COLOR_CYAN "  Ordenando por ID con Merge Sort (recursivo)...\n" COLOR_RESET);
+            merge_sort(catalogo, 0, catalogo->cantidad - 1);
+            printf(COLOR_GREEN "  Catalogo ordenado!\n" COLOR_RESET);
+        }
     }
     else if (opc_alg == '0')
     {
-        // Volver al menu anterior
+        return;
     }
     else
     {

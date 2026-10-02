@@ -76,7 +76,8 @@ void pausar(void)
  * de audio en ./assets/{artista} - {titulo}.mp3 y lo reproduce usando
  * reproduir_musica. Solo esta parte reproduce musica de verdad.
  */
-void reproducir_playlist_csv(void) {
+void reproducir_playlist_csv(void) 
+{
     playlist pl;
     pl = crear_playlist_vacia(100); 
     if (pl.canciones == NULL) 
