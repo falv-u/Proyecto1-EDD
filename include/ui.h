@@ -46,12 +46,17 @@ void ui_menu_fila(playlist *cola, playlist *catalogo);
 void ui_mostrar_historial(const playlist *historial);
 
 /* Busqueda */
+
 void ui_menu_busqueda(playlist *catalogo);
+
 /* Ordenar */
 void ui_menu_ordenar(playlist *catalogo);
 
 /* Exportar */
 void ui_menu_exportar(const playlist *catalogo);
+
+/* Ranking */
+void ui_mostrar_ranking(const playlist *pl);
 
 /* ----------FUNCIONES UI BUSQUEDA ---------*/
 /* Funcion UI para pedir el artista a buscar */

@@ -9,12 +9,17 @@
 #include "ui.h"
 
 /* Prototipos de funciones externas ya implementadas en otros .c */
+// Cola y playlist
 int agregar_a_cola(playlist *cola, const cancion *c);
 int quitar_de_cola_pos(playlist *cola, int pos);
 int reproducir_de_cola(playlist *cola, playlist *catalogo, playlist *historial);
 int buscar_cid_playlist(const playlist *pl, uint32_t cid);
+// busqueda y ordenamiento
 void insertion_sort_int(playlist *pl, int criterio);
 void ejecuta_busqueda_artista(playlist *pl);
+// ranking
+int mas_escuchada_artista(const playlist *pl, char *c);
+int mas_escuchada_genero(const playlist *pl, char *c);
 
 /* Falta funcion de play/pause */
 cancion *ui_toggle_play_pause(cancion *actual, int *en_pausa, playlist *cola, playlist *pl, playlist *historial)
@@ -94,8 +99,7 @@ void imprime_menu(void)
     printf("\n  \t" COLOR_BOLD "Buscar:\n" COLOR_RESET);
     // Opciones Busqueda
     printf(COLOR_MAGENTA "  [s]" COLOR_RESET " ID/Artista   ");
-    printf(COLOR_MAGENTA "  [a]" COLOR_RESET " Artista     ");
-    printf(COLOR_MAGENTA "  [g]" COLOR_RESET " Generos  ");
+    printf(COLOR_MAGENTA "  [g]" COLOR_RESET " Generos     ");
     printf(COLOR_MAGENTA "  [r]" COLOR_RESET " Ranking  ");
 
     printf("\n  \t" COLOR_BOLD "Opciones:\n" COLOR_RESET);
@@ -256,6 +260,7 @@ void ui_menu_busqueda(playlist *catalogo)
         if (scanf("%u", &id) == 1)
         {
             while (getchar() != '\n'); // eliminar enter de la cadena
+
             int pos = binsearch_cancion(catalogo, 0, catalogo->cantidad - 1, id);
             if (pos != -1)
             {
@@ -273,6 +278,33 @@ void ui_menu_busqueda(playlist *catalogo)
     {
         ui_pedir_artista();
         ejecuta_busqueda_artista(catalogo);
+    }
+    else if (opc == '3')
+    {
+        char titulo[100];
+        printf(COLOR_CYAN "\n  >> Introduce el titulo a buscar: " COLOR_RESET);
+        if (fgets(titulo, sizeof(titulo), stdin) != NULL)
+        {
+            // Eliminamos salto de linea y final de cadena
+            int i = 0;
+            while (titulo[i] != '\0')
+            {
+                if (titulo[i] == '\n')
+                {
+                    titulo[i] = '\0';
+                    break;
+                }
+                i++;
+            }
+
+            int pos = search_titulo(catalogo, titulo);
+            if (pos != -1)
+            {
+                printf(COLOR_GREEN "  Canción encontrada.\n" COLOR_RESET);
+                printf(COLOR_CYAN "    %d. %s - %s\n" COLOR_RESET, pos + 1, catalogo->canciones[pos].artista, catalogo->canciones[pos].titulo);
+            }
+        }
+        ui_pausa();
     }
 }
 
@@ -331,3 +363,8 @@ void ui_menu_exportar(const playlist *catalogo)
     ui_pausa();
 }
 
+/* Submenu ranking */
+void ui_mostrar_ranking(const playlist *pl)
+{
+    
+}

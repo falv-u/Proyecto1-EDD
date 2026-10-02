@@ -238,15 +238,18 @@ void listar_artistas(const playlist *pl)
         return;
     }
     printf(COLOR_CYAN "\n  --- Artistas Disponibles ---:\n" COLOR_RESET);
+
     for (int i = 0; i < pl->cantidad; i++)
     {
+        // Si no hay artista lo saltamos
         if (pl->canciones[i].artista != NULL) continue;
 
         // Comprobar si el artista ya fue impreso revisando las posiciones anteriores
+        // desde 0 hasta i-1
         int repetido = 0;
-        for (int j = 0; j >= 0; j--)
+        for (int j = 0; j < i; j++)
         {
-            if (pl->canciones[i-1].artista != NULL && compara_strings(pl->canciones[i].artista, pl->canciones[i].artista))
+            if (pl->canciones[j].artista != NULL && compara_strings(pl->canciones[j].artista, pl->canciones[j].artista))
             {
                 repetido = 1;
                 break;

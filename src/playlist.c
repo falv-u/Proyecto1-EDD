@@ -114,7 +114,7 @@ void liberar_pl(playlist *pl)
 	}
 	free(pl->canciones);
 	free(pl->nombre);
-	printf("se libero la playlist sin errores apartentes\n");
+	printf("Se libero la playlist sin errores.\n");
 }
 /*
  * Funcion de creado que usa funciones auxiliares para modularidad, en si esta
@@ -132,7 +132,7 @@ playlist crear_playlist(void)
 	 * pedimos un nombre que sera recogido desde la entrada estandar,
 	 * enviado a buff con un tamano maximo de sizeof(buff)
 	 */
-	printf("agregue un nombre para la playlist: ");
+	printf("Agregue un nombre para la playlist [ej: Favoritas]: ");
 	fgets(buff, sizeof(buff), stdin);
 	/* 
 	 * calcula el numero de bytes en buff sin contar el salto de linea
@@ -158,7 +158,7 @@ void imprimir_playlist(const playlist *pl)
 	int i;
 
 	if (pl == NULL) {
-		printf("playlist vacia\n");
+		printf("Playlist vacia.\n");
 		return;
 	}
 
@@ -180,7 +180,7 @@ void imprimir_playlist(const playlist *pl)
 				c->anio,
 				c->total_rep);
 	}
-	printf("------------------------------------------------------------------------------------------------a---\n");
+	printf("----------------------------------------------------------------------------------------------------\n");
 }
 
 int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
@@ -191,7 +191,7 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
 	f = fopen(ruta, "a");
 	if ( f == NULL )
 	{
-		printf("error abriendo archivo");
+		printf("Error abriendo archivo!\n");
 		return 121;
 	}
 
@@ -205,7 +205,7 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
 	nueva = malloc(sizeof(cancion)*(n+1));
 	if (nueva == NULL)
 	{
-		printf("error de asignacion de memoria\n");
+		printf("Error de asignacion de memoria!\n");
 	}
 
 	if (pl->canciones != NULL)

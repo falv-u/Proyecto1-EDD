@@ -135,5 +135,12 @@ int main(void)
 	liberar_pl(&pl);
 	liberar_arreglo_playlist(&cola);
 	liberar_historial(&historial);
+
+	if (corriendo == 0)
+	{
+		printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+		printf(COLOR_GREEN "\t[Summy finalizado correctamente]" COLOR_RESET "\n~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+	}
+		
 	return 0;
 }

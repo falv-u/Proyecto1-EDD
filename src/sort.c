@@ -6,6 +6,11 @@
 // pipe: le doy, segun un articulo q vi por ahi selection sirve para cuando el arreglo esta muy desordenado, mas que insertion
 void insertion_sort_int(playlist *pl, int criterio)
 {
+    /* ariel: comprobaciones de null y cantidad
+    */
+    if (pl == NULL || pl->canciones == NULL || pl->cantidad <= 1)
+        return;
+
     int n = pl->cantidad;
     for (int i = 1; i < n; i++)
     {
@@ -14,6 +19,65 @@ void insertion_sort_int(playlist *pl, int criterio)
         cancion key = pl->canciones[i];
         int j = i - 1;
 
+        /*
+        * Comparacion de cada elemento con el key
+        * 0) id 1) duracion 2) anio 3) reps
+        * 4) titulo 5) artista
+        * 6) album 7) genero
+        */
+        int es_mayor = 0;
+
+        while (j >= 0)
+        {
+            switch (criterio)
+            {
+                case 0:
+                    es_mayor = (pl->canciones[j].cid > key.cid);
+                    break;
+                
+                case 1:
+                    es_mayor = (pl->canciones[j].duracion > key.duracion);
+                    break;
+                
+                case 2:
+                    es_mayor = (pl->canciones[j].anio > key.anio);
+                    break;
+                
+                case 3:
+                    es_mayor = (pl->canciones[j].total_rep > key.total_rep);
+                    break;
+                
+                case 4:
+                    es_mayor = (strcmp(pl->canciones[j].titulo, key.titulo) > 0);
+                    break;
+                
+                case 5:
+                    es_mayor = (strcmp(pl->canciones[j].artista, key.artista) > 0);
+                    break;
+                
+                case 6:
+                    es_mayor = (strcmp(pl->canciones[j].album, key.album) > 0);
+                    break;
+                
+                case 7:
+                    es_mayor = (strcmp(pl->canciones[j].genero, key.genero) > 0);
+                    break;
+
+                default:
+                    es_mayor = (pl->canciones[j].cid > key.cid);
+                    break;
+            }
+
+            if (!es_mayor)
+                break;
+
+            // Desplazo hacia la derecha
+            pl->canciones[j + 1] = pl->canciones[j];
+            j--;
+        }
+
+        // codigo pipe ==============================
+        /*
         switch(criterio)
         {
         	case 0:
@@ -51,7 +115,7 @@ void insertion_sort_int(playlist *pl, int criterio)
 	            j--;
 	        }
 	        break;
-        }
+        }*/
 
         pl->canciones[j + 1] = key;
     }
@@ -67,21 +131,25 @@ void merge(playlist *p, int low, int med, int high)
     int i, j, k;
     int n_1 = (med - low) + 1; // Cantidad de elementos en el subarreglo izquierdo
     int n_2 = (high - med); // Cantidad de elementos en el subarreglo derecho
-    playlist *subarr_left, *subarr_right; // Subarreglos izquierdo y derecho
+
+    // playlist *subarr_left, *subarr_right; // Subarreglos izquierdo y derecho
 
     // Asignacion de memoria
-    subarr_left = malloc(n_1 * sizeof(playlist));
-    subarr_right = malloc(n_2 * sizeof(playlist));
+    // cambiado de playlist a cancion para que no se quede sin memoria
+    cancion *subarr_left = malloc(n_1 * sizeof(cancion));
+    cancion *subarr_right = malloc(n_2 * sizeof(cancion));
 
     // Copia de datos del arreglo A en los subarreglos L y R
     for (i = 0; i < n_1; i++)
     {
-        subarr_left->canciones[i] = *(p->canciones + low + i);
+        subarr_left[i] = p->canciones[low + i];
+        //subarr_left->canciones[i] = *(p->canciones + low + i);
     }
 
     for (j = 0; j < n_2; j++)
     {
-        subarr_right->canciones[j] = *(p->canciones + med + j + 1);
+        subarr_right[j] = p->canciones[med + j + 1];
+        //subarr_right->canciones[j] = *(p->canciones + med + j + 1);
     }
 
     i = 0;
@@ -92,28 +160,37 @@ void merge(playlist *p, int low, int med, int high)
     {
         if (i == n_1)
         {
-            *(p->canciones + k) = *(subarr_right->canciones + j);
-            j =  j+ 1;
+            p->canciones[k] = subarr_right[j];
+            //p->canciones + k = subarr_right->canciones + j;
+            j = j + 1;
         }
         else if(j == n_2)
         {
-            *(p->canciones + k) = *(subarr_left->canciones + i);
+            p->canciones[k] = subarr_left[i];
+            //p->canciones + k = subarr_left->canciones + i;
             i = i + 1;
         }
         else
         {
-            if ((subarr_left->canciones + i)->duracion <= (subarr_right->canciones + j)->duracion)
+            //if ((subarr_left->canciones + i)->duracion <= (subarr_right->canciones + j)->duracion)
+            if (subarr_left[i].cid <= subarr_right[j].cid)
             {
-                *(p->canciones + k) = *(subarr_left->canciones + i);
+                p->canciones[k] = subarr_left[i];
+                //p->canciones[k] = *(subarr_left->canciones + i);
                 i = i + 1;
             }
             else
             {
-                *(p->canciones + k) = *(subarr_right->canciones + j);
+                p->canciones[k] = subarr_right[j];
+                //*(p->canciones + k) = *(subarr_right->canciones + j);
                 j = j + 1;
             }
         }
     }
+
+    // liberar memoria
+    free(subarr_left);
+    free(subarr_right);
 }
 
 void merge_sort(playlist *p, int low, int high)
