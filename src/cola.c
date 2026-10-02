@@ -105,6 +105,6 @@ int reproducir_de_cola(playlist *cola, playlist *catalogo, playlist *historial)
 	catalogo->canciones[pos].total_rep++;
 	agregar_a_historial(historial, &catalogo->canciones[pos]);
 	printf("reproduciendo: %s - %s\n",
-	       catalogo->canciones[pos].artista, catalogo->canciones[pos].titulo);
+			catalogo->canciones[pos].artista, catalogo->canciones[pos].titulo);
 	return 0;
 }

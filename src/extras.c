@@ -76,21 +76,15 @@ void pausar(void)
  * de audio en ./assets/{artista} - {titulo}.mp3 y lo reproduce usando
  * reproduir_musica. Solo esta parte reproduce musica de verdad.
  */
-void reproducir_playlist_csv(void) 
+void reproducir_playlist_csv(void)
 {
-    playlist pl;
-    pl = crear_playlist_vacia(100); 
-    if (pl.canciones == NULL) 
-    {
-        printf("Error: No se pudo asignar memoria para la playlist.\n");
-        return;
-    }
+	playlist pl = {0};   // Initialize all fields to zero/NULL
 
 	/* cargar por csv */
 	if (playlist_cargar_csv(&pl, "./playlist.csv") != 0)
 	{
 		printf("Error: No se pudo cargar el archivo playlist.csv.\n");
-		liberar_arreglo_playlist(&pl);
+		liberar_pl(&pl);
 		return;
 	}
 
@@ -103,17 +97,14 @@ void reproducir_playlist_csv(void)
 
 		FILE *f = fopen(ruta, "r");
 
-		if (f)
-		{  
+		if (f) {
 			fclose(f);
 			printf("Reproduciendo: %s - %s\n", c->artista, c->titulo);
 			reproducir_musica(ruta, c);
-		} 
-		else
-		{
+		} else {
 			printf("Advertencia: No se encontró el archivo de audio para %s - %s\n", c->artista, c->titulo);
 		}
 	}
 
-	liberar_arreglo_playlist(&pl);
+	liberar_pl(&pl);
 }

@@ -212,7 +212,7 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
 	fclose(f);
 
 	n = pl->cantidad;
-	
+
 	nueva = malloc(sizeof(cancion)*(n+1));
 	if (nueva == NULL)
 	{
@@ -230,7 +230,7 @@ int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)
 	nueva[n] = *c;
 	pl->canciones = nueva;
 	pl->cantidad = n+1;
-	
+
 	return 0;
 }
 
@@ -250,10 +250,10 @@ int exportar_playlist(const playlist *pl, const char *ruta)
 
 	for (i = 0; i < pl->cantidad; i++)
 		fprintf(f, "%u;%u;%u;%u;%s;%s;%s;%s\n",
-		        pl->canciones[i].cid, pl->canciones[i].duracion,
-		        pl->canciones[i].anio, pl->canciones[i].total_rep,
-		        pl->canciones[i].titulo, pl->canciones[i].artista,
-		        pl->canciones[i].album, pl->canciones[i].genero);
+				pl->canciones[i].cid, pl->canciones[i].duracion,
+				pl->canciones[i].anio, pl->canciones[i].total_rep,
+				pl->canciones[i].titulo, pl->canciones[i].artista,
+				pl->canciones[i].album, pl->canciones[i].genero);
 
 	fclose(f);
 	return 0;

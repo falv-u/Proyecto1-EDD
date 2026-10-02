@@ -40,21 +40,21 @@ int main(void)
 			case 'p':
 				actual = ui_toggle_play_pause(actual, &en_pausa, &cola, &pl, &historial);
 				ui_pausa();
-    			break;
+				break;
 
-			/* [F] Fila de reproduccion */
+				/* [F] Fila de reproduccion */
 			case 'F':
 			case 'f':
 				ui_menu_fila(&cola, &pl);
 				break;
 
-			/* [H] Historial */
+				/* [H] Historial */
 			case 'H':
 			case 'h':
 				ui_menu_historial(&historial);
 				break;
 
-			/* [N] Siguiente cancion */
+				/* [N] Siguiente cancion */
 			case 'N':
 			case 'n':
 				if (pl.cantidad > 0) // Siguiente canción
@@ -66,7 +66,7 @@ int main(void)
 				}
 				break;
 
-			/* [B] Anterior cancion */
+				/* [B] Anterior cancion */
 			case 'B':
 			case 'b':
 				if (pl.cantidad > 0) // Anterior canción
@@ -78,43 +78,43 @@ int main(void)
 				}
 				break;
 
-			/* ~~~~~~ Busquedas ~~~~~~*/
-			/* [S] Busqueda binaria por ID/artista */
+				/* ~~~~~~ Busquedas ~~~~~~*/
+				/* [S] Busqueda binaria por ID/artista */
 			case 'S':
 			case 's':
 				ui_menu_busqueda(&pl);
 				break;
 
-			/* [A] Listar artistas [BORRADO, MOVERLO A UI.C] */
+				/* [A] Listar artistas [BORRADO, MOVERLO A UI.C] */
 			case 'A':
-            case 'a':
-                listar_artistas(&pl);
-                ui_pausa();
-                break;
+			case 'a':
+				listar_artistas(&pl);
+				ui_pausa();
+				break;
 
-			/* [G] Buscar generos */
-            case 'G':
-            case 'g':
-                interactuar_genero(&pl);
-                ui_pausa();
-                break;
+				/* [G] Buscar generos */
+			case 'G':
+			case 'g':
+				interactuar_genero(&pl);
+				ui_pausa();
+				break;
 
-			/* [R] Ranking */
-            case 'R':
-            case 'r':
-                // Utiliza la función del archivo ranking.c
-                ui_menu_ranking(&pl);
-                ui_pausa();
-                break;
+				/* [R] Ranking */
+			case 'R':
+			case 'r':
+				// Utiliza la función del archivo ranking.c
+				ui_menu_ranking(&pl);
+				ui_pausa();
+				break;
 
-			/* ~~~~~~ Opciones ~~~~~~*/
-			/* [T] Ordenar */
+				/* ~~~~~~ Opciones ~~~~~~*/
+				/* [T] Ordenar */
 			case 'T':
 			case 't':
 				ui_menu_ordenar(&pl);
 				break;
-			
-			/* [E] Exportar */
+
+				/* [E] Exportar */
 			case 'E':
 			case 'e':
 				ui_menu_exportar(&pl);
@@ -124,16 +124,16 @@ int main(void)
 			case 'x':
 				ui_menu_extras();
 				break;
-			
-			/* [Q] Salir */
+
+				/* [Q] Salir */
 			case 'Q':
-            case 'q':
-            case '0':
-                corriendo = 0;
-      		break;
-			
-    		default:
-    			break;
+			case 'q':
+			case '0':
+				corriendo = 0;
+				break;
+
+			default:
+				break;
 		}
 	}
 
@@ -146,6 +146,6 @@ int main(void)
 		printf("\n~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 		printf(COLOR_GREEN "\t[Summy finalizado correctamente]" COLOR_RESET "\n~~~~~~~~~~~~~~~~~~~~~~~~~\n");
 	}
-		
+
 	return 0;
 }

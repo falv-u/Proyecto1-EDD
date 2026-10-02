@@ -38,9 +38,9 @@ void canciones_mas_escuchada(const playlist *pl)
 	n = (N_ME < pl->cantidad) ? N_ME : pl->cantidad;
 	for (i = 0; i < n; i++)
 		printf("%2d. %s - %s (%u)\n", i + 1,
-		       pl->canciones[idx[i]].artista,
-		       pl->canciones[idx[i]].titulo,
-		       pl->canciones[idx[i]].total_rep);
+				pl->canciones[idx[i]].artista,
+				pl->canciones[idx[i]].titulo,
+				pl->canciones[idx[i]].total_rep);
 }
 
 void mas_escuchado(const playlist *pl)
@@ -70,13 +70,13 @@ void mas_escuchado(const playlist *pl)
 		mejor = i;
 		for (j = i + 1; j < pl->cantidad; j++)
 			if (compara_strings(pl->canciones[j].artista, pl->canciones[i].artista)
-			    && pl->canciones[j].total_rep > pl->canciones[mejor].total_rep)
+					&& pl->canciones[j].total_rep > pl->canciones[mejor].total_rep)
 				mejor = j;
 
 		printf("%-25s %s (%u reps)\n",
-		       pl->canciones[mejor].artista,
-		       pl->canciones[mejor].titulo,
-		       pl->canciones[mejor].total_rep);
+				pl->canciones[mejor].artista,
+				pl->canciones[mejor].titulo,
+				pl->canciones[mejor].total_rep);
 	}
 }
 
@@ -92,26 +92,26 @@ int mas_escuchada_de(const playlist *pl, char *c, int campo)
 	switch (campo)
 	{
 		case 1:
-		for (i = 0; i < pl->cantidad; i++)
-		{
-			if (compara_strings(pl->canciones[i].artista, c)
-					&& (mejor == -1 || pl->canciones[i].total_rep > pl->canciones[mejor].total_rep))
-				mejor = i;
-		}
-		break;
+			for (i = 0; i < pl->cantidad; i++)
+			{
+				if (compara_strings(pl->canciones[i].artista, c)
+						&& (mejor == -1 || pl->canciones[i].total_rep > pl->canciones[mejor].total_rep))
+					mejor = i;
+			}
+			break;
 
 		case 2:
-		for (i = 0; i < pl->cantidad; i++)
-		{
-			if (compara_strings(pl->canciones[i].genero, c)
-					&& (mejor == -1 || pl->canciones[i].total_rep > pl->canciones[mejor].total_rep))
-				mejor = i;
-		}
-		break;
+			for (i = 0; i < pl->cantidad; i++)
+			{
+				if (compara_strings(pl->canciones[i].genero, c)
+						&& (mejor == -1 || pl->canciones[i].total_rep > pl->canciones[mejor].total_rep))
+					mejor = i;
+			}
+			break;
 
 		default:
-		printf("campo invalido...como llegaste aqui?\n");
-		return -1;
+			printf("campo invalido...como llegaste aqui?\n");
+			return -1;
 	}
 
 	return mejor;
