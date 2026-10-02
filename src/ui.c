@@ -152,7 +152,7 @@ int ui_principal(void)
 
 void ui_pausa(void)
 {
-    printf(COLOR_CYAN "\nPresione Enter para continuar...." COLOR_RESET);
+    printf(COLOR_CYAN "[Presione Enter para continuar....]" COLOR_RESET);
     getchar();
 }
 
@@ -231,7 +231,7 @@ void ui_menu_fila(playlist *cola, playlist *catalogo)
 }
 
 /* Submenu historial */
-void ui_mostrar_historial(const playlist *historial)
+void ui_menu_historial(const playlist *historial)
 {
     printf(COLOR_CYAN "\n === Historial [%d canciones] ===\n" COLOR_RESET, historial->cantidad);
     for (int i = historial->cantidad - 1; i >= 0; i--)
@@ -364,7 +364,82 @@ void ui_menu_exportar(const playlist *catalogo)
 }
 
 /* Submenu ranking */
-void ui_mostrar_ranking(const playlist *pl)
+/* Si bien funciona bien canciones_mas_escuchada: necesitamos la mas escuchada por
+artista y por genero... 
+*/
+void ui_menu_ranking(const playlist *pl)
 {
+    printf(COLOR_CYAN "\n  --- Rankings & Stats ---\n" COLOR_RESET);
+    printf("  [1] Top mas escuchadas\n");
+    printf("  [2] La mas escuchada por artista\n");
+    printf("  [3] La mas escuchada por genero\n");
     
+    char opc = ui_input();
+    if (opc == '1')
+    {
+        canciones_mas_escuchada(pl);
+        ui_pausa();
+    }
+    else if (opc == '2')
+    {
+        char artista[100];
+        printf(COLOR_CYAN "\n  >> Introduce el nombre del artista: " COLOR_RESET);
+        if (fgets(artista, sizeof(artista), stdin) != NULL)
+        {
+            // Eliminamos salto de linea y final de cadena
+            int i = 0;
+            while (artista[i] != '\0')
+            {
+                if (artista[i] == '\n')
+                {
+                    artista[i] = '\0';
+                    break;
+                }
+                i++;
+            }
+
+            int pos = mas_escuchada_artista(pl, artista);
+            if (pos != -1)
+            {
+                printf(COLOR_GREEN "  Cancion mas escuchada de" COLOR_CYAN "%s...\n" COLOR_RESET, artista);
+                printf(COLOR_CYAN "    %d. %s - %s\n" COLOR_RESET, pos + 1, pl->canciones[pos].artista, pl->canciones[pos].titulo);
+            }
+            else
+            {
+                printf(COLOR_RED "  No se encontro la cancion del artista [%s].\n" COLOR_RESET, artista);
+            }
+        }
+        ui_pausa();
+    }
+    else if (opc == '3')
+    {
+        char genero[100];
+        printf(COLOR_CYAN "\n  >> Introduce el genero (ej. Rock): " COLOR_RESET);
+        if (fgets(genero, sizeof(genero), stdin) != NULL)
+        {
+            // Eliminamos salto de linea y final de cadena
+            int i = 0;
+            while (genero[i] != '\0')
+            {
+                if (genero[i] == '\n')
+                {
+                    genero[i] = '\0';
+                    break;
+                }
+                i++;
+            }
+
+            int pos = mas_escuchada_genero(pl, genero);
+            if (pos != -1)
+            {
+                printf(COLOR_GREEN "  Cancion mas escuchada del genero " COLOR_CYAN "%s...\n" COLOR_RESET, genero);
+                printf(COLOR_CYAN "    %d. %s - %s\n" COLOR_RESET, pos + 1, pl->canciones[pos].artista, pl->canciones[pos].titulo);
+            }
+            else
+            {
+                printf(COLOR_RED "  No se encontro la cancion del genero [%s].\n" COLOR_RESET, genero);
+            }
+        }
+        ui_pausa();
+    }
 }

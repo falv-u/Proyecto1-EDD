@@ -51,7 +51,7 @@ int main(void)
 			/* [H] Historial */
 			case 'H':
 			case 'h':
-				ui_mostrar_historial(&historial);
+				ui_menu_historial(&historial);
 				break;
 
 			/* [N] Siguiente cancion */
@@ -85,7 +85,7 @@ int main(void)
 				ui_menu_busqueda(&pl);
 				break;
 
-			/* [A] Listar artistas */
+			/* [A] Listar artistas [BORRADO, MOVERLO A UI.C] */
 			case 'A':
             case 'a':
                 listar_artistas(&pl);
@@ -103,7 +103,7 @@ int main(void)
             case 'R':
             case 'r':
                 // Utiliza la función del archivo ranking.c
-                canciones_mas_escuchada(&pl);
+                ui_menu_ranking(&pl);
                 ui_pausa();
                 break;
 

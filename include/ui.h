@@ -32,7 +32,7 @@ char ui_input(void);
 /* Funcion principal de la interfaz de usuario. */
 int ui_principal(void);
 
-/* Pausa la ejecucion del programa hasta que el usuario presione Enter. */
+/* Pausa la ejecucion del programa [no es Play/pause] hasta que el usuario presione Enter. */
 void ui_pausa(void);
 
 /* ----------FUNCIONES UI MENU ---------*/
@@ -43,7 +43,7 @@ cancion *ui_toggle_play_pause(cancion *actual, int *en_pausa, playlist *cola, pl
 void ui_menu_fila(playlist *cola, playlist *catalogo);
 
 /* Historial */
-void ui_mostrar_historial(const playlist *historial);
+void ui_menu_historial(const playlist *historial);
 
 /* Busqueda */
 
@@ -56,7 +56,7 @@ void ui_menu_ordenar(playlist *catalogo);
 void ui_menu_exportar(const playlist *catalogo);
 
 /* Ranking */
-void ui_mostrar_ranking(const playlist *pl);
+void ui_menu_ranking(const playlist *pl);
 
 /* ----------FUNCIONES UI BUSQUEDA ---------*/
 /* Funcion UI para pedir el artista a buscar */
