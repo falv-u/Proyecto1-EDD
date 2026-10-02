@@ -443,11 +443,23 @@ void ui_menu_ordenar(playlist *catalogo)
 	}
 	else if (opc_alg == '2')
 	{
-		if (catalogo != NULL && catalogo->cantidad > 0)
+		printf(COLOR_CYAN "\n  --- Criterio [Merge Sort] ---\n" COLOR_RESET);
+		printf("  [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n");
+		printf("  [4] Titulo  [5] Artista  [6] Album  [7] Genero\n");
+		char opc_crit = ui_input();
+		if (opc_crit >= '0' && opc_crit <= '7')
 		{
-			printf(COLOR_CYAN "  Ordenando por ID con Merge Sort (recursivo)...\n" COLOR_RESET);
-			merge_sort(catalogo, 0, catalogo->cantidad - 1);
-			printf(COLOR_GREEN "  Catalogo ordenado!\n" COLOR_RESET);
+			int criterio = opc_crit - '0';
+			if (catalogo != NULL && catalogo->cantidad > 0)
+			{
+				printf(COLOR_CYAN "  Ordenando con Merge Sort (recursivo)...\n" COLOR_RESET);
+				merge_sort(catalogo, 0, catalogo->cantidad - 1, criterio);
+				printf(COLOR_GREEN "  Catalogo ordenado!\n" COLOR_RESET);
+			}
+		}
+		else
+		{
+			printf(COLOR_RED "  Opcion invalida.\n" COLOR_RESET);
 		}
 	}
 	else if (opc_alg == '0')
