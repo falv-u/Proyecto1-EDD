@@ -153,3 +153,52 @@ int generar_catalogo_si_no_existe(const char *ruta, int n)
 	printf("catalogo no encontrado, generando %d canciones...\n", n);
 	return escribir_csv(ruta, n);
 }
+/* cuenta lineas de archivo */
+unsigned int contar_por_archivo(const char *ruta)
+{
+	FILE *f;
+	char linea_actual[1024];
+	int total;
+	f = fopen(ruta, "r");
+	if ( ruta == NULL || f == NULL)
+	{
+		printf("no se pudo contabilizar lineas, el archivo existe?\n");
+		return 0;
+	}
+	total = 0;
+
+	while (fgets(linea_actual, sizeof(linea_actual), f))
+		if (linea_actual[0] != '\n')
+			total++;
+	return total;
+
+}
+/* busca coincidencias */
+void canciones_por_genero(const playlist *catalogo)
+{
+	int cont_g[N_GENEROS] = {0};
+	playlist *pl;
+	int i;
+
+	for (i = 0; i< catalogo->cantidad; i++)
+	{
+		if (catalogo->canciones[i].genero == NULL)
+			continue;
+		/* Clasificamos comparando con los generos definidos */
+		for (j = 0; j < N_GENEROS; j++)
+		{
+			if (compara_strings(catalogo->canciones[i].genero, (char *)GENEROS[j]))
+			{
+				cont_g[j]++;
+				break; /* Ya coincidió, pasa a la siguiente canción */
+			}
+		}
+	}
+
+	/* Mostrar info*/
+	printf("\n--- Cantidad de canciones por genero ---\n");
+	for (j = 0; j < N_GENEROS; j++)
+	{
+		printf("%-15s : %d canciones\n", GENEROS[j], cont_g[j]);
+	}
+}

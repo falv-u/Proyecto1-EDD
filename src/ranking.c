@@ -86,7 +86,7 @@ int mas_escuchada_de(const playlist *pl, char *c, int campo)
 	int mejor;
 	mejor = -1;
 
-	if (pl == NULL || pl->canciones == NULL || c == NULL || campo < 0 || campo < 2)
+	if (pl == NULL || pl->canciones == NULL || c == NULL || campo < 1 || campo > 2)
 		return -1;
 
 	switch (campo)
