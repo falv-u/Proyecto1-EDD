@@ -13,6 +13,11 @@ playlist crear_historial(void)
 	h.ruta = NULL;
 	h.cantidad = 0;
 	h.canciones = malloc(sizeof(cancion) * MAX_HISTORIAL);
+	if (h.canciones == NULL) 
+	{
+		fprintf(stderr, "Error: sin memoria\n");
+		exit(1);
+	}
 	return h;
 }
 

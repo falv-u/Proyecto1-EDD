@@ -58,6 +58,12 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 	rewind(f); /* vuelve al inicio del archivo */
 
 	pl->canciones = malloc(sizeof(cancion) * total);
+	if (pl->canciones == NULL) 
+	{
+		fprintf(stderr, "Error: sin memoria\n");
+		fclose(f);
+		return 121;
+	}
 	pl->cantidad = 0;
 
 	while (fgets(linea_actual, sizeof(linea_actual), f))

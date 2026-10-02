@@ -34,6 +34,11 @@ playlist crear_playlist_vacia(int capacidad)
 	pl.ruta = NULL;
 	pl.cantidad = 0;
 	pl.canciones = malloc(sizeof(cancion) * capacidad);
+	if (pl.canciones == NULL)
+	{
+		fprintf(stderr, "Error: Sin memoria\n");
+		exit(1);
+	}
 	return pl;
 }
 
