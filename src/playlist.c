@@ -44,7 +44,13 @@ int playlist_cargar_csv(playlist *pl, const char *ruta)
 		printf("error abriendo archivo...\n");
 		return 121;
 	}
-	/* lee con fgets, restringido a linea_actual del tamano de linea_actual para el archivo f */
+	/*
+	 * lee con fgets, restringido a linea_actual del tamano de linea_actual para el archivo f 
+	 * c lee como valor verdadero toda cosa diferente a 0, NULL o false, por tanto mientras
+	 * fgets lee hasta el termino de linea. por tanto el bucle es:
+	 * comienza a leer -> termino de linea -> cursor empieza en siguiente linea -> vuelve a leer
+	 *
+	 */
 	total = 0;
 	while (fgets(linea_actual, sizeof(linea_actual), f))
 		if (linea_actual[0] != '\n')

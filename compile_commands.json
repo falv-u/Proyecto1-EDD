@@ -6,6 +6,7 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
@@ -22,13 +23,14 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
-      "src/busqueda.c"
+      "src/catalogo.c"
     ],
     "directory": "/home/frani/code/Proyecto1-EDD",
-    "file": "/home/frani/code/Proyecto1-EDD/src/busqueda.c",
+    "file": "/home/frani/code/Proyecto1-EDD/src/catalogo.c",
     "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
   },
   {
@@ -38,6 +40,41 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/cola.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/cola.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-std=c99",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/historial.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/historial.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
@@ -54,6 +91,7 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
@@ -70,6 +108,7 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
@@ -86,6 +125,24 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/ranking.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/ranking.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
@@ -102,6 +159,7 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
@@ -118,6 +176,7 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
@@ -134,6 +193,24 @@
       "-Wall",
       "-Wextra",
       "-Wpedantic",
+      "-std=c99",
+      "-I./include/",
+      "-o",
+      "build/main.run",
+      "src/ui.c"
+    ],
+    "directory": "/home/frani/code/Proyecto1-EDD",
+    "file": "/home/frani/code/Proyecto1-EDD/src/ui.c",
+    "output": "/home/frani/code/Proyecto1-EDD/build/main.run"
+  },
+  {
+    "arguments": [
+      "/usr/bin/cc",
+      "-c",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-std=c99",
       "-I./include/",
       "-o",
       "build/main.run",
