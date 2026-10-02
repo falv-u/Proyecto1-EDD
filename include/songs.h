@@ -710,4 +710,22 @@ int mas_escuchada_genero(const playlist *pl, char *c);
 /** @brief Muestra los creditos del proyecto. */
 void mostrar_creditos(void);
 
+/* ----------------------- FUNCIONES EXTRAS ----------------------- */
+/** @brief Reproduce una playlist desde un archivo CSV.
+ *
+ * Lee el archivo playlist.csv, para cada cancion construye la ruta del archivo
+ * de audio en ./assets/{artista} - {titulo}.mp3 y lo reproduce usando
+ * reproduir_musica. Solo esta parte reproduce musica de verdad.
+ */
+void reproducir_playlist_csv(void);
+
+/** @brief Funcion de pausa. */
+void pausar(void);
+
+/** @brief Reproduce el audio de una cancion. */
+int reproducir_musica(const char *ruta, cancion *c);
+
+/** @brief Muestra los creditos del proyecto. */
+void mostrar_creditos(void);
+
 #endif /* CANCIONES */

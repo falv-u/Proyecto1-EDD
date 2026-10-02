@@ -9,15 +9,15 @@
 #include "ui.h"
 
 /* Prototipos de funciones externas ya implementadas en otros .c */
-// Cola y playlist
+/* Cola y playlist */
 int agregar_a_cola(playlist *cola, const cancion *c);
 int quitar_de_cola_pos(playlist *cola, int pos);
 int reproducir_de_cola(playlist *cola, playlist *catalogo, playlist *historial);
 int buscar_cid_playlist(const playlist *pl, uint32_t cid);
-// busqueda y ordenamiento
+/* Busqueda y ordenamiento */
 void insertion_sort_int(playlist *pl, int criterio);
 void ejecuta_busqueda_artista(playlist *pl);
-// ranking
+/* Ranking */
 int mas_escuchada_artista(const playlist *pl, char *c);
 int mas_escuchada_genero(const playlist *pl, char *c);
 
@@ -500,7 +500,7 @@ void ui_menu_ranking(const playlist *pl)
     }
 }
 
-void ui_menu_extras(playlist *catalogo)
+void ui_menu_extras(void)
 {
     printf(COLOR_CYAN "\n  --- Extras ---\n" COLOR_RESET);
     printf("  [1] Reproducir playlist\n");

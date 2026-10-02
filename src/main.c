@@ -122,7 +122,7 @@ int main(void)
 
 			case 'X':
 			case 'x':
-				ui_menu_extras(&pl);
+				ui_menu_extras();
 				break;
 			
 			/* [Q] Salir */
