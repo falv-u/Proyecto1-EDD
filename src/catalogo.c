@@ -39,8 +39,8 @@ void llenar(tema *t)
 int es_valido(const tema *t)
 {
 	return t->dur >= DUR_MIN && t->dur <= DUR_MAX
-	    && t->anio >= ANIO_MIN && t->anio <= ANIO_MAX
-	    && t->reps <= REP_MAX;
+		&& t->anio >= ANIO_MIN && t->anio <= ANIO_MAX
+		&& t->reps <= REP_MAX;
 }
 
 /* Simple funcion de mezcla */
@@ -107,11 +107,11 @@ int escribir_csv(const char *ruta, int n)
 	}
 	for (i = 0; i < n; i++)
 		fprintf(f, "%d;%u;%u;%u;%s %s;%s;%s %s;%s\n",
-		        i + 1, v[i].dur, (unsigned)v[i].anio, v[i].reps,
-		        PALABRAS[v[i].p1], PALABRAS[v[i].p2],
-		        ARTISTAS[v[i].artista],
-		        PALABRAS[v[i].p3], PALABRAS[v[i].p4],
-		        GENEROS[v[i].genero]);
+				i + 1, v[i].dur, (unsigned)v[i].anio, v[i].reps,
+				PALABRAS[v[i].p1], PALABRAS[v[i].p2],
+				ARTISTAS[v[i].artista],
+				PALABRAS[v[i].p3], PALABRAS[v[i].p4],
+				GENEROS[v[i].genero]);
 	free(v);
 
 	ok = !ferror(f);

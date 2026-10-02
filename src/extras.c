@@ -78,13 +78,13 @@ void pausar(void)
  */
 void reproducir_playlist_csv(void) 
 {
-    playlist pl;
-    pl = crear_playlist_vacia(100); 
-    if (pl.canciones == NULL) 
-    {
-        printf("Error: No se pudo asignar memoria para la playlist.\n");
-        return;
-    }
+	playlist pl;
+	pl = crear_playlist_vacia(100); 
+	if (pl.canciones == NULL) 
+	{
+		printf("Error: No se pudo asignar memoria para la playlist.\n");
+		return;
+	}
 
 	/* cargar por csv */
 	if (playlist_cargar_csv(&pl, "./playlist.csv") != 0)
