@@ -43,7 +43,7 @@ int es_valido(const tema *t)
 	    && t->reps <= REP_MAX;
 }
 
-/* Fisher-Yates: mezcla v en el lugar, O(n). */
+/* Simple funcion de mezcla */
 void mezclar(tema *v, int n)
 {
 	int i, j;
