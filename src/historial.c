@@ -52,9 +52,15 @@ int agregar_a_historial(playlist *h, const cancion *c)
 	pos = buscar_en_historial(h, c->cid);
 
 	if (pos != -1)
+	{
+		printf("Eliminada cancion N%d\n", pos+1);
 		quitar_de_historial(h, pos);
+	}
 	else if (h->cantidad == MAX_HISTORIAL)
+	{
+		printf("Eliminada cancion N%d\n", pos+1);
 		quitar_de_historial(h, 0);
+	}
 
 	h->canciones[h->cantidad] = *c;
 	h->cantidad++;
