@@ -6,3 +6,4 @@
 *.run
 /.cache/**
 /static/**
+/docs_doxygen/**
