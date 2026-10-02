@@ -55,12 +55,21 @@ cancion *ui_toggle_play_pause(cancion *actual, int *en_pausa, playlist *cola, pl
 
 void limpiar_pantalla(void)
 {
+    // Limpieza de pantalla.
     printf("\033[H\033[J");
+    system("clear");
+
+    // Banner hecho en ASCII art (opcional)
+    printf(COLOR_CYAN);
+    printf(" .▄▄ · ▄• ▄▌• ▌ ▄ ·. • ▌ ▄ ·.  ▄· ▄▌\n");
+    printf(" ▐█ ▀. █▪██▌·██ ▐███▪·██ ▐███▪▐█▪██▌\n");
+    printf(" ▄▀▀▀█▄█▌▐█▌▐█ ▌▐▌▐█·▐█ ▌▐▌▐█·▐█▌▐█▪\n");
+    printf(" ▐█▄▪▐█▐█▄█▌██ ██▌▐█▌██ ██▌▐█▌ ▐█▀·.\n");
+    printf("  ▀▀▀▀  ▀▀▀ ▀▀  █▪▀▀▀▀▀  █▪▀▀▀  ▀ • \n" COLOR_RESET);
 }
 
 void imprime_cancion(cancion *c)
 {
-    printf("\n");
     if (c != NULL && c->artista != NULL && c->titulo != NULL)
     {
         printf(COLOR_CYAN "  %s - %s\n" COLOR_RESET, c->artista, c->titulo);
@@ -76,26 +85,26 @@ void imprime_menu(void)
     printf("  \t" COLOR_BOLD "Reproducir:\n" COLOR_RESET);
 
     // Opciones reproduccion
-    printf(COLOR_BLUE "  [P]" COLOR_RESET " Play/Pause   ");
-    printf(COLOR_BLUE "  [F]" COLOR_RESET " Cola/Fila   ");
-    printf(COLOR_BLUE   "  [H]" COLOR_RESET " Historial  ");
-    printf(COLOR_BLUE "[N]" COLOR_RESET " Sig.   ");
-    printf(COLOR_BLUE "[B]" COLOR_RESET " Ant.   ");
+    printf(COLOR_BLUE "  [p]" COLOR_RESET " Play/Pause   ");
+    printf(COLOR_BLUE "  [f]" COLOR_RESET " Cola/Fila   ");
+    printf(COLOR_BLUE   "  [h]" COLOR_RESET " Historial  ");
+    printf(COLOR_BLUE "[n]" COLOR_RESET " Sig.   ");
+    printf(COLOR_BLUE "[b]" COLOR_RESET " Ant.   ");
 
     printf("\n  \t" COLOR_BOLD "Buscar:\n" COLOR_RESET);
     // Opciones Busqueda
-    printf(COLOR_MAGENTA "  [S]" COLOR_RESET " ID/Artista   ");
-    printf(COLOR_MAGENTA "  [A]" COLOR_RESET " Artista     ");
-    printf(COLOR_MAGENTA "  [G]" COLOR_RESET " Generos  ");
-    printf(COLOR_MAGENTA "  [R]" COLOR_RESET " Ranking  ");
+    printf(COLOR_MAGENTA "  [s]" COLOR_RESET " ID/Artista   ");
+    printf(COLOR_MAGENTA "  [a]" COLOR_RESET " Artista     ");
+    printf(COLOR_MAGENTA "  [g]" COLOR_RESET " Generos  ");
+    printf(COLOR_MAGENTA "  [r]" COLOR_RESET " Ranking  ");
 
     printf("\n  \t" COLOR_BOLD "Opciones:\n" COLOR_RESET);
     // Opciones Catalogo
-    printf(COLOR_MAGENTA "  [T]" COLOR_RESET " Ordenar      ");
-    printf(COLOR_MAGENTA "  [E]" COLOR_RESET " Exportar      ");
+    printf(COLOR_MAGENTA "  [t]" COLOR_RESET " Ordenar      ");
+    printf(COLOR_MAGENTA "  [e]" COLOR_RESET " Exportar      ");
 
     // Salir
-    printf(COLOR_RED  "[Q]" COLOR_RESET " Salir\n");
+    printf(COLOR_RED  "[q]" COLOR_RESET " Salir\n");
 }
 
 char ui_input(void)
