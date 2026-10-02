@@ -23,7 +23,6 @@ int main(void)
 	int corriendo = 1;
 	int en_pausa = 0;
 	int indice_actual = -1; // para recorrer pl.canciones
-	char buffer[128];
 
 	while (corriendo)
 	{
@@ -96,7 +95,7 @@ int main(void)
 			/* [G] Buscar generos */
             case 'G':
             case 'g':
-                interactuar_generos(&pl);
+                interactuar_genero(&pl);
                 ui_pausa();
                 break;
 

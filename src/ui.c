@@ -8,10 +8,9 @@
 #include <stdlib.h>
 #include "ui.h"
 
-/* Prototipos de funciones externas ya implementadas */
+/* Prototipos de funciones externas ya implementadas en otros .c */
 int agregar_a_cola(playlist *cola, const cancion *c);
 int quitar_de_cola_pos(playlist *cola, int pos);
-int vaciar_cola(playlist *cola);
 int reproducir_de_cola(playlist *cola, playlist *catalogo, playlist *historial);
 int buscar_cid_playlist(const playlist *pl, uint32_t cid);
 void insertion_sort_int(playlist *pl, int criterio);
@@ -173,16 +172,48 @@ void ui_sin_resultados(char *solicitud)
 /* Submenu fila de reproduccion*/
 void ui_menu_fila(playlist *cola, playlist *catalogo)
 {
-    char buf[64];
-    printf(COLOR_CYAN "\n === Fila [%d canciones] ===\n" COLOR_RESET, cola->cantidad);
+    printf(COLOR_CYAN "\n === Fila de rep. [%d canciones] ===\n" COLOR_RESET, cola->cantidad);
     for (int i = 0; i < cola->cantidad; i++)
     {
         printf("    %d. [ID %u] %s - %s\n", i + 1, cola->canciones[i].cid, cola->canciones[i].artista, cola->canciones[i].titulo);
     }
 
-    if (cola->cantidad == 0)
-    {
+    if (cola->cantidad == 0) 
         printf(COLOR_YELLOW "\n  [La fila esta vacia. Usa [F] para agregar canciones.]" COLOR_RESET);
+
+    printf("\n\tOpciones:\n(1) Agregar inicio por ID (2) Quitar 1ra (3) Vaciar (0) Volver\n");
+    char opc = ui_input();
+
+    if (opc == '1')
+    {
+        unsigned int id;
+        printf("  Ingrese ID de la canción: ");
+        if (scanf("%u", &id) == 1)
+        {
+            while (getchar() != '\n');
+            int pos = buscar_cid_playlist(catalogo, id);
+            if (pos != -1 && agregar_a_cola(cola, &catalogo->canciones[pos]) == 0)
+            {
+                printf(COLOR_GREEN "  Canción añadida.\n" COLOR_RESET);
+            }
+            else
+            {
+                printf(COLOR_RED "  Error: ID no es valido o ya esta agregada.\n" COLOR_RESET);
+            }
+        }
+        ui_pausa();
+    }
+    else if (opc == '2')
+    {
+        quitar_de_cola_pos(cola, 0);
+        printf(COLOR_GREEN "  Primera cancion retirada de la fila.\n" COLOR_RESET);
+        ui_pausa();
+    }
+    else if (opc == '3')
+    {
+        vaciar_cola(cola);
+        printf(COLOR_GREEN "  Fila vaciada.\n" COLOR_RESET);
+        ui_pausa();
     }
 }
 
@@ -190,7 +221,7 @@ void ui_menu_fila(playlist *cola, playlist *catalogo)
 void ui_mostrar_historial(const playlist *historial)
 {
     printf(COLOR_CYAN "\n === Historial [%d canciones] ===\n" COLOR_RESET, historial->cantidad);
-    for (int i = 0; i < historial->cantidad; i++)
+    for (int i = historial->cantidad - 1; i >= 0; i--)
     {
         printf("  - %s - %s (Reps: %u)\n", historial->canciones[i].artista, historial->canciones[i].titulo, historial->canciones[i].total_rep);
     }
@@ -203,19 +234,57 @@ void ui_mostrar_historial(const playlist *historial)
 /* Submenu busqueda */
 void ui_menu_busqueda(playlist *catalogo)
 {
-    char buf[128];
     printf(COLOR_CYAN "\n  --- Busqueda ---\n" COLOR_RESET);
+    printf("  [1] Buscar por ID [recursiva]\n");
+    printf("  [2] Buscar por artista\n");
+    printf("  [0] Salir\n");
+
+    char opc = ui_input();
+    if (opc == '1')
+    {
+        unsigned int id;
+        printf("  Ingrese ID de la canción: ");
+        if (scanf("%u", &id) == 1)
+        {
+            while (getchar() != '\n'); // eliminar enter de la cadena
+            int pos = binsearch_cancion(catalogo, 0, catalogo->cantidad - 1, id);
+            if (pos != -1)
+            {
+                printf(COLOR_GREEN "  Canción encontrada.\n" COLOR_RESET);
+                printf(COLOR_CYAN "    %d. %s - %s\n" COLOR_RESET, pos + 1, catalogo->canciones[pos].artista, catalogo->canciones[pos].titulo);
+            }
+            else
+            {
+                printf(COLOR_RED "  No se encontró la canción. [Ordenar por ID con [T] primero]\n" COLOR_RESET);
+            }
+        }
+        ui_pausa();
+    }
+    else if (opc == '2')
+    {
+        ui_pedir_artista();
+        ejecuta_busqueda_artista(catalogo);
+    }
 }
 
 /* Submenu ordenar */
 void ui_menu_ordenar(playlist *catalogo)
 {
-    char buf[32];
-    printf(COLOR_CYAN "\n  --- Ordenar (Insertion Sort) ---\n" COLOR_RESET);
-    printf(" [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n >> ");
+    printf(COLOR_CYAN "\n  --- Ordenar [Insertion Sort] ---\n" COLOR_RESET);
+    printf("  [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n");
+    
+    char opc = ui_input();
 
-    if (fgets(buf, sizeof(buf), stdin) == NULL)
+    /* Convierte el caracter a entero para poder usarlo como indice */
+    if (opc >= '0' && opc <= '3')
     {
+        int criterio = opc - '0';
+        insertion_sort_int(catalogo, criterio);
+        printf(COLOR_GREEN "  Catalogo ordenado!\n" COLOR_RESET);
+    }
+    else
+    {
+        printf(COLOR_RED "  Opcion invalida.\n" COLOR_RESET);
     }
     ui_pausa();
 }
@@ -223,9 +292,33 @@ void ui_menu_ordenar(playlist *catalogo)
 /* Submenu exportar */
 void ui_menu_exportar(const playlist *catalogo)
 {
-    char buf[128];
-    printf(COLOR_CYAN "\n  --- Exportar a CSV ---\n" COLOR_RESET);
+    char buf[100];
+    FILE *archivo;
 
+    printf(COLOR_CYAN "\n  --- Exportar a CSV ---\n" COLOR_RESET);
+    printf("  Nombre del archivo (ej: playlist.csv): ");
+
+    if (scanf("%99s", buf) == 1)
+    {
+        while (getchar() != '\n');
+        archivo = fopen(buf, "w");
+        if (archivo != NULL)
+        {
+            for (int i = 0; i < catalogo->cantidad; i++)
+            {
+                cancion *c = &catalogo->canciones[i];
+                fprintf(archivo, "%u;%u;%u;%u;%s;%s;%s;%s\n",
+                        c->cid, c->duracion, c->anio, c->total_rep,
+                        c->titulo, c->artista, c->album, c->genero);
+            }
+            fclose(archivo);
+            printf(COLOR_GREEN "  Archivo exportado con éxito -> %s.\n" COLOR_RESET, buf);
+        }
+        else
+        {
+            printf(COLOR_RED "  Error al abrir el archivo.\n" COLOR_RESET);
+        }
+    }
     ui_pausa();
 }
 

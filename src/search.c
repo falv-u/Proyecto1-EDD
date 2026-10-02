@@ -260,7 +260,7 @@ void listar_artistas(const playlist *pl)
     }
 }
 
-void interactuar_generos(playlist *pl)
+void interactuar_genero(playlist *pl)
 {
     if (pl == NULL || pl->canciones == NULL || pl->cantidad <= 0)
     {
