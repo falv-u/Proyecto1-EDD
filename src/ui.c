@@ -1,7 +1,4 @@
 /* Idea: While principal, interfaz con colores y ascii, etc.*/
-// FALTA UN CLI, reproducir, pausar
-// LS para listar las canciones completas (Panchito)
-// Crear y eliminar playlists/cancion: Orquestado
 
 #include <stdio.h>
 #include <string.h>
