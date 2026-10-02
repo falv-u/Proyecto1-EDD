@@ -6,15 +6,24 @@
 #include "songs.h"
 #include "ui.h"
 
+/* Inicializadores de cola e historial */
+playlist crear_playlist_vacia(int capacidad);
+playlist crear_historial(void);
+void liberar_arreglo_playlist(playlist *pl);
+void liberar_historial(playlist *h);
 
 int main(void)
 {
 	srand(time(NULL));
 	playlist pl = crear_playlist();
+	playlist historial = crear_historial();
+	playlist cola = crear_playlist_vacia(MAX_COLA);
 	cancion *actual = NULL;
 
 	int corriendo = 1;
+	int en_pausa = 0;
 	int indice_actual = -1; // para recorrer pl.canciones
+	char buffer[128];
 
 	while (corriendo)
 	{
@@ -26,20 +35,27 @@ int main(void)
 		char opc = ui_input();
 		switch (opc)
 		{
+			/* ~~~~~~ Reproduccion ~~~~~~*/
+			/* [P] Reproducir cancion desde la cola */
 			case 'P':
 			case 'p':
-			case '2':
-				if (actual != NULL)
-				{
-					printf(COLOR_CYAN "\n  Reproduciendo/Pausando: %s..." COLOR_RESET, actual->titulo);
-				}
-				else
-				{
-					printf(COLOR_RED "\n No hay ninguna canción seleccionada." COLOR_RESET);
-				}
+				actual = ui_toggle_play_pause(actual, &en_pausa, &cola, &pl, &historial);
 				ui_pausa();
     			break;
-			
+
+			/* [F] Fila de reproduccion */
+			case 'F':
+			case 'f':
+				ui_menu_fila(&cola, &pl);
+				break;
+
+			/* [H] Historial */
+			case 'H':
+			case 'h':
+				ui_mostrar_historial(&historial);
+				break;
+
+			/* [N] Siguiente cancion */
 			case 'N':
 			case 'n':
 				if (pl.cantidad > 0) // Siguiente canción
@@ -47,47 +63,44 @@ int main(void)
 					// Ciclicamente (%)
 					indice_actual = (indice_actual + 1) % pl.cantidad;
 					actual = &pl.canciones[indice_actual];
+					en_pausa = 0;
 				}
 				break;
 
+			/* [B] Anterior cancion */
 			case 'B':
 			case 'b':
 				if (pl.cantidad > 0) // Anterior canción
 				{
-					// Ciclicamente (%)
-					// le sumamos + pl.cantidad para que no hayan negativos. 
+					// Ciclicamente (%): le sumamos + pl.cantidad para que no hayan negativos. 
 					indice_actual = (indice_actual - 1 + pl.cantidad) % pl.cantidad;
 					actual = &pl.canciones[indice_actual];
+					en_pausa = 0;
 				}
 				break;
 
-			case 'L':
-			case 'l':
-				// cargar la lista usando el separador indicado para el csv "," o "|"
+			/* ~~~~~~ Busquedas ~~~~~~*/
+			/* [S] Busqueda binaria por ID/artista */
+			case 'S':
+			case 's':
+				ui_menu_busqueda(&pl);
 				break;
 
-			case 'T':
-			case 't':
-				// insertar funcion ordenamiento
-				if (pl.cantidad > 0)
-				{
-					printf("\n");
-				}
-				ui_pausa();
-				break;
-
+			/* [A] Listar artistas */
 			case 'A':
             case 'a':
                 listar_artistas(&pl);
                 ui_pausa();
                 break;
 
+			/* [G] Buscar generos */
             case 'G':
             case 'g':
                 interactuar_generos(&pl);
                 ui_pausa();
                 break;
 
+			/* [R] Ranking */
             case 'R':
             case 'r':
                 // Utiliza la función del archivo ranking.c
@@ -95,24 +108,33 @@ int main(void)
                 ui_pausa();
                 break;
 
-            case 'F':
-            case 'f':
-                // Placeholder para cuando programen la lógica de la Fila de Reproducción (Cola)
-                printf(COLOR_YELLOW "\n  [ Módulo de Fila de Reproducción en construcción ]\n" COLOR_RESET);
-                ui_pausa();
-                break;
-
-            case 'Q':
+			/* ~~~~~~ Opciones ~~~~~~*/
+			/* [T] Ordenar */
+			case 'T':
+			case 't':
+				ui_menu_ordenar(&pl);
+				break;
+			
+			/* [E] Exportar */
+			case 'E':
+			case 'e':
+				ui_menu_exportar(&pl);
+				break;
+			
+			/* [Q] Salir */
+			case 'Q':
             case 'q':
             case '0':
                 corriendo = 0;
       		break;
-
+			
     		default:
     			break;
 		}
 	}
 
 	liberar_pl(&pl);
+	liberar_arreglo_playlist(&cola);
+	liberar_historial(&historial);
 	return 0;
 }
