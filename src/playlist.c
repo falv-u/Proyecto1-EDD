@@ -173,8 +173,6 @@ void imprimir_playlist(const playlist *pl)
 		return;
 	}
 
-	printf("Playlist #%u: %s\n", pl->pid, pl->nombre ? pl->nombre : "(sin nombre)");
-	printf("Canciones: %d\n", pl->cantidad);
 	printf("----------------------------------------------------------------------------------------------------\n");
 	printf("%-4s %-30s %-20s %-20s %-6s %-5s %-5s\n",
 			"ID", "Titulo", "Artista", "Album", "Dur", "Anio", "Rep");
@@ -192,6 +190,8 @@ void imprimir_playlist(const playlist *pl)
 				c->total_rep);
 	}
 	printf("----------------------------------------------------------------------------------------------------\n");
+	printf("[Playlist] #%u: %s | ", pl->pid, pl->nombre ? pl->nombre : "(sin nombre)");
+	printf("[Canciones]: %d\n", pl->cantidad);
 }
 
 int agregar_cancion_playlist(const char *ruta, cancion *c, playlist *pl)

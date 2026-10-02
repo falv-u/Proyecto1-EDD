@@ -349,6 +349,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Imprime la cancion actual en la terminal. </p>
+<p>Imprime la cancion actual en la terminal.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntero a la cancion actualmente en reproduccion, o NULL si no hay ninguna. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -368,6 +375,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Imprime el menu de opciones en la terminal. </p>
 <p>Imprime el menu de opciones en la terminal. </p>
 
 </div>
@@ -389,6 +397,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Limpia la terminal. </p>
+<p>Limpia la terminal. </p>
 
 </div>
 </div>
@@ -402,7 +411,7 @@ Functions</h2></td></tr>
           <td class="memname">void ui_cancion_busqueda </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>num</em>, </td>
+          <td class="paramname"><em>indice</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -419,6 +428,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Muestra una cancion encontrada en la busqueda. </p>
+<p>Muestra una cancion encontrada en la busqueda.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">indice</td><td>Posicion o numero de orden en los resultados. </td></tr>
+    <tr><td class="paramname">c</td><td>Puntero a la cancion a mostrar. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -439,6 +456,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Lee una entrada del usuario en la terminal. </p>
+<p>Lee una entrada del usuario en la terminal.</p>
+<dl class="section return"><dt>Returns</dt><dd>El caracter ingresado si es valido (alfanumerico), o '\0' si es invalido. </dd></dl>
 
 </div>
 </div>
@@ -459,6 +478,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Muestra el menu de busqueda. </p>
+<p>Muestra el menu de busqueda.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">catalogo</td><td>Puntero al catalogo donde se realizaran las busquedas. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -479,6 +505,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Muestra el menu de exportar. </p>
+<p>Muestra el menu de exportar.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">catalogo</td><td>Puntero a la playlist del catalogo a persistir en disco. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -498,6 +531,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Muestra el menu de extras. </p>
 <p>Muestra el menu de extras. </p>
 
 </div>
@@ -529,6 +563,15 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Fila de reproduccion. </p>
+<p>Fila de reproduccion.</p>
+<p>Permite listar canciones en cola, agregar canciones por ID, retirar la primera, retirar por posicion o ID, y vaciar la cola por completo.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cola</td><td>Puntero a la playlist que representa la cola de reproduccion. </td></tr>
+    <tr><td class="paramname">catalogo</td><td>Puntero al catalogo principal de canciones disponibles. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -549,6 +592,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Historial. </p>
+<p>Historial.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">historial</td><td>Puntero a la playlist que contiene el historial de reproducciones. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -569,6 +619,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Muestra el menu de ordenar. </p>
+<p>Muestra el menu de ordenar.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">catalogo</td><td>Puntero a la playlist del catalogo a ordenar. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -589,6 +646,13 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Muestra el menu de ranking. </p>
+<p>Muestra el menu de ranking.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pl</td><td>Puntero al catalogo de canciones sobre el que se calculan las estadisticas. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -608,6 +672,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Pausa la ejecucion del programa [no es Play/pause] hasta que el usuario presione Enter. </p>
 <p>Pausa la ejecucion del programa [no es Play/pause] hasta que el usuario presione Enter. </p>
 
 </div>
@@ -629,6 +694,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Pide el artista a buscar. </p>
+<p>Pide el artista a buscar. </p>
 
 </div>
 </div>
@@ -649,6 +715,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Funcion principal de la interfaz de usuario. </p>
+<p>Funcion principal de la interfaz de usuario.</p>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 al finalizar la ejecucion. </dd></dl>
 
 </div>
 </div>
@@ -662,7 +730,7 @@ Functions</h2></td></tr>
           <td class="memname">void ui_resultados_busqueda </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>encontrados</em>, </td>
+          <td class="paramname"><em>cantidad</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -679,6 +747,14 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Muestra los resultados de busqueda por artista. </p>
+<p>Muestra los resultados de busqueda por artista.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cantidad</td><td>Numero de canciones encontradas. </td></tr>
+    <tr><td class="paramname">artista</td><td>Nombre del artista buscado. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -692,13 +768,20 @@ Functions</h2></td></tr>
           <td class="memname">void ui_sin_resultados </td>
           <td>(</td>
           <td class="paramtype">char *&#160;</td>
-          <td class="paramname"><em>artista</em></td><td>)</td>
+          <td class="paramname"><em>solicitud</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Muestra mensaje de no resultados. </p>
+<p>Muestra mensaje de no resultados.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">solicitud</td><td>Cadena de texto que origino la busqueda sin resultados. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -747,6 +830,19 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Play/Pause. </p>
+<p>Play/Pause.</p>
+<p>Si no hay cancion activa, toma la primera cancion de la cola y la reproduce. Si ya hay una cancion reproduciendose, alterna entre estado pausado y reanudado.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">actual</td><td>Puntero a la cancion en reproduccion actualmente. </td></tr>
+    <tr><td class="paramname">en_pausa</td><td>Puntero a la bandera de estado de pausa (0: reproduciendo, 1: en pausa). </td></tr>
+    <tr><td class="paramname">cola</td><td>Puntero a la cola de reproduccion. </td></tr>
+    <tr><td class="paramname">pl</td><td>Puntero al catalogo principal de canciones. </td></tr>
+    <tr><td class="paramname">historial</td><td>Puntero a la lista de historial de reproduccion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Puntero a la cancion que queda en reproduccion, o NULL si la cola esta vacia. </dd></dl>
 
 </div>
 </div>

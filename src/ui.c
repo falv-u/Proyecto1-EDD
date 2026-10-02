@@ -21,7 +21,18 @@ void ejecuta_busqueda_artista(playlist *pl);
 int mas_escuchada_artista(const playlist *pl, char *c);
 int mas_escuchada_genero(const playlist *pl, char *c);
 
-/* Falta funcion de play/pause */
+/** @brief Alterna el estado de reproduccion entre reproducir y pausar.
+ *
+ * Si no hay cancion activa, toma la primera cancion de la cola y la reproduce.
+ * Si ya hay una cancion reproduciendose, alterna entre estado pausado y reanudado.
+ *
+ * @param actual Puntero a la cancion en reproduccion actualmente.
+ * @param en_pausa Puntero a la bandera de estado de pausa (0: reproduciendo, 1: en pausa).
+ * @param cola Puntero a la cola de reproduccion.
+ * @param pl Puntero al catalogo principal de canciones.
+ * @param historial Puntero a la lista de historial de reproduccion.
+ * @return Puntero a la cancion que queda en reproduccion, o NULL si la cola esta vacia.
+ */
 cancion *ui_toggle_play_pause(cancion *actual, int *en_pausa, playlist *cola, playlist *pl, playlist *historial)
 {
     int pos;
@@ -58,6 +69,7 @@ cancion *ui_toggle_play_pause(cancion *actual, int *en_pausa, playlist *cola, pl
     return actual;
 }
 
+/** @brief Limpia la pantalla de la terminal mediante secuencias de escape ANSI. */
 void limpiar_pantalla(void)
 {
     // Limpieza de pantalla.
@@ -65,6 +77,10 @@ void limpiar_pantalla(void)
     system("clear");
 }
 
+/** @brief Muestra en consola la informacion de la cancion en reproduccion.
+ *
+ * @param c Puntero a la cancion actualmente en reproduccion, o NULL si no hay ninguna.
+ */
 void imprime_cancion(cancion *c)
 {
     if (c != NULL && c->artista != NULL && c->titulo != NULL)
@@ -77,6 +93,7 @@ void imprime_cancion(cancion *c)
     }
 }
 
+/** @brief Imprime el menu principal con todas las opciones disponibles y arte ASCII. */
 void imprime_menu(void)
 {
     printf("  \t" COLOR_BOLD "Reproducir:\n" COLOR_RESET);
@@ -109,9 +126,13 @@ void imprime_menu(void)
     printf(" ▐█ ▀. █▪██▌·██ ▐███▪·██ ▐███▪▐█▪██▌\n");
     printf(" ▄▀▀▀█▄█▌▐█▌▐█ ▌▐▌▐█·▐█ ▌▐▌▐█·▐█▌▐█▪\n");
     printf(" ▐█▄▪▐█▐█▄█▌██ ██▌▐█▌██ ██▌▐█▌ ▐█▀·.\n");
-    printf("  ▀▀▀▀  ▀▀▀ ▀▀  █▪▀▀▀▀▀  █▪▀▀▀  ▀ • \n" COLOR_RESET);
+    printf("  ▀▀▀▀  ▀▀▀ ▀▀  █▪▀▀▀▀▀  █▪▀▀▀  ▀ • \t" COLOR_RESET);
 }
 
+/** @brief Lee y valida un caracter de entrada del usuario por consola.
+ *
+ * @return El caracter ingresado si es valido (alfanumerico), o '\0' si es invalido.
+ */
 char ui_input(void)
 {
     char input[32];
@@ -136,6 +157,10 @@ char ui_input(void)
     return input[0];
 }
 
+/** @brief Bucle principal de la interfaz de usuario para interaccion por consola.
+ *
+ * @return Retorna 0 al finalizar la ejecucion.
+ */
 int ui_principal(void)
 {
     int running = 1;
@@ -151,6 +176,7 @@ int ui_principal(void)
     return 0;
 }
 
+/** @brief Pausa la ejecucion del programa hasta que el usuario presione Enter. */
 void ui_pausa(void)
 {
     printf(COLOR_CYAN "[Presione Enter para continuar....]" COLOR_RESET);
@@ -159,16 +185,27 @@ void ui_pausa(void)
 
 /* Funciones UI para busqueda */
 
+/** @brief Solicita al usuario ingresar el nombre de un artista por consola. */
 void ui_pedir_artista(void)
 {
     printf(COLOR_CYAN "\n  >> Introduce el nombre del artista a buscar: " COLOR_RESET);
 }
 
+/** @brief Muestra el total de coincidencias encontradas para la busqueda de un artista.
+ *
+ * @param cantidad Numero de canciones encontradas.
+ * @param artista Nombre del artista buscado.
+ */
 void ui_resultados_busqueda(int cantidad, char *artista)
 {
     printf(COLOR_GREEN "\n  Encontrados %d resultados para el artista '%s'." COLOR_RESET, cantidad, artista);
 }
 
+/** @brief Muestra una cancion individual perteneciente a los resultados de busqueda.
+ *
+ * @param indice Posicion o numero de orden en los resultados.
+ * @param c Puntero a la cancion a mostrar.
+ */
 void ui_cancion_busqueda(int indice, cancion *c)
 {
     if (c != NULL && c->artista != NULL && c->titulo != NULL)
@@ -177,13 +214,25 @@ void ui_cancion_busqueda(int indice, cancion *c)
     }
 }
 
+/** @brief Informa al usuario que no se hallaron resultados para el criterio solicitado.
+ *
+ * @param solicitud Cadena de texto que origino la busqueda sin resultados.
+ */
 void ui_sin_resultados(char *solicitud)
 {
     printf(COLOR_RED "\n  Sin resultados para %s." COLOR_RESET, solicitud);
 }
 
 /* Funciones UI para lista de canciones */
-/* Submenu fila de reproduccion*/
+
+/** @brief Muestra el submenu interactivo para la gestion de la cola/fila de reproduccion.
+ *
+ * Permite listar canciones en cola, agregar canciones por ID, retirar la primera,
+ * retirar por posicion o ID, y vaciar la cola por completo.
+ *
+ * @param cola Puntero a la playlist que representa la cola de reproduccion.
+ * @param catalogo Puntero al catalogo principal de canciones disponibles.
+ */
 void ui_menu_fila(playlist *cola, playlist *catalogo)
 {
     printf(COLOR_CYAN "\n === Fila de rep. [%d canciones] ===\n" COLOR_RESET, cola->cantidad);
@@ -268,7 +317,10 @@ void ui_menu_fila(playlist *cola, playlist *catalogo)
     }
 }
 
-/* Submenu historial */
+/** @brief Despliega el submenu del historial con las ultimas canciones reproducidas.
+ *
+ * @param historial Puntero a la playlist que contiene el historial de reproducciones.
+ */
 void ui_menu_historial(const playlist *historial)
 {
     printf(COLOR_CYAN "\n === Historial [%d canciones] ===\n" COLOR_RESET, historial->cantidad);
@@ -282,7 +334,10 @@ void ui_menu_historial(const playlist *historial)
     ui_pausa();
 }
 
-/* Submenu busqueda */
+/** @brief Despliega el submenu de busqueda (por ID, artista o titulo).
+ *
+ * @param catalogo Puntero al catalogo donde se realizaran las busquedas.
+ */
 void ui_menu_busqueda(playlist *catalogo)
 {
     printf(COLOR_CYAN "\n  --- Busqueda ---\n" COLOR_RESET);
@@ -346,7 +401,10 @@ void ui_menu_busqueda(playlist *catalogo)
     }
 }
 
-/* Submenu ordenar */
+/** @brief Despliega el submenu de ordenamiento del catalogo segun algoritmos y criterios.
+ *
+ * @param catalogo Puntero a la playlist del catalogo a ordenar.
+ */
 void ui_menu_ordenar(playlist *catalogo)
 {
     printf(COLOR_CYAN "\n  --- Ordenar [Insertion Sort] ---\n" COLOR_RESET);
@@ -389,7 +447,10 @@ void ui_menu_ordenar(playlist *catalogo)
     ui_pausa();
 }
 
-/* Submenu exportar */
+/** @brief Despliega el submenu para exportar el catalogo actual a un archivo CSV.
+ *
+ * @param catalogo Puntero a la playlist del catalogo a persistir en disco.
+ */
 void ui_menu_exportar(const playlist *catalogo)
 {
     char buf[100];
@@ -422,10 +483,10 @@ void ui_menu_exportar(const playlist *catalogo)
     ui_pausa();
 }
 
-/* Submenu ranking */
-/* Si bien funciona bien canciones_mas_escuchada: necesitamos la mas escuchada por
-artista y por genero... 
-*/
+/** @brief Despliega el submenu de rankings y estadisticas de reproduccion.
+ *
+ * @param pl Puntero al catalogo de canciones sobre el que se calculan las estadisticas.
+ */
 void ui_menu_ranking(const playlist *pl)
 {
     printf(COLOR_CYAN "\n  --- Rankings & Stats ---\n" COLOR_RESET);
@@ -503,6 +564,7 @@ void ui_menu_ranking(const playlist *pl)
     }
 }
 
+/** @brief Despliega el submenu de extras (reproduccion de audio real y creditos). */
 void ui_menu_extras(void)
 {
     printf(COLOR_CYAN "\n  --- Extras ---\n" COLOR_RESET);

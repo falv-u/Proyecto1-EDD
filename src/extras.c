@@ -16,7 +16,7 @@ void mostrar_creditos(void) {
 	printf("\t\t- UI, search, diseno el main y orquesto todas las funciones\n");
 	printf("\t- Felipe Desmaras\n");
 	printf("\t\t- Todos los sort, cola\n");
-	printf("\tProfesor: ---completar\n");
+	printf("\tProfesor: Jacqueline Aldridge Aguila\n");
 	printf("\tAgradecimientos a:\n\n");
 	printf("\t - A la profe por ser buen profe y tenernos paciencia\n");
 	printf("\t - A miltongoat por ensenarnos LaTex\n");
