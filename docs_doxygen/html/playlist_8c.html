@@ -108,22 +108,29 @@ Include dependency graph for playlist.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af75e7969fb9b00f351596ecc01d1c7c0" id="r_af75e7969fb9b00f351596ecc01d1c7c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#af75e7969fb9b00f351596ecc01d1c7c0">existe_plcsv</a> (void)</td></tr>
-<tr class="memdesc:af75e7969fb9b00f351596ecc01d1c7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">busca si existe un archivo. Verifica si el archivo CSV de la playlist existe tratando de abrir el contenido en modo lectura.  <br /></td></tr>
+<tr class="memdesc:af75e7969fb9b00f351596ecc01d1c7c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verifica la existencia fisica del archivo CSV de la playlist en disco.  <br /></td></tr>
 <tr class="separator:af75e7969fb9b00f351596ecc01d1c7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e68e67d873ac89cd253a7d67a4f06b4" id="r_a5e68e67d873ac89cd253a7d67a4f06b4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a5e68e67d873ac89cd253a7d67a4f06b4">copiar_cadena</a> (const char *s)</td></tr>
+<tr class="memdesc:a5e68e67d873ac89cd253a7d67a4f06b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Duplica una cadena de caracteres reservando memoria dinamica con malloc.  <br /></td></tr>
 <tr class="separator:a5e68e67d873ac89cd253a7d67a4f06b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a980a0d4992e15102a2b6d875663fa019" id="r_a980a0d4992e15102a2b6d875663fa019"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a980a0d4992e15102a2b6d875663fa019">playlist_cargar_csv</a> (<a class="el" href="structplaylist.html">playlist</a> *pl, const char *ruta)</td></tr>
-<tr class="memdesc:a980a0d4992e15102a2b6d875663fa019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga las canciones desde un archivo CSV a la playlist. para cierto archivo de ruta, se busca cargar todos sus datos a una playlist, primero se cuentan las lineas que tiene el archivo sabiendo el numero de canciones se reserva la memoria con malloc. se separa el texto segun un separador '|', cada dato separado se guarda en una direccion de memoria en ram, por tanto para no perder el acceso se guarda en un arreglo char *temporal, una vez guardada esa linea, se hace una verificacion sencilla de exito, y si en caso de que en alguna parte de el arreglo temporal apunte a NULL, n&lt;datos_de_cancion en este caso 8, si sucede se salta esa iteracion y esos datos no se guardan en memoria. si caso contrario todo sale bien esos datos son transformados a sus respectivas unidades y se guardan en la playlist.  <br /></td></tr>
+<tr class="memdesc:a980a0d4992e15102a2b6d875663fa019"><td class="mdescLeft">&#160;</td><td class="mdescRight">Carga las canciones desde un archivo CSV a la estructura playlist.  <br /></td></tr>
 <tr class="separator:a980a0d4992e15102a2b6d875663fa019"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07debb28045e255ae3a597f099238ffe" id="r_a07debb28045e255ae3a597f099238ffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a07debb28045e255ae3a597f099238ffe">liberar_pl</a> (<a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
+<tr class="memdesc:a07debb28045e255ae3a597f099238ffe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera la totalidad de la memoria dinamica asociada a una playlist.  <br /></td></tr>
 <tr class="separator:a07debb28045e255ae3a597f099238ffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2374f9dcd2309a2dd405c04029c53f5c" id="r_a2374f9dcd2309a2dd405c04029c53f5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplaylist.html">playlist</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a2374f9dcd2309a2dd405c04029c53f5c">crear_playlist</a> (void)</td></tr>
-<tr class="memdesc:a2374f9dcd2309a2dd405c04029c53f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funcion de creado que usa funciones auxiliares para modularidad, en si esta funcion solo define por si misma el id de una playlist y su nombre.  <br /></td></tr>
+<tr class="memdesc:a2374f9dcd2309a2dd405c04029c53f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Solicita datos al usuario e inicializa una nueva playlist.  <br /></td></tr>
 <tr class="separator:a2374f9dcd2309a2dd405c04029c53f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d6fbad722a10252e1d025f3c2923ac5" id="r_a8d6fbad722a10252e1d025f3c2923ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a8d6fbad722a10252e1d025f3c2923ac5">imprimir_playlist</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
+<tr class="memdesc:a8d6fbad722a10252e1d025f3c2923ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Imprime por salida estandar el listado tabular de canciones de una lista.  <br /></td></tr>
 <tr class="separator:a8d6fbad722a10252e1d025f3c2923ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7618558656695c0a873eff28fb520ff5" id="r_a7618558656695c0a873eff28fb520ff5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a7618558656695c0a873eff28fb520ff5">agregar_cancion_playlist</a> (const char *ruta, <a class="el" href="structcancion.html">cancion</a> *c, <a class="el" href="structplaylist.html">playlist</a> *pl)</td></tr>
+<tr class="memdesc:a7618558656695c0a873eff28fb520ff5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Agrega una cancion al arreglo dinamico de la playlist y la anexa a su CSV.  <br /></td></tr>
 <tr class="separator:a7618558656695c0a873eff28fb520ff5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d2327dc960031eda2714b192ba64d52" id="r_a3d2327dc960031eda2714b192ba64d52"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="playlist_8c.html#a3d2327dc960031eda2714b192ba64d52">exportar_playlist</a> (const <a class="el" href="structplaylist.html">playlist</a> *pl, const char *ruta)</td></tr>
+<tr class="memdesc:a3d2327dc960031eda2714b192ba64d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exporta el arreglo completo de una playlist o catalogo a un archivo CSV.  <br /></td></tr>
+<tr class="separator:a3d2327dc960031eda2714b192ba64d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="a7618558656695c0a873eff28fb520ff5" name="a7618558656695c0a873eff28fb520ff5"></a>
@@ -158,6 +165,18 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Agrega una cancion al arreglo dinamico de la playlist y la anexa a su CSV. </p>
+<p>Abre el archivo CSV especificado en modo anexo ("a") e imprime una nueva linea con los campos delimitados por punto y coma. Posteriormente, realoca memoria para el arreglo contiguo pl-&gt;canciones, copia las canciones previas, asigna la nueva cancion en la ultima posicion e incrementa pl-&gt;cantidad.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta del archivo CSV donde se anexara el registro. </td></tr>
+    <tr><td class="paramname">c</td><td>Puntero a la estructura de la cancion que sera agregada. </td></tr>
+    <tr><td class="paramname">pl</td><td>Puntero a la playlist en memoria donde se insertara el elemento. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 en caso de exito, 121 si no fue posible abrir el archivo en disco. </dd></dl>
+
 </div>
 </div>
 <a id="a5e68e67d873ac89cd253a7d67a4f06b4" name="a5e68e67d873ac89cd253a7d67a4f06b4"></a>
@@ -175,6 +194,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Duplica una cadena de caracteres reservando memoria dinamica con malloc. </p>
+<p>Calcula el tamano de la cadena origen mediante strlen, solicita memoria para alojar todos los bytes mas el caracter nulo de terminacion '\0' y copia el contenido mediante strcpy para desacoplar buffers temporales.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>Puntero a la cadena de texto de origen. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Puntero a la nueva zona de memoria reservada, o NULL en caso de error de memoria. </dd></dl>
 
 </div>
 </div>
@@ -194,8 +223,9 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Funcion de creado que usa funciones auxiliares para modularidad, en si esta funcion solo define por si misma el id de una playlist y su nombre. </p>
-<dl class="section return"><dt>Returns</dt><dd>Playlist </dd></dl>
+<p>Solicita datos al usuario e inicializa una nueva playlist. </p>
+<p>Genera un identificador numerico unico mediante <a class="el" href="songs_8h.html#a4ad356699a7bb281e2507c484494a07b" title="Genera un identificador numerico unico y secuencial.">generar_id()</a>, solicita por entrada estandar el nombre de la lista, elimina el salto de linea resultante de fgets, reserva memoria para pl.nombre y, si el archivo de playlist existe en disco, carga las canciones almacenadas invocando a <a class="el" href="songs_8h.html#a980a0d4992e15102a2b6d875663fa019" title="Carga las canciones desde un archivo CSV a la estructura playlist.">playlist_cargar_csv()</a>.</p>
+<dl class="section return"><dt>Returns</dt><dd>Estructura playlist completamente inicializada y lista para uso. </dd></dl>
 
 </div>
 </div>
@@ -215,8 +245,48 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>busca si existe un archivo. Verifica si el archivo CSV de la playlist existe tratando de abrir el contenido en modo lectura. </p>
-<p>Verifica si el archivo CSV de la playlist existe. Retorna 1 si existe, 0 si no. </p><dl class="section return"><dt>Returns</dt><dd>Retorna 1 si existe, 0 si no. </dd></dl>
+<p>Verifica la existencia fisica del archivo CSV de la playlist en disco. </p>
+<p>Intenta abrir el archivo definido por ruta_pl en modo lectura ("r").</p>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 1 si el archivo existe en disco y puede abrirse, 0 si no existe. </dd></dl>
+
+</div>
+</div>
+<a id="a3d2327dc960031eda2714b192ba64d52" name="a3d2327dc960031eda2714b192ba64d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d2327dc960031eda2714b192ba64d52">&#9670;&#160;</a></span>exportar_playlist()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int exportar_playlist </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ruta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exporta el arreglo completo de una playlist o catalogo a un archivo CSV. </p>
+<p>Crea o trunca el archivo en la ruta especificada en modo escritura ("w") y recorre iterativamente el arreglo contiguo de canciones, escribiendo cada elemento linea por linea con formato "id;duracion;anio;reps;titulo;artista;album;genero\\n".</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pl</td><td>Puntero de solo lectura a la playlist cuyos registros se guardaran. </td></tr>
+    <tr><td class="paramname">ruta</td><td>Ruta del archivo CSV de destino. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 si la escritura concluyo exitosamente, 1 si fallan punteros o apertura. </dd></dl>
 
 </div>
 </div>
@@ -236,6 +306,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Imprime por salida estandar el listado tabular de canciones de una lista. </p>
+<p>Despliega un encabezado con el identificador de la playlist, nombre y total de canciones, seguido por una tabla con formato de columnas de ancho fijo mostrando ID, Titulo, Artista, Album, Duracion, Anio y Reproducciones acumuladas.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pl</td><td>Puntero de solo lectura a la playlist que se va a imprimir. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="a07debb28045e255ae3a597f099238ffe" name="a07debb28045e255ae3a597f099238ffe"></a>
@@ -253,6 +332,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Libera la totalidad de la memoria dinamica asociada a una playlist. </p>
+<p>Recorre todas las canciones de la lista liberando los cuatro punteros de cadena (titulo, artista, album, genero) mediante free(). Posteriormente libera el arreglo contiguo pl-&gt;canciones y la cadena con el nombre de la playlist pl-&gt;nombre.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pl</td><td>Puntero a la playlist que sera desasignada y limpiada de memoria. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -282,8 +370,16 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Carga las canciones desde un archivo CSV a la playlist. para cierto archivo de ruta, se busca cargar todos sus datos a una playlist, primero se cuentan las lineas que tiene el archivo sabiendo el numero de canciones se reserva la memoria con malloc. se separa el texto segun un separador '|', cada dato separado se guarda en una direccion de memoria en ram, por tanto para no perder el acceso se guarda en un arreglo char *temporal, una vez guardada esa linea, se hace una verificacion sencilla de exito, y si en caso de que en alguna parte de el arreglo temporal apunte a NULL, n&lt;datos_de_cancion en este caso 8, si sucede se salta esa iteracion y esos datos no se guardan en memoria. si caso contrario todo sale bien esos datos son transformados a sus respectivas unidades y se guardan en la playlist. </p>
-<dl class="section return"><dt>Returns</dt><dd>Retorna 0 en éxito, 121 si no puede abrir el archivo. </dd></dl>
+<p>Carga las canciones desde un archivo CSV a la estructura playlist. </p>
+<p>Para cierto archivo de ruta, se busca cargar todos sus datos a una playlist; primero se cuentan las lineas que tiene el archivo mediante fgets. Sabiendo el numero de canciones se reserva la memoria contigua con malloc. Se procesa cada linea usando strtok con separadores ";\\n" guardando los punteros en un arreglo temporal char *t[8]. Se verifica que se hayan extraido exactamente los 8 campos requeridos; de cumplirse, los datos numericos se transforman a enteros con strtoul y los textos se copian en el heap con <a class="el" href="songs_8h.html#a5e68e67d873ac89cd253a7d67a4f06b4" title="Duplica una cadena de caracteres reservando memoria dinamica con malloc.">copiar_cadena()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pl</td><td>Puntero a la estructura playlist donde se cargaran las canciones. </td></tr>
+    <tr><td class="paramname">ruta</td><td>Ruta del archivo CSV en disco desde donde se leeran los datos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 en exito, 121 si no fue posible abrir el archivo para lectura. </dd></dl>
 
 </div>
 </div>

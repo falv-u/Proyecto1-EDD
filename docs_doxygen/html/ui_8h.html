@@ -147,6 +147,18 @@ Functions</h2></td></tr>
 <tr class="separator:a0a285eb0c5fe24788d87bbdbd9171c3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f9d9b671fbbd0c8235d590da8f88e97" id="r_a9f9d9b671fbbd0c8235d590da8f88e97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a9f9d9b671fbbd0c8235d590da8f88e97">ui_pausa</a> (void)</td></tr>
 <tr class="separator:a9f9d9b671fbbd0c8235d590da8f88e97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa86ff5d7413780ab11d4bd932e510ad9" id="r_aa86ff5d7413780ab11d4bd932e510ad9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcancion.html">cancion</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#aa86ff5d7413780ab11d4bd932e510ad9">ui_toggle_play_pause</a> (<a class="el" href="structcancion.html">cancion</a> *actual, int *en_pausa, <a class="el" href="structplaylist.html">playlist</a> *cola, <a class="el" href="structplaylist.html">playlist</a> *pl, <a class="el" href="structplaylist.html">playlist</a> *historial)</td></tr>
+<tr class="separator:aa86ff5d7413780ab11d4bd932e510ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2b7d0470387f9f741b1d95e33c37f8" id="r_a6f2b7d0470387f9f741b1d95e33c37f8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a6f2b7d0470387f9f741b1d95e33c37f8">ui_menu_fila</a> (<a class="el" href="structplaylist.html">playlist</a> *cola, <a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="separator:a6f2b7d0470387f9f741b1d95e33c37f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a419c25136443c205541f5a8f61e1bd03" id="r_a419c25136443c205541f5a8f61e1bd03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a419c25136443c205541f5a8f61e1bd03">ui_mostrar_historial</a> (const <a class="el" href="structplaylist.html">playlist</a> *historial)</td></tr>
+<tr class="separator:a419c25136443c205541f5a8f61e1bd03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1494b99efb2c389b0d7c81431a78bc" id="r_a8d1494b99efb2c389b0d7c81431a78bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a8d1494b99efb2c389b0d7c81431a78bc">ui_menu_busqueda</a> (<a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="separator:a8d1494b99efb2c389b0d7c81431a78bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75408838e6e78132cb7d59d87af0cc17" id="r_a75408838e6e78132cb7d59d87af0cc17"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#a75408838e6e78132cb7d59d87af0cc17">ui_menu_ordenar</a> (<a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="separator:a75408838e6e78132cb7d59d87af0cc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad18692a794521545575d2c234127127c" id="r_ad18692a794521545575d2c234127127c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#ad18692a794521545575d2c234127127c">ui_menu_exportar</a> (const <a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="separator:ad18692a794521545575d2c234127127c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebf439cccc099059ea6ad9a69790823d" id="r_aebf439cccc099059ea6ad9a69790823d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#aebf439cccc099059ea6ad9a69790823d">ui_pedir_artista</a> (void)</td></tr>
 <tr class="separator:aebf439cccc099059ea6ad9a69790823d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac4ea26889004adba9304289d30bb62b1" id="r_ac4ea26889004adba9304289d30bb62b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ui_8h.html#ac4ea26889004adba9304289d30bb62b1">ui_resultados_busqueda</a> (int encontrados, char *artista)</td></tr>
@@ -398,6 +410,106 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8d1494b99efb2c389b0d7c81431a78bc" name="a8d1494b99efb2c389b0d7c81431a78bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1494b99efb2c389b0d7c81431a78bc">&#9670;&#160;</a></span>ui_menu_busqueda()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ui_menu_busqueda </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>catalogo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad18692a794521545575d2c234127127c" name="ad18692a794521545575d2c234127127c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad18692a794521545575d2c234127127c">&#9670;&#160;</a></span>ui_menu_exportar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ui_menu_exportar </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>catalogo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f2b7d0470387f9f741b1d95e33c37f8" name="a6f2b7d0470387f9f741b1d95e33c37f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f2b7d0470387f9f741b1d95e33c37f8">&#9670;&#160;</a></span>ui_menu_fila()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ui_menu_fila </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>cola</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>catalogo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75408838e6e78132cb7d59d87af0cc17" name="a75408838e6e78132cb7d59d87af0cc17"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75408838e6e78132cb7d59d87af0cc17">&#9670;&#160;</a></span>ui_menu_ordenar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ui_menu_ordenar </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>catalogo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a419c25136443c205541f5a8f61e1bd03" name="a419c25136443c205541f5a8f61e1bd03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a419c25136443c205541f5a8f61e1bd03">&#9670;&#160;</a></span>ui_mostrar_historial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ui_mostrar_historial </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>historial</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9f9d9b671fbbd0c8235d590da8f88e97" name="a9f9d9b671fbbd0c8235d590da8f88e97"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9f9d9b671fbbd0c8235d590da8f88e97">&#9670;&#160;</a></span>ui_pausa()</h2>
 
@@ -492,6 +604,52 @@ Functions</h2></td></tr>
           <td class="paramtype">char *&#160;</td>
           <td class="paramname"><em>artista</em></td><td>)</td>
           <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa86ff5d7413780ab11d4bd932e510ad9" name="aa86ff5d7413780ab11d4bd932e510ad9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa86ff5d7413780ab11d4bd932e510ad9">&#9670;&#160;</a></span>ui_toggle_play_pause()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structcancion.html">cancion</a> * ui_toggle_play_pause </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structcancion.html">cancion</a> *&#160;</td>
+          <td class="paramname"><em>actual</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>en_pausa</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>cola</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>pl</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>historial</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">

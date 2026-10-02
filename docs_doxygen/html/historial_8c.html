@@ -107,14 +107,19 @@ Include dependency graph for historial.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a9d9428f5c00ddd118c19e71a14503bb2" id="r_a9d9428f5c00ddd118c19e71a14503bb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structplaylist.html">playlist</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#a9d9428f5c00ddd118c19e71a14503bb2">crear_historial</a> (void)</td></tr>
+<tr class="memdesc:a9d9428f5c00ddd118c19e71a14503bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserva memoria e inicializa la estructura de historial de reproduccion.  <br /></td></tr>
 <tr class="separator:a9d9428f5c00ddd118c19e71a14503bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5165a9a9c2d90543877e30854338dfda" id="r_a5165a9a9c2d90543877e30854338dfda"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#a5165a9a9c2d90543877e30854338dfda">buscar_en_historial</a> (const <a class="el" href="structplaylist.html">playlist</a> *h, uint32_t cid)</td></tr>
+<tr class="memdesc:a5165a9a9c2d90543877e30854338dfda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Localiza una cancion dentro del historial mediante su identificador cid.  <br /></td></tr>
 <tr class="separator:a5165a9a9c2d90543877e30854338dfda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3950b057fcc8122f856f6fa724c0834a" id="r_a3950b057fcc8122f856f6fa724c0834a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#a3950b057fcc8122f856f6fa724c0834a">quitar_de_historial</a> (<a class="el" href="structplaylist.html">playlist</a> *h, int pos)</td></tr>
+<tr class="memdesc:a3950b057fcc8122f856f6fa724c0834a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remueve una cancion del historial desplazando los elementos a la izquierda.  <br /></td></tr>
 <tr class="separator:a3950b057fcc8122f856f6fa724c0834a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1af0c8792dfebd92b5fe99a5d6afeacf" id="r_a1af0c8792dfebd92b5fe99a5d6afeacf"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#a1af0c8792dfebd92b5fe99a5d6afeacf">agregar_a_historial</a> (<a class="el" href="structplaylist.html">playlist</a> *h, const <a class="el" href="structcancion.html">cancion</a> *c)</td></tr>
+<tr class="memdesc:a1af0c8792dfebd92b5fe99a5d6afeacf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserta una cancion en la ultima posicion del historial.  <br /></td></tr>
 <tr class="separator:a1af0c8792dfebd92b5fe99a5d6afeacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05f724842d26f64eea61c442fc9a678e" id="r_a05f724842d26f64eea61c442fc9a678e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="historial_8c.html#a05f724842d26f64eea61c442fc9a678e">liberar_historial</a> (<a class="el" href="structplaylist.html">playlist</a> *h)</td></tr>
+<tr class="memdesc:a05f724842d26f64eea61c442fc9a678e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera la memoria del arreglo dinamico reservado para el historial.  <br /></td></tr>
 <tr class="separator:a05f724842d26f64eea61c442fc9a678e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -144,6 +149,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Inserta una cancion en la ultima posicion del historial. </p>
+<p>Verifica si la cancion ya habia sido reproducida previamente; si es asi, la remueve de su ubicacion previa para reubicarla al final. Si el historial ha alcanzado MAX_HISTORIAL elementos, descarta la cancion mas antigua ubicada en la posicion 0 y corre las demas antes de almacenar la nueva cancion en h-&gt;cantidad.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Puntero al historial de canciones reproducidas. </td></tr>
+    <tr><td class="paramname">c</td><td>Puntero a la cancion que acaba de ser reproducida. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 en caso exitoso, 1 si el puntero al historial o la cancion son invalidos. </dd></dl>
+
 </div>
 </div>
 <a id="a5165a9a9c2d90543877e30854338dfda" name="a5165a9a9c2d90543877e30854338dfda"></a>
@@ -172,6 +188,17 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Localiza una cancion dentro del historial mediante su identificador cid. </p>
+<p>Recorre linealmente el arreglo de canciones del historial comparando el campo cid de cada entrada contra el identificador buscado.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Puntero de solo lectura al historial de reproduccion. </td></tr>
+    <tr><td class="paramname">cid</td><td>Identificador numerico de la cancion. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Indice en el historial si es localizada, o -1 si no se encuentra registrada. </dd></dl>
+
 </div>
 </div>
 <a id="a9d9428f5c00ddd118c19e71a14503bb2" name="a9d9428f5c00ddd118c19e71a14503bb2"></a>
@@ -190,6 +217,10 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reserva memoria e inicializa la estructura de historial de reproduccion. </p>
+<p>Configura una playlist con campos iniciales vacios y reserva memoria dinamica contigua para almacenar un maximo acotado de MAX_HISTORIAL canciones.</p>
+<dl class="section return"><dt>Returns</dt><dd>Estructura playlist dimensionada para trabajar como historial. </dd></dl>
+
 </div>
 </div>
 <a id="a05f724842d26f64eea61c442fc9a678e" name="a05f724842d26f64eea61c442fc9a678e"></a>
@@ -207,6 +238,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Libera la memoria del arreglo dinamico reservado para el historial. </p>
+<p>Aplica free al arreglo h-&gt;canciones y resetea h-&gt;cantidad a 0 sin desasignar las cadenas de texto, dado que son referencias pertenecientes al catalogo.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Puntero a la estructura de historial a liberar. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -235,6 +275,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Remueve una cancion del historial desplazando los elementos a la izquierda. </p>
+<p>Desplaza las canciones desde pos + 1 hasta h-&gt;cantidad - 1 hacia la izquierda sobreescribiendo el elemento en pos y decrementando el total de canciones registradas.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">h</td><td>Puntero a la estructura de historial. </td></tr>
+    <tr><td class="paramname">pos</td><td>Indice en base 0 del elemento que sera eliminado. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

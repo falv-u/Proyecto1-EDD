@@ -107,6 +107,7 @@ Include dependency graph for audio.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae5d57c6676f2bf56f5f333dd925fdea7" id="r_ae5d57c6676f2bf56f5f333dd925fdea7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="audio_8c.html#ae5d57c6676f2bf56f5f333dd925fdea7">reproduir_musica</a> (const char *ruta, <a class="el" href="structcancion.html">cancion</a> *c)</td></tr>
+<tr class="memdesc:ae5d57c6676f2bf56f5f333dd925fdea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simula o reproduce el audio de una pista musical.  <br /></td></tr>
 <tr class="separator:ae5d57c6676f2bf56f5f333dd925fdea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -135,6 +136,17 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Simula o reproduce el audio de una pista musical. </p>
+<p>Inicializa el motor de audio miniaudio en memoria, ejecuta la reproduccion del archivo apuntado por ruta y aguarda la confirmacion del usuario por consola. Al concluir la reproduccion, desinicializa el motor para liberar recursos del sistema e incrementa en una unidad el contador de reproducciones de la cancion.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Direccion del archivo de audio compatible en el sistema de archivos. </td></tr>
+    <tr><td class="paramname">c</td><td>Puntero a la cancion en reproduccion para actualizar su contador total_rep. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 en caso de exito, -1 si el motor de audio falla al inicializarse. </dd></dl>
 
 </div>
 </div>

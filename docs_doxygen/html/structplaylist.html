@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('structplaylist.html',''); initResizabl
 </div><!--header-->
 <div class="contents">
 
-<p>Estructura que contiene los datos de cada playlist.  
+<p>Estructura que gestiona colecciones de canciones en memoria contigua.  
  <a href="structplaylist.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="songs_8h_source.html">songs.h</a>&gt;</code></p>
@@ -120,8 +120,8 @@ Data Fields</h2></td></tr>
 <tr class="separator:ae43ca328f7775489add2c3dbd059320f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Estructura que contiene los datos de cada playlist. </p>
-<p>Esta estructura tambien </p>
+<div class="textblock"><p>Estructura que gestiona colecciones de canciones en memoria contigua. </p>
+<p>Esta estructura maneja arreglos dinamicos de canciones, asociando metadatos como su identificador numerico, un nombre asignado por el usuario o sistema, la ruta asociada en disco si persiste en archivo CSV, y el contador exacto de elementos validos que residen actualmente en memoria. Se utiliza para representar el catalogo general, la cola de reproduccion y el historial. </p>
 </div><h2 class="groupheader">Field Documentation</h2>
 <a id="ad30044441484b5ba8db08b00d186d20d" name="ad30044441484b5ba8db08b00d186d20d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad30044441484b5ba8db08b00d186d20d">&#9670;&#160;</a></span>canciones</h2>

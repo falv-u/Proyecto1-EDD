@@ -110,6 +110,7 @@ Include dependency graph for catalogo.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structtema.html">tema</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura temporal y compacta para generacion de catalogos.  <a href="structtema.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -136,17 +137,27 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:af635e15642f0bc48ca1dd0efa72db518" id="r_af635e15642f0bc48ca1dd0efa72db518"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#af635e15642f0bc48ca1dd0efa72db518">llenar</a> (<a class="el" href="structtema.html">tema</a> *t)</td></tr>
+<tr class="memdesc:af635e15642f0bc48ca1dd0efa72db518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asigna valores aleatorios a los campos de una estructura tema.  <br /></td></tr>
 <tr class="separator:af635e15642f0bc48ca1dd0efa72db518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9281b0d66d6074c1c84200edcd27d698" id="r_a9281b0d66d6074c1c84200edcd27d698"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#a9281b0d66d6074c1c84200edcd27d698">es_valido</a> (const <a class="el" href="structtema.html">tema</a> *t)</td></tr>
+<tr class="memdesc:a9281b0d66d6074c1c84200edcd27d698"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valida que los campos numericos de un tema esten dentro de los limites reales.  <br /></td></tr>
 <tr class="separator:a9281b0d66d6074c1c84200edcd27d698"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f3ec01aefe3b4c35813a8f7e1d276c2" id="r_a7f3ec01aefe3b4c35813a8f7e1d276c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#a7f3ec01aefe3b4c35813a8f7e1d276c2">mezclar</a> (<a class="el" href="structtema.html">tema</a> *v, int n)</td></tr>
+<tr class="memdesc:a7f3ec01aefe3b4c35813a8f7e1d276c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Algoritmo Fisher-Yates para barajar registros de forma aleatoria en O(n).  <br /></td></tr>
 <tr class="separator:a7f3ec01aefe3b4c35813a8f7e1d276c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c9be0259e840b22fee79deb3773a936" id="r_a5c9be0259e840b22fee79deb3773a936"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#a5c9be0259e840b22fee79deb3773a936">existe</a> (const char *ruta)</td></tr>
+<tr class="memdesc:a5c9be0259e840b22fee79deb3773a936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comprueba si un archivo existe en el sistema de almacenamiento.  <br /></td></tr>
 <tr class="separator:a5c9be0259e840b22fee79deb3773a936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8254f4d5e6e4e583fd2f437b29d10b8d" id="r_a8254f4d5e6e4e583fd2f437b29d10b8d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#a8254f4d5e6e4e583fd2f437b29d10b8d">escribir_csv</a> (const char *ruta, int n)</td></tr>
+<tr class="memdesc:a8254f4d5e6e4e583fd2f437b29d10b8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribe n registros aleatorios en un archivo CSV empleando un archivo temporal.  <br /></td></tr>
 <tr class="separator:a8254f4d5e6e4e583fd2f437b29d10b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a409cd49f567aab412ba07ac96c6737b1" id="r_a409cd49f567aab412ba07ac96c6737b1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#a409cd49f567aab412ba07ac96c6737b1">generar_catalogo_si_no_existe</a> (const char *ruta, int n)</td></tr>
+<tr class="memdesc:a409cd49f567aab412ba07ac96c6737b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Genera el catalogo aleatorio en disco unicamente si no existe previamente.  <br /></td></tr>
 <tr class="separator:a409cd49f567aab412ba07ac96c6737b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a952ed1bf8f44fba8b756ebcad6da0894" id="r_a952ed1bf8f44fba8b756ebcad6da0894"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#a952ed1bf8f44fba8b756ebcad6da0894">contar_por_archivo</a> (const char *ruta)</td></tr>
+<tr class="separator:a952ed1bf8f44fba8b756ebcad6da0894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5b5dcf2f21ef87b202577506562b685" id="r_ab5b5dcf2f21ef87b202577506562b685"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="catalogo_8c.html#ab5b5dcf2f21ef87b202577506562b685">canciones_por_genero</a> (const <a class="el" href="structplaylist.html">playlist</a> *catalogo)</td></tr>
+<tr class="separator:ab5b5dcf2f21ef87b202577506562b685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -285,6 +296,42 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
+<a id="ab5b5dcf2f21ef87b202577506562b685" name="ab5b5dcf2f21ef87b202577506562b685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5b5dcf2f21ef87b202577506562b685">&#9670;&#160;</a></span>canciones_por_genero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void canciones_por_genero </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structplaylist.html">playlist</a> *&#160;</td>
+          <td class="paramname"><em>catalogo</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a952ed1bf8f44fba8b756ebcad6da0894" name="a952ed1bf8f44fba8b756ebcad6da0894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a952ed1bf8f44fba8b756ebcad6da0894">&#9670;&#160;</a></span>contar_por_archivo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned int contar_por_archivo </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>ruta</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a9281b0d66d6074c1c84200edcd27d698" name="a9281b0d66d6074c1c84200edcd27d698"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9281b0d66d6074c1c84200edcd27d698">&#9670;&#160;</a></span>es_valido()</h2>
 
@@ -300,6 +347,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Valida que los campos numericos de un tema esten dentro de los limites reales. </p>
+<p>Evalua que la duracion se encuentre entre DUR_MIN y DUR_MAX, que el anio este comprendido entre ANIO_MIN y ANIO_MAX, y que las reproducciones no excedan REP_MAX.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Puntero constante al tema cuyos datos numericos seran evaluados. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 1 si todos los atributos cumplen los limites, 0 si alguno es invalido. </dd></dl>
 
 </div>
 </div>
@@ -329,6 +386,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Escribe n registros aleatorios en un archivo CSV empleando un archivo temporal. </p>
+<p>Reserva memoria dinamica para n estructuras tema, las inicializa aleatoriamente asegurando consistencia numerica, las mezcla con Fisher-Yates y las escribe en un archivo con extension .tmp. Si todo el proceso y el cierre de archivo ocurren sin errores I/O, renombra atomicamente el archivo temporal a la ruta destino final.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Nombre o camino del archivo CSV a generar. </td></tr>
+    <tr><td class="paramname">n</td><td>Cantidad de registros musicales que seran generados. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 en caso de exito, -1 en parametros invalidos, -2 por falta de memoria RAM, -3 en errores de escritura en disco. </dd></dl>
+
 </div>
 </div>
 <a id="a5c9be0259e840b22fee79deb3773a936" name="a5c9be0259e840b22fee79deb3773a936"></a>
@@ -346,6 +414,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Comprueba si un archivo existe en el sistema de almacenamiento. </p>
+<p>Intenta abrir el archivo especificado en modo lectura ("r"). Si la llamada a fopen retorna distinto de NULL, el archivo existe y es accesible; luego se cierra.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Cadena con la ruta absoluta o relativa del archivo a verificar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 1 si el archivo existe y es legible, 0 en caso contrario. </dd></dl>
 
 </div>
 </div>
@@ -375,6 +453,17 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Genera el catalogo aleatorio en disco unicamente si no existe previamente. </p>
+<p>Verifica mediante <a class="el" href="songs_8h.html#a5c9be0259e840b22fee79deb3773a936" title="Comprueba si un archivo existe en el sistema de almacenamiento.">existe()</a> si el archivo de catalogo ya reside en el almacenamiento. En caso negativo, procede a llamar a <a class="el" href="songs_8h.html#a8254f4d5e6e4e583fd2f437b29d10b8d" title="Escribe n registros aleatorios en un archivo CSV empleando un archivo temporal.">escribir_csv()</a> para sintetizar los n temas.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruta</td><td>Ruta del archivo CSV que almacena el catalogo general. </td></tr>
+    <tr><td class="paramname">n</td><td>Cantidad de canciones a generar en caso de ausencia del archivo. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Retorna 0 si ya existia o si se genero correctamente, valor negativo si ocurrio una falla. </dd></dl>
+
 </div>
 </div>
 <a id="af635e15642f0bc48ca1dd0efa72db518" name="af635e15642f0bc48ca1dd0efa72db518"></a>
@@ -392,6 +481,15 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Asigna valores aleatorios a los campos de una estructura tema. </p>
+<p>Genera valores dentro de rangos acotados mediante rand() para duracion en segundos, anio de publicacion, cantidad de reproducciones e indices a arreglos constantes de palabras para armar titulos y albumes, asi como artistas y generos.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">t</td><td>Puntero a la estructura tema receptora de los datos generados. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -420,6 +518,16 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Algoritmo Fisher-Yates para barajar registros de forma aleatoria en O(n). </p>
+<p>Itera desde el final del arreglo hacia el inicio, seleccionando un indice aleatorio equiprobable entre 0 e i, e intercambiando la estructura actual con la seleccionada para garantizar una distribucion uniforme de los temas.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">v</td><td>Arreglo contiguo de temas en memoria a ser mezclado. </td></tr>
+    <tr><td class="paramname">n</td><td>Cantidad total de elementos dentro del arreglo. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

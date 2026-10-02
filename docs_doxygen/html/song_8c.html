@@ -108,10 +108,13 @@ Include dependency graph for song.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac046ab6d6cd2b3bfaa679aebf84c0aaf" id="r_ac046ab6d6cd2b3bfaa679aebf84c0aaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structcancion.html">cancion</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="song_8c.html#ac046ab6d6cd2b3bfaa679aebf84c0aaf">crear_cancion</a> (const char titulo[], const char artista[], const char album[], const char genero[])</td></tr>
+<tr class="memdesc:ac046ab6d6cd2b3bfaa679aebf84c0aaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserva e inicializa una estructura de cancion en memoria.  <br /></td></tr>
 <tr class="separator:ac046ab6d6cd2b3bfaa679aebf84c0aaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a0b48892f9e7387f65670a8e221b08a" id="r_a6a0b48892f9e7387f65670a8e221b08a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="song_8c.html#a6a0b48892f9e7387f65670a8e221b08a">eliminar_cancion</a> (<a class="el" href="structcancion.html">cancion</a> *c)</td></tr>
+<tr class="memdesc:a6a0b48892f9e7387f65670a8e221b08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Libera los bloques de memoria dinamica de una cancion.  <br /></td></tr>
 <tr class="separator:a6a0b48892f9e7387f65670a8e221b08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea5f0d564d27f7f75825a679f9ae3474" id="r_aea5f0d564d27f7f75825a679f9ae3474"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="song_8c.html#aea5f0d564d27f7f75825a679f9ae3474">inicializar_canciones</a> (<a class="el" href="structcancion.html">cancion</a> canciones[])</td></tr>
+<tr class="memdesc:aea5f0d564d27f7f75825a679f9ae3474"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa un arreglo estatico de canciones leyendo un CSV por bloques.  <br /></td></tr>
 <tr class="separator:aea5f0d564d27f7f75825a679f9ae3474"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -153,6 +156,19 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Reserva e inicializa una estructura de cancion en memoria. </p>
+<p>Asigna dinamicamente mediante malloc el tamano exacto de memoria para cada una de las cadenas pasadas por parametro y las copia con strcpy. Configura ademas campos predeterminados para duracion, reproducciones y anio de publicacion.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">titulo</td><td>Cadena constante con el titulo de la cancion. </td></tr>
+    <tr><td class="paramname">artista</td><td>Cadena constante con el nombre del artista o banda. </td></tr>
+    <tr><td class="paramname">album</td><td>Cadena constante con el nombre del album discografico. </td></tr>
+    <tr><td class="paramname">genero</td><td>Cadena constante con el genero musical. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Estructura cancion con sus punteros de texto apuntando a memoria asignada. </dd></dl>
+
 </div>
 </div>
 <a id="a6a0b48892f9e7387f65670a8e221b08a" name="a6a0b48892f9e7387f65670a8e221b08a"></a>
@@ -171,6 +187,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Libera los bloques de memoria dinamica de una cancion. </p>
+<p>Aplica la instruccion free a cada uno de los cuatro punteros de cadena (titulo, artista, album, genero) asignados previamente con memoria en el heap, evitando fugas de memoria al descartar canciones individuales.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">c</td><td>Puntero a la estructura de la cancion a destruir. </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <a id="aea5f0d564d27f7f75825a679f9ae3474" name="aea5f0d564d27f7f75825a679f9ae3474"></a>
@@ -188,6 +213,15 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Inicializa un arreglo estatico de canciones leyendo un CSV por bloques. </p>
+<p>Abre el archivo list.csv en modo lectura y lee secuencialmente lineas aplicando formato con fscanf para extraer titulo, artista, album y genero, asignando estructuras de canciones en el arreglo hasta completar MAXCANCIONES elementos.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">canciones</td><td>Arreglo de estructuras cancion donde se almacenaran los datos. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

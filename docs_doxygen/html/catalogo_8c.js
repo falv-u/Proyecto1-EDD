@@ -10,6 +10,8 @@ var catalogo_8c =
     [ "N_MAXIMO", "catalogo_8c.html#ab7044341e2e9b6f2eab449b22104baf9", null ],
     [ "N_PALABRAS", "catalogo_8c.html#acfa81a44bf8886b06b6ea87d012c7eb2", null ],
     [ "REP_MAX", "catalogo_8c.html#a56b27c42d9639c8251962e5d1fcddb98", null ],
+    [ "canciones_por_genero", "catalogo_8c.html#ab5b5dcf2f21ef87b202577506562b685", null ],
+    [ "contar_por_archivo", "catalogo_8c.html#a952ed1bf8f44fba8b756ebcad6da0894", null ],
     [ "es_valido", "catalogo_8c.html#a9281b0d66d6074c1c84200edcd27d698", null ],
     [ "escribir_csv", "catalogo_8c.html#a8254f4d5e6e4e583fd2f437b29d10b8d", null ],
     [ "existe", "catalogo_8c.html#a5c9be0259e840b22fee79deb3773a936", null ],
