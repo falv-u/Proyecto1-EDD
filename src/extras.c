@@ -21,18 +21,26 @@ void mostrar_creditos(void) {
 	printf("\t - A la profe por ser buen profe y tenernos paciencia\n");
 	printf("\t - A miltongoat por ensenarnos LaTex\n");
 	printf("\t - A redbull, monster y score por\n");
-	printf("\tpermitirnos terminar esto en tiempo record\n");
-	printf("\tA zed por ser zed.\n");
-	printf("\tYT music por dar ambiente en el entorno colaborativo\n");
+	printf("\t   permitirnos terminar esto en tiempo record\n");
+	printf("\t - A zed por ser zed.\n");
+	printf("\t - YT music por dar ambiente en el entorno colaborativo\n");
 	printf("\tY UNA DISCULPA POR: \b\n");
-	printf("\tentregarlo tarde\n");
+	printf("\t- entregarlo tarde\n");
 	printf("\tNO AGRADECEMOS A: \b\n");
 	printf("\tDoxygen por hacer que nuestros comentarios se vean sucios\n");
 	printf("\ty generar paginas de documentacion no muy agraciadas\n\n");
 	printf("\tA las ias a las que intentamos pedir ayuda y nos intentaron\n");
 	printf("\tcomplejizar y envenenar el codigo\n");
 	printf("\tA las demas materias que nos aplastaron en pruebas e informes.\n");
-	printf("\t====================\n\n");
+	printf(
+	    "\n"
+	    "==========================================\n"
+	    "     _                                  \n"
+	    "   <(o )___   Esperamos se divierta testeando       \n"
+	    "    ( ._> /           este programa!             \n"
+	    "     `---'         que tenga lindo dia.\n"
+	    "========================================\n"
+	);
 }
 
 /** @brief Simula o reproduce el audio de una pista musical.
