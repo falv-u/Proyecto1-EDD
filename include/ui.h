@@ -17,52 +17,58 @@
 #define MAX_LINE 256
 
 /* ----------FUNCIONES UI ---------*/
-/* Limpia la terminal. */
+/** @brief Limpia la terminal. */
 void limpiar_pantalla(void);
 
-/* Imprime la cancion actual en la terminal. */
+/** @brief Imprime la cancion actual en la terminal. */
 void imprime_cancion(cancion *c);
 
-/* Imprime el menu de opciones en la terminal. */
+/** @brief Imprime el menu de opciones en la terminal. */
 void imprime_menu(void);
 
-/* Lee una entrada del usuario en la terminal. */
+/** @brief Lee una entrada del usuario en la terminal. */
 char ui_input(void);
 
-/* Funcion principal de la interfaz de usuario. */
+/** @brief Funcion principal de la interfaz de usuario. */
 int ui_principal(void);
 
-/* Pausa la ejecucion del programa [no es Play/pause] hasta que el usuario presione Enter. */
+/** @brief Pausa la ejecucion del programa [no es Play/pause] hasta que el usuario presione Enter. */
 void ui_pausa(void);
 
 /* ----------FUNCIONES UI MENU ---------*/
-/* Play/Pause */
+/** @brief Play/Pause */
 cancion *ui_toggle_play_pause(cancion *actual, int *en_pausa, playlist *cola, playlist *pl, playlist *historial);
 
-/* Fila de reproduccion */
+/** @brief Fila de reproduccion */
 void ui_menu_fila(playlist *cola, playlist *catalogo);
 
-/* Historial */
+/** @brief Historial */
 void ui_menu_historial(const playlist *historial);
 
 /* Busqueda */
 
+/** @brief Muestra el menu de busqueda */
 void ui_menu_busqueda(playlist *catalogo);
 
-/* Ordenar */
+/** @brief Muestra el menu de ordenar */
 void ui_menu_ordenar(playlist *catalogo);
 
-/* Exportar */
+/** @brief Muestra el menu de exportar */
 void ui_menu_exportar(const playlist *catalogo);
 
-/* Ranking */
+/** @brief Muestra el menu de ranking */
 void ui_menu_ranking(const playlist *pl);
 
 /* ----------FUNCIONES UI BUSQUEDA ---------*/
-/* Funcion UI para pedir el artista a buscar */
+/** @brief Pide el artista a buscar */
 void ui_pedir_artista(void);
+/** @brief Muestra los resultados de busqueda por artista */
 void ui_resultados_busqueda(int encontrados, char *artista);
+/** @brief Muestra una cancion encontrada en la busqueda */
 void ui_cancion_busqueda(int num, cancion *c);
+/** @brief Muestra mensaje de no resultados */
 void ui_sin_resultados(char *artista);
 
 #endif
+/** @brief Muestra el menu de extras */
+void ui_menu_extras(playlist *catalogo);
