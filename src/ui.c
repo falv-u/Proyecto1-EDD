@@ -343,6 +343,7 @@ void ui_menu_busqueda(playlist *catalogo)
 	printf(COLOR_CYAN "\n  --- Busqueda ---\n" COLOR_RESET);
 	printf("  [1] Buscar por ID [recursiva]\n");
 	printf("  [2] Buscar por artista\n");
+	printf("  [3] Buscar por genero\n");
 	printf("  [0] Salir\n");
 
 	char opc = ui_input();
@@ -430,11 +431,16 @@ void ui_menu_ordenar(playlist *catalogo)
 		printf("  [0] ID  [1] Duracion  [2] Ano  [3] Reproducciones\n");
 		printf("  [4] Titulo  [5] Artista  [6] Album  [7] Genero\n");
 		char opc_crit = ui_input();
-		if (opc_crit >= '0' && opc_crit <= '3')
+		if (opc_crit >= '0' && opc_crit <= '7')
 		{
+			/* Nombres de los criterios de ordenamiento */
+			const char *nombres_crit[] = {
+				"ID", "Duracion", "Ano", "Reproducciones",
+				"Titulo", "Artista", "Album", "Genero"
+			};
 			int criterio = opc_crit - '0';
 			insertion_sort_int(catalogo, criterio);
-			printf(COLOR_GREEN "  Catalogo ordenado!\n" COLOR_RESET);
+			printf(COLOR_GREEN "  Catalogo ordenado por %s!\n" COLOR_RESET, nombres_crit[criterio]);
 		}
 		else
 		{

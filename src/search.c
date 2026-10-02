@@ -269,6 +269,7 @@ void interactuar_genero(playlist *pl)
 	{
 		ui_sin_resultados("genero");
 	}
+
 	char genero_buscado[128];
 	int max_resultados = pl->cantidad;
 
@@ -279,6 +280,8 @@ void interactuar_genero(playlist *pl)
 		printf(COLOR_RED "\nError: No hay memoria suficiente." COLOR_RESET);
 		return;
 	}
+
+	canciones_por_genero(pl);
 
 	printf(COLOR_CYAN "\n  >> Introduce el genero a buscar: " COLOR_RESET);
 	if (fgets(genero_buscado, sizeof(genero_buscado), stdin) != NULL)

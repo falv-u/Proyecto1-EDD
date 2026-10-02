@@ -651,6 +651,13 @@ void merge_sort(playlist *p, int low, int high);
 
 /** @brief Despliega el ranking de las N canciones con mayor reproduccion del sistema.
  *
+ * 
+ * @param pl Puntero de solo lectura a la estructura con las canciones a rankear.
+ */
+void canciones_por_genero(const playlist *pl);
+
+/** @brief Despliega el ranking de las N canciones con mayor reproduccion del sistema.
+ *
  * Crea un arreglo auxiliar local de indices de tamano pl->cantidad para preservar el
  * orden original de la playlist. Aplica un ordenamiento burbuja descendente comparando
  * pl->canciones[idx[j]].total_rep e intercambiando unicamente los indices numericos.
