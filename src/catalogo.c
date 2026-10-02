@@ -3,17 +3,6 @@
 #include <stdlib.h>
 #include "songs.h"
 
-#define DUR_MIN   60
-#define DUR_MAX   600
-#define ANIO_MIN  1960
-#define ANIO_MAX  2026
-#define REP_MAX   100000
-#define N_MAXIMO  5000000
-
-#define N_ARTISTAS 15
-#define N_GENEROS  9
-#define N_PALABRAS 30
-
 static const char *ARTISTAS[N_ARTISTAS] = {
 	"Queen", "KISS", "Nirvana", "Metalica", "Mago de oz",
 	"Los Prisioneros", "Los Bunkers", "Radiohead", "Gorillaz", "Bad Bunny",
@@ -31,12 +20,6 @@ static const char *PALABRAS[N_PALABRAS] = {
 	"Dios", "espejo"
 };
 
-/* Un tema: numeros y posiciones en los arreglos de textos. */
-typedef struct {
-	uint32_t dur, reps;
-	uint16_t anio;
-	uint8_t  p1, p2, p3, p4, artista, genero;
-} tema;
 
 /* Llena un tema con datos aleatorios. */
 void llenar(tema *t)
@@ -177,8 +160,8 @@ unsigned int contar_por_archivo(const char *ruta)
 void canciones_por_genero(const playlist *catalogo)
 {
 	int cont_g[N_GENEROS] = {0};
-	playlist *pl;
 	int i;
+	int j;
 
 	for (i = 0; i< catalogo->cantidad; i++)
 	{
