@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "ui.h"
 
 /* Prototipos de funciones externas ya implementadas en otros .c */
@@ -346,24 +347,37 @@ void ui_menu_busqueda(playlist *catalogo)
     printf("  [0] Salir\n");
 
     char opc = ui_input();
-    if (opc == '1')
+        if (opc == '1')
     {
-        unsigned int id;
+        unsigned long long id;
         printf("  Ingrese ID de la canción: ");
-        if (scanf("%u", &id) == 1)
+        if (scanf("%llu", &id) == 1)
         {
             while (getchar() != '\n'); // eliminar enter de la cadena
 
-            int pos = binsearch_cancion(catalogo, 0, catalogo->cantidad - 1, id);
-            if (pos != -1)
+            /* Comprobacion simple con el maximo de un unsigned int */
+            if (id > UINT_MAX)
             {
-                printf(COLOR_GREEN "  Canción encontrada.\n" COLOR_RESET);
-                printf(COLOR_CYAN "    %d. %s - %s\n" COLOR_RESET, pos + 1, catalogo->canciones[pos].artista, catalogo->canciones[pos].titulo);
+                printf(COLOR_RED "  Error: El ID supera el valor maximo permitido (%u).\n" COLOR_RESET, UINT_MAX);
             }
             else
             {
-                printf(COLOR_RED "  No se encontró la canción. [Ordenar por ID con [T] primero]\n" COLOR_RESET);
+                int pos = binsearch_cancion(catalogo, 0, catalogo->cantidad - 1, (unsigned int)id);
+                if (pos != -1)
+                {
+                    printf(COLOR_GREEN "  Canción encontrada.\n" COLOR_RESET);
+                    printf(COLOR_CYAN "    %d. %s - %s\n" COLOR_RESET, pos + 1, catalogo->canciones[pos].artista, catalogo->canciones[pos].titulo);
+                }
+                else
+                {
+                    printf(COLOR_RED "  No se encontró la canción. [Ordenar por ID con [T] primero]\n" COLOR_RESET);
+                }
             }
+        }
+        else
+        {
+            while (getchar() != '\n');
+            printf(COLOR_RED "  Error: Entrada invalida.\n" COLOR_RESET);
         }
         ui_pausa();
     }
